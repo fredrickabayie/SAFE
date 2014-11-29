@@ -9,7 +9,7 @@ package safe.models;
  *
  * @author chokayg3
  */
-public class Drug {
+public class Drug_Model {
     String drugBarcode;
     String drugName;
     String drugManufacturer;
@@ -24,13 +24,13 @@ public class Drug {
      * @param drugExpiredate
      * @param drugUsage 
      */
-    public Drug ( String drugBarcode, String drugName, String drugManufacturer, String drugExpiredate, String drugUsage ){
+    public Drug_Model ( String drugBarcode, String drugName, String drugManufacturer, String drugExpiredate, String drugUsage ){
         this.drugBarcode = drugBarcode;
         this.drugName = drugName;
         this.drugManufacturer = drugManufacturer;
         this.drugExpiredate = drugExpiredate;
         this.drugUsage = drugUsage;
-    }//End of Drug
+    }//End of Drug_Model
     
     /**
      * 

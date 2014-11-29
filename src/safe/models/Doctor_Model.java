@@ -9,7 +9,7 @@ package safe.models;
  *
  * @author Fredrick Abayie
  */
-public class Doctor {
+public class Doctor_Model {
     String doctorId;
     String doctorFname;
     String doctorSname;
@@ -22,12 +22,12 @@ public class Doctor {
      * @param doctorSname
      * @param doctorPhone 
      */
-    public Doctor ( String doctorId, String doctorFname, String doctorSname, int doctorPhone ){
+    public Doctor_Model ( String doctorId, String doctorFname, String doctorSname, int doctorPhone ){
         this.doctorId = doctorId;
         this.doctorFname = doctorFname;
         this.doctorSname = doctorSname;
         this.doctorPhone = doctorPhone;
-    }//End of Doctor
+    }//End of Doctor_Model
     
     /**
      * 

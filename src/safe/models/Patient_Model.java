@@ -9,7 +9,7 @@ package safe.models;
  *
  * @author Fredrick Abayie
  */
-public class Patient {
+public class Patient_Model {
     String patientId;
     String patientFname;
     String patientSname;
@@ -26,14 +26,14 @@ public class Patient {
      * @param patientAddress
      * @param patientPhone 
      */
-    public Patient ( String patientId, String patientFname, String patientSname, int patientAge, String patientAddress, String patientPhone ){
+    public Patient_Model ( String patientId, String patientFname, String patientSname, int patientAge, String patientAddress, String patientPhone ){
         this.patientId = patientId;
         this.patientFname = patientFname;
         this.patientSname = patientSname;
         this.patientAge = patientAge;
         this.patientAddress = patientAddress;
         this.patientPhone = patientPhone;
-    }//End of Patient
+    }//End of Patient_Model
     
     /**
      * 
@@ -130,5 +130,12 @@ public class Patient {
     public String getPatientPhone ( ){
         return patientPhone;
     }//End of getPatientPhone
+    
+    @Override
+    public String toString (){
+        return  patientId+" "+patientFname+" "+patientSname+" "+patientAge+" "+patientAddress+" "+patientPhone;
+    }
+    
+    
     
 }//End of class
