@@ -29,7 +29,9 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="249" max="-2" attributes="0"/>
               <Component id="ok_button" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
+              <Component id="connect_button" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="153" max="32767" attributes="0"/>
               <Component id="cancel_button" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="212" max="-2" attributes="0"/>
           </Group>
@@ -60,7 +62,7 @@
                       <Component id="jPanel1" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="17" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -88,6 +90,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="cancel_button" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="ok_button" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="connect_button" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -437,6 +440,11 @@
     <Component class="javax.swing.JButton" name="ok_button">
       <Properties>
         <Property name="text" type="java.lang.String" value="OK"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="connect_button">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Connect"/>
       </Properties>
     </Component>
   </SubComponents>

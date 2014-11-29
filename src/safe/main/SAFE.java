@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package safe.main;
+import safe.controllers.Database_Controller;
 import safe.controllers.Patient_Controller;
 import safe.views.Patient_View;
 
@@ -42,9 +43,10 @@ public class SAFE {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                Database_Controller database_controller = new Database_Controller ( );
                 Patient_View patient_view = new Patient_View ( );
                 patient_view.setVisible(true);
-                Patient_Controller patient_controller = new Patient_Controller ( patient_view );
+                Patient_Controller patient_controller = new Patient_Controller ( patient_view, database_controller );
                 patient_controller.controller();
             }
         });

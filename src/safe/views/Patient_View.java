@@ -29,6 +29,10 @@ public class Patient_View extends javax.swing.JFrame {
         return ok_button;
     }//End of getOk_button
     
+    public JButton getConnect_button(){
+        return connect_button;
+    }
+    
     public String getPatientId(){
         return patientId.getText();
     }//End of getPatientId
@@ -102,6 +106,7 @@ public class Patient_View extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         patientId = new javax.swing.JTextField();
         ok_button = new javax.swing.JButton();
+        connect_button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setType(java.awt.Window.Type.UTILITY);
@@ -283,6 +288,8 @@ public class Patient_View extends javax.swing.JFrame {
 
         ok_button.setText("OK");
 
+        connect_button.setText("Connect");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -290,7 +297,9 @@ public class Patient_View extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(249, 249, 249)
                 .addComponent(ok_button)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(149, 149, 149)
+                .addComponent(connect_button)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
                 .addComponent(cancel_button)
                 .addGap(212, 212, 212))
             .addGroup(layout.createSequentialGroup()
@@ -314,7 +323,7 @@ public class Patient_View extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -336,7 +345,8 @@ public class Patient_View extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancel_button)
-                    .addComponent(ok_button))
+                    .addComponent(ok_button)
+                    .addComponent(connect_button))
                 .addContainerGap())
         );
 
@@ -384,6 +394,7 @@ public class Patient_View extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancel_button;
+    private javax.swing.JButton connect_button;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
