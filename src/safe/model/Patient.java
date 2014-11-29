@@ -59,4 +59,76 @@ public class Patient {
         this.patientFname = patientFname;
     }//End of setPatientFname
     
+    /**
+     * 
+     * @return 
+     */
+    public String getPatientFname ( ){
+        return patientFname;
+    }//End of getPatientFname
+    
+    /**
+     * 
+     * @param patientSname 
+     */
+    public void setPatientSname ( String patientSname ){
+        this.patientSname = patientSname;
+    }//End of setPatientSname
+    
+    /**
+     * 
+     * @return 
+     */
+    public String getPatientSname ( ){
+        return patientSname;
+    }//End of getPatientSname
+    
+    /**
+     * 
+     * @param patientAge 
+     */
+    public void setPatientAge ( int patientAge ){
+        this.patientAge = patientAge;
+    }//End of setPatientAge
+    
+    /**
+     * 
+     * @return 
+     */
+    public int getPatientAge ( ){
+        return patientAge;
+    }//End of getPatientFname
+    
+    /**
+     * 
+     * @param patientAddress 
+     */
+    public void setPatientAddress ( String patientAddress ){
+        this.patientAddress = patientAddress;
+    }//End of setPatientAddress
+    
+    /**
+     * 
+     * @return 
+     */
+    public String getPatientAddress ( ){
+        return patientAddress;
+    }//End of getPatientAddress
+    
+    /**
+     * 
+     * @param patientPhone
+     */
+    public void setPatientPhone ( String patientPhone ){
+        this.patientPhone = patientPhone;
+    }//End of setPatientPhone
+    
+    /**
+     * 
+     * @return 
+     */
+    public String getPatientPhone ( ){
+        return patientPhone;
+    }//End of getPatientPhone
+    
 }//End of class
