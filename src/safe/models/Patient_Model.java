@@ -5,6 +5,8 @@
  */
 package safe.models;
 
+import java.sql.Date;
+
 /**
  *
  * @author Fredrick Abayie
@@ -15,7 +17,17 @@ public class Patient_Model {
     String patientSname;
     int patientAge;
     String patientAddress;
-    String patientPhone;
+    int patientPhone;
+    String patientGender;
+    String patientOccupation;
+    String patientBloodgroup;
+    String patientMaritalstatus;
+    String patientBirthdate;
+    String patientNational;
+    String patientCountry;
+    String patientCity;
+    int patientPin;
+    String patientEmail;
     
     /**
      * 
@@ -25,14 +37,37 @@ public class Patient_Model {
      * @param patientAge
      * @param patientAddress
      * @param patientPhone 
+     * @param patientGender 
+     * @param patientOccupation 
+     * @param patientBloodgroup 
+     * @param patientMaritalstatus 
+     * @param patientBirthdate 
+     * @param patientNational 
+     * @param patientCountry 
+     * @param patientCity 
+     * @param patientPin 
+     * @param patientEmail 
      */
-    public Patient_Model ( String patientId, String patientFname, String patientSname, int patientAge, String patientAddress, String patientPhone ){
+    public Patient_Model ( String patientId, String patientFname, String patientSname, int patientAge, String patientAddress, 
+            int patientPhone, String patientGender, String patientOccupation, String patientBloodgroup, String patientMaritalstatus,
+            String patientBirthdate, String patientNational, String patientCountry, String patientCity, int patientPin, String patientEmail ){
         this.patientId = patientId;
         this.patientFname = patientFname;
         this.patientSname = patientSname;
         this.patientAge = patientAge;
         this.patientAddress = patientAddress;
         this.patientPhone = patientPhone;
+        this.patientGender = patientGender;
+        this.patientBloodgroup = patientBloodgroup;
+        this.patientCity = patientCity;
+        this.patientBirthdate = patientBirthdate;
+        this.patientOccupation = patientOccupation;
+        this.patientPin = patientPin;
+        this.patientEmail = patientEmail;
+        this.patientCountry = patientCountry;
+        this.patientNational = patientNational;
+        this.patientMaritalstatus = patientMaritalstatus;
+        
     }//End of Patient_Model
     
     /**
@@ -119,7 +154,7 @@ public class Patient_Model {
      * 
      * @param patientPhone
      */
-    public void setPatientPhone ( String patientPhone ){
+    public void setPatientPhone ( int patientPhone ){
         this.patientPhone = patientPhone;
     }//End of setPatientPhone
     
@@ -127,13 +162,159 @@ public class Patient_Model {
      * 
      * @return 
      */
-    public String getPatientPhone ( ){
+    public int getPatientPhone ( ){
         return patientPhone;
     }//End of getPatientPhone
     
+    /**
+     * 
+     * @param patientGender
+     */
+    public void setPatientGender ( String patientGender ){
+        this.patientGender = patientGender;
+    }//End of setPatientGender
+    
+    /**
+     * 
+     * @return 
+     */
+    public String getPatientGender ( ){
+        return patientGender;
+    }//End of getPatientGender
+    
+    /**
+     * 
+     * @param patientBloodgroup
+     */
+    public void setPatientBloodgroup ( String patientBloodgroup ){
+        this.patientBloodgroup = patientBloodgroup;
+    }//End of setPatientGender
+    
+    /**
+     * 
+     * @return 
+     */
+    public String getPatientBloodgroup ( ){
+        return patientBloodgroup;
+    }//End of getPatientBloodgroup
+    
+    /**
+     * 
+     * @param patientMaritalstatus
+     */
+    public void setPatientMaritalstatus ( String patientMaritalstatus ){
+        this.patientMaritalstatus = patientMaritalstatus;
+    }//End of setPatientMaritalstatus
+    
+    /**
+     * 
+     * @return 
+     */
+    public String getPatientMaritalstatus ( ){
+        return patientMaritalstatus;
+    }//End of getPatientMaritalstatus
+    
+    /**
+     * 
+     * @param patientNational
+     */
+    public void setPatientNational ( String patientNational ){
+        this.patientNational = patientNational;
+    }//End of setPatientNational
+    
+    /**
+     * 
+     * @return 
+     */
+    public String getPatientNational ( ){
+        return patientNational;
+    }//End of getPatientNational
+    
+    /**
+     * 
+     * @param patientBirthdate
+     */
+    public void setPatientBirthdate ( String patientBirthdate ){
+        this.patientBirthdate = patientBirthdate;
+    }//End of setPatientBirthdate
+    
+    /**
+     * 
+     * @return 
+     */
+    public String getPatientBirthdate ( ){
+        return patientBirthdate;
+    }//End of getPatientBirthdate
+    
+    /**
+     * 
+     * @param patientCountry
+     */
+    public void setPatientCountry ( String patientCountry ){
+        this.patientCountry = patientCountry;
+    }//End of setPatientCountry
+    
+    /**
+     * 
+     * @return 
+     */
+    public String getPatientCountry ( ){
+        return patientCountry;
+    }//End of getPatientCountry
+    
+    /**
+     * 
+     * @param patientCity
+     */
+    public void setPatientCity ( String patientCity ){
+        this.patientCity = patientCity;
+    }//End of setPatientCity
+    
+    /**
+     * 
+     * @return 
+     */
+    public String getPatientCity ( ){
+        return patientCity;
+    }//End of getPatientCity
+    
+    /**
+     * 
+     * @param patientPin
+     */
+    public void setPatientPin ( int patientPin ){
+        this.patientPin = patientPin;
+    }//End of setPatientPin
+    
+    /**
+     * 
+     * @return 
+     */
+    public int getPatientPin ( ){
+        return patientPin;
+    }//End of getPatientPin
+    
+    /**
+     * 
+     * @param patientEmail
+     */
+    public void setPatientEmail ( String patientEmail ){
+        this.patientEmail = patientEmail;
+    }//End of setPatientEmail
+    
+    /**
+     * 
+     * @return 
+     */
+    public String getPatientEmail ( ){
+        return patientEmail;
+    }//End of getPatientEmail
+    
     @Override
     public String toString (){
-        return  patientId+" "+patientFname+" "+patientSname+" "+patientAge+" "+patientAddress+" "+patientPhone;
+        return  patientId+" "+patientFname+" "+patientSname+" "+patientAge+" "+patientAddress+" "+patientPhone+" "+patientGender+
+                " "+patientOccupation+" "+patientBloodgroup+" "+patientMaritalstatus+" "+patientBirthdate+" "+patientNational+
+                " "+patientEmail+" "+patientCountry+" "+patientCity+" "+patientPin;
     }
     
     

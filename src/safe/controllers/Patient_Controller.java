@@ -7,6 +7,9 @@ package safe.controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+//import javax.swing.JOptionPane;
 import safe.views.Patient_View;
 import safe.models.Patient_Model;
 //import safe.controllers.Database_Controller;
@@ -45,15 +48,36 @@ public class Patient_Controller {
                 if ( e.getSource( ).equals ( patient_view.getConnect_button ( ))){
                     database_controller.connectTodatabase();
                 }//End of if
+                if ( e.getSource( ).equals( patient_view.getClose_button ( ))){
+                    patient_view.dispose();
+                }//End of if
                 if ( e.getSource( ).equals ( patient_view.getOk_button ( ))){
                     String patientId = patient_view.getPatientId();
                     String patientFname = patient_view.getPatientFname();
                     String patientSname = patient_view.getPatientSname();
                     int patientAge = patient_view.getPatientAge();
                     String patientAddress = patient_view.getPatientAddress();
-                    String patientPhone = patient_view.getPatientPhone();
-                    Patient_Model patient_model = new Patient_Model ( patientId, patientFname, patientSname, patientAge, patientAddress, patientPhone );
-                    
+                    int patientPhone = patient_view.getPatientPhone();
+                    String patientEmail = patient_view.getPatientEmail();
+                    String patientCountry = patient_view.getPatientCountry();
+                    int patientPin = patient_view.getPatientPin();
+                    String patientNational = patient_view.getPatientNational();
+                    String patientCity = patient_view.getPatientCity();
+                    String patientBloodgroup = patient_view.getPatientBloodgroup();
+                    String patientOccupation = patient_view.getPatientOccupation();
+                    String patientGender = patient_view.getPatientGender();
+                    String patientMaritalstatus = patient_view.getPatientMaritalstatus();
+//                    String patientBirth = null;
+//                    SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy");
+//                    patientBirth=sdf.format(patient_view.getPatientBirthdate().get);
+//                     bookingControl.setValues(9,strDate); //store the date as string
+                    String patientBirthdate = patient_view.getPatientBirthdate();
+                    Patient_Model patient_model = new Patient_Model ( patientId, patientFname, patientSname, patientAge, patientAddress, 
+                            patientPhone, patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate,
+                    patientNational, patientCountry, patientCity, patientPin, patientEmail );
+                    database_controller.insertTodatabase(patientId, patientFname, patientSname, patientAge, patientAddress, patientPhone,
+                            patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate, patientNational, 
+                            patientCountry, patientCity, patientPin, patientEmail);
                     System.out.println ( ""+patient_model.toString() );
                 }//End of if
             }//End of actionPerformed
@@ -61,8 +85,11 @@ public class Patient_Controller {
         patient_view.getCancel_button().addActionListener ( actionListener );
         patient_view.getOk_button().addActionListener ( actionListener );
         patient_view.getConnect_button().addActionListener ( actionListener );
+        patient_view.getClose_button().addActionListener ( actionListener );
         }
         catch ( Exception e ){
+//            JOptionPane.showMessageDialog(null, "Failed To Connect To The DataBase", "Not Connected", JOptionPane.ERROR_MESSAGE);
+//            System.out.print(e.toString());
         }
     }//End of controller
     

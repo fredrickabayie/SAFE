@@ -17,7 +17,7 @@ public class SAFE {
    /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main( String args [ ] ) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -25,7 +25,7 @@ public class SAFE {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("CDE/Motif".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -45,7 +45,7 @@ public class SAFE {
             public void run() {
                 Database_Controller database_controller = new Database_Controller ( );
                 Patient_View patient_view = new Patient_View ( );
-                patient_view.setVisible(true);
+                patient_view.setVisible ( true );
                 Patient_Controller patient_controller = new Patient_Controller ( patient_view, database_controller );
                 patient_controller.controller();
             }
