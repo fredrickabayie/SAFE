@@ -9,13 +9,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.Vector;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.filechooser.FileSystemView;
+import javax.swing.table.DefaultTableModel;
 //import javax.swing.JOptionPane;
 import safe.views.Patient_View;
 import safe.models.Patient_Model;
+import safe.views.Patient_Table_View;
 //import safe.controllers.Database_Controller;
 
 /**
@@ -25,20 +28,66 @@ import safe.models.Patient_Model;
 public class Patient_Controller {
     private final Patient_View patient_view;
     private final Database_Controller database_controller;
+    private final Patient_Table_View patient_table_view;
     private ActionListener actionListener;
     File file;
     FileInputStream inputstream;
     JFileChooser filechooser;
+    Vector vector;
+    DefaultTableModel table_model;
     
     /**
      * 
      * @param patient_view 
      * @param database_controller 
+     * @param patient_table_view 
      */
-    public Patient_Controller( Patient_View patient_view, Database_Controller database_controller ){
+    public Patient_Controller( Patient_View patient_view, Database_Controller database_controller, 
+            Patient_Table_View patient_table_view ){
+        
      this.patient_view = patient_view;   
      this.database_controller = database_controller;
+     this.patient_table_view = patient_table_view;
+//     vector = new Vector ();
+//     vector.add ("PATIENT ID");
+//     vector.add ("PATIENT FIRSTNAME");
+//     vector.add ("PATIENT SURNAME");
+//     vector.add ("PATIENT PHONE");
+//     vector.add ("PATIENT EMAIL");
+//     table_model = new DefaultTableModel (new Vector(), vector);
+//     vector.add ("PATIENT ID");
+     
     }//End of Patient_Controller
+    
+    /**
+     * 
+     */
+    public void mmm (){
+        try
+        {
+            actionListener = (ActionEvent e) -> {
+                //Connection to database
+                if ( e.getSource().equals(patient_table_view.getConnect())){
+                    database_controller.connectTodatabase();
+                }
+                
+                //Displaying what is in the database
+                if (e.getSource().equals(patient_table_view.getDisplay())){
+                    database_controller.displayDatabase();
+                }
+                
+                //Updating the database
+                if (e.getSource().equals(patient_table_view.getUpdate())){
+                    database_controller.updateDatabase();
+                }
+            };
+               patient_table_view.getConnect().addActionListener ( actionListener );
+               patient_table_view.getDisplay().addActionListener ( actionListener );
+        }
+        catch( Exception e ){
+        }
+    }
+    
     
     /**
      * A method to connect to the database
@@ -72,44 +121,7 @@ public class Patient_Controller {
                     patient_view.dispose();
                 }//End of if
                 if ( e.getSource( ).equals ( patient_view.getOk_button ( ))){
-                    String patientId = patient_view.getPatientId();
-                    String patientFname = patient_view.getPatientFname();
-                    String patientSname = patient_view.getPatientSname();
-                    int patientAge = patient_view.getPatientAge();
-                    String patientAddress = patient_view.getPatientAddress();
-                    int patientPhone = patient_view.getPatientPhone();
-                    String patientEmail = patient_view.getPatientEmail();
-                    String patientCountry = patient_view.getPatientCountry();
-                    int patientPin = patient_view.getPatientPin();
-                    String patientNational = patient_view.getPatientNational();
-                    String patientCity = patient_view.getPatientCity();
-                    String patientBloodgroup = patient_view.getPatientBloodgroup();
-                    String patientOccupation = patient_view.getPatientOccupation();
-                    String patientGender = patient_view.getPatientGender();
-                    String patientMaritalstatus = patient_view.getPatientMaritalstatus();
-//                    byte patientImage = patient_view.getPatientImage();
-//                    inputstream = new FileInputStream(file);
-//                    int len = ( int ) file.length();
-//                    if ( e.getSource( ).equals ( patient_view.getBrowse_button ( ))){
-//                    JFileChooser filechooser = new JFileChooser();
-//                    filechooser.showOpenDialog(patient_view);
-//                    file = filechooser.getSelectedFile();
-//                    String path = file.getAbsolutePath();
-//                    patient_view.getImage_button().setIcon(new ImageIcon (path));
-//                    
-//                }//End of if
-//                                FileInputStream input = new FileInputStream(file);
-//                    int length = ( int )file.length();
-//                    patientImage = input;
-                   
-                    String patientBirthdate = patient_view.getPatientBirthdate();
-                    Patient_Model patient_model = new Patient_Model ( patientId, patientFname, patientSname, patientAge, patientAddress, 
-                            patientPhone, patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate,
-                    patientNational, patientCountry, patientCity, patientPin, patientEmail );
-                    database_controller.insertTodatabase(patientId, patientFname, patientSname, patientAge, patientAddress, patientPhone,
-                            patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate, patientNational, 
-                            patientCountry, patientCity, patientPin, patientEmail );
-                    System.out.println ( ""+patient_model.toString() );
+                    insert();
                 }//End of if
             }//End of actionPerformed
         };//End of ActionListener
@@ -161,6 +173,47 @@ public class Patient_Controller {
 //        }
 //    }
     
+    
+    private void insert(){
+         String patientId = patient_view.getPatientId();
+                    String patientFname = patient_view.getPatientFname();
+                    String patientSname = patient_view.getPatientSname();
+                    int patientAge = patient_view.getPatientAge();
+                    String patientAddress = patient_view.getPatientAddress();
+                    int patientPhone = patient_view.getPatientPhone();
+                    String patientEmail = patient_view.getPatientEmail();
+                    String patientCountry = patient_view.getPatientCountry();
+                    int patientPin = patient_view.getPatientPin();
+                    String patientNational = patient_view.getPatientNational();
+                    String patientCity = patient_view.getPatientCity();
+                    String patientBloodgroup = patient_view.getPatientBloodgroup();
+                    String patientOccupation = patient_view.getPatientOccupation();
+                    String patientGender = patient_view.getPatientGender();
+                    String patientMaritalstatus = patient_view.getPatientMaritalstatus();
+//                    byte patientImage = patient_view.getPatientImage();
+//                    inputstream = new FileInputStream(file);
+//                    int len = ( int ) file.length();
+//                    if ( e.getSource( ).equals ( patient_view.getBrowse_button ( ))){
+//                    JFileChooser filechooser = new JFileChooser();
+//                    filechooser.showOpenDialog(patient_view);
+//                    file = filechooser.getSelectedFile();
+//                    String path = file.getAbsolutePath();
+//                    patient_view.getImage_button().setIcon(new ImageIcon (path));
+//                    
+//                }//End of if
+//                                FileInputStream input = new FileInputStream(file);
+//                    int length = ( int )file.length();
+//                    patientImage = input;
+                   
+                    String patientBirthdate = patient_view.getPatientBirthdate();
+                    Patient_Model patient_model = new Patient_Model ( patientId, patientFname, patientSname, patientAge, patientAddress, 
+                            patientPhone, patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate,
+                    patientNational, patientCountry, patientCity, patientPin, patientEmail );
+                    database_controller.insertTodatabase(patientId, patientFname, patientSname, patientAge, patientAddress, patientPhone,
+                            patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate, patientNational, 
+                            patientCountry, patientCity, patientPin, patientEmail );
+                    System.out.println ( ""+patient_model.toString() );
+    }
     
     
 }//End of class

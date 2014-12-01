@@ -5,6 +5,8 @@
  */
 package safe.views;
 
+import java.util.Vector;
+import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -14,18 +16,73 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Patient_Table_View extends javax.swing.JFrame {
     DefaultTableModel table_model;
+    Vector vector;
 
     /**
      * Creates new form Patient_Table_View
      */
     public Patient_Table_View() {
-        table_model = new DefaultTableModel();
+        vector = new Vector();
+        vector.add ("ID");
+        vector.add ("FIRST NAME");
+        vector.add ("SURNAME");
+        vector.add ("AGE");
+        vector.add ("ADDRESS");
+        vector.add ("PHONE");
+        vector.add ("GENDER");
+        vector.add ("OCCUPATION");
+        vector.add ("BLOODGROUP");
+        vector.add ("MARITAL STATUS");
+        vector.add ("BIRTH DATE");
+        vector.add ("NATIONAL");
+        vector.add ("COUNTRY");
+        vector.add ("CITY");
+        vector.add ("PIN");
+        vector.add ("EMAIL");
+//        table_model = new DefaultTableModel ( new Object[][]{},new String []{"ID","Fname","Sname"});
+        table_model = new DefaultTableModel ( new Vector(), vector );
         initComponents();
     }
-    
-    public JTable getPatient_table(){
-        return patient_table;
+//    patientId, patientFname, patientSname, patientAge, patientAddress, 
+//                            patientPhone, patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate,
+//                    patientNational, patientCountry, patientCity, patientPin, patientEmail
+    /**
+     * 
+     * @param w 
+     */
+    public void addRow(Object []w){
+        table_model.addRow(w);
     }//End of getPatient_table
+    
+    public int getRowCount(){
+        return table_model.getRowCount();
+    }
+    
+    public int getValueAt(){
+//        i=0;
+//        j=1;
+//        for ()
+        return Integer.parseInt((String)table_model.getValueAt(patient_table.getSelectedRow(),2));
+//        return (String)table_model.getValueAt(WIDTH, WIDTH);
+//        return Integer.parseInt((String)table_model.getValueAt(WIDTH, WIDTH));
+//        return (String) table_model.getValueAt(i, j);
+    }
+    
+    public JButton getDisplay(){
+        return display;
+    }
+    
+    public JButton getConnect(){
+        return connect;
+    }
+    
+    public JButton getUpdate(){
+        return update;
+    }
+    
+    public JButton getDelete(){
+        return delete;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,6 +95,10 @@ public class Patient_Table_View extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         patient_table = new javax.swing.JTable();
+        connect = new javax.swing.JButton();
+        display = new javax.swing.JButton();
+        update = new javax.swing.JButton();
+        delete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -47,7 +108,19 @@ public class Patient_Table_View extends javax.swing.JFrame {
         patient_table.setModel(table_model);
         jScrollPane1.setViewportView(patient_table);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 1200, 696));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1560, 696));
+
+        connect.setText("connect");
+        getContentPane().add(connect, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+
+        display.setText("display");
+        getContentPane().add(display, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, -1, -1));
+
+        update.setText("update");
+        getContentPane().add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, -1, -1));
+
+        delete.setText("delete");
+        getContentPane().add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -89,7 +162,11 @@ public class Patient_Table_View extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton connect;
+    private javax.swing.JButton delete;
+    private javax.swing.JButton display;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable patient_table;
+    private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }

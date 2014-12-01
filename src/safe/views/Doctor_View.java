@@ -16,7 +16,48 @@ public class Doctor_View extends javax.swing.JFrame {
      */
     public Doctor_View() {
         initComponents();
-    }
+    }//End of Doctor_View
+    
+    /**
+     * 
+     * @return 
+     */
+    public String getDoctorId(){
+        return doctorId.getText();
+    }//End of getDoctorId
+    
+    /**
+     * 
+     * @return 
+     */
+    public String getDoctorFname(){
+        return doctorFname.getText();
+    }//End of getDoctorFname
+    
+    /**
+     * 
+     * @return 
+     */
+    public String getDoctorSname(){
+        return doctorSname.getText();
+    }//End of getDoctorSname
+    
+    /**
+     * 
+     * @return 
+     */
+    public String getDoctorPhone(){
+        return doctorPhone.getText();
+    }//End of getDoctorPhone
+    
+    /**
+     * 
+     * @return 
+     */
+    public String getDoctorEmail(){
+        return doctorEmail.getText();
+    }//End of getDoctorEmail
+    
     
    
 
