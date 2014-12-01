@@ -57,9 +57,9 @@ public class Patient_View extends javax.swing.JFrame {
      * A method to get a button id
      * @return 
      */
-    public JButton getBrowse_button(){
-        return browse_button;
-    }//End of getBrowse_button
+//    public JButton getBrowse_button(){
+//        return browse_button;
+//    }//End of getBrowse_button
 
     /**
      * A method to get a button id
@@ -270,8 +270,6 @@ public class Patient_View extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         patientId = new javax.swing.JTextField();
         image_button = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        browse_button = new javax.swing.JButton();
         close_button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -505,23 +503,15 @@ public class Patient_View extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jLabel16.setText("Patient ID");
-        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 138, -1, 40));
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, 40));
 
         patientId.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jPanel3.add(patientId, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, 230, 39));
+        jPanel3.add(patientId, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 230, 39));
 
         image_button.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         image_button.setMnemonic('p');
         image_button.setText("PHOTO");
-        jPanel3.add(image_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 230, 160));
-
-        jButton4.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        jButton4.setText("Take Picture");
-        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, -1, -1));
-
-        browse_button.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        browse_button.setText("Browse");
-        jPanel3.add(browse_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+        jPanel3.add(image_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 230, 160));
 
         close_button.setText("x");
         jPanel3.add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, -1, 20));
@@ -571,12 +561,10 @@ public class Patient_View extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton browse_button;
     private javax.swing.JButton cancel_button;
     private javax.swing.JButton close_button;
     private javax.swing.JButton connect_button;
     private javax.swing.JButton image_button;
-    private javax.swing.JButton jButton4;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

@@ -74,7 +74,7 @@ public class Doctor_View extends javax.swing.JFrame {
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 225, -1, 40));
 
         jLabel6.setText("Email");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 50, -1, 40));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 40, -1, 40));
         jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 190, 50));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 790, 320));

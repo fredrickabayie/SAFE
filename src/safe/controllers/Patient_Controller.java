@@ -57,7 +57,7 @@ public class Patient_Controller {
                 if ( e.getSource( ).equals ( patient_view.getCancel_button ( ))){
                     patient_view.dispose();
                 }//End of if
-                if ( e.getSource( ).equals ( patient_view.getBrowse_button ( ))){
+                if ( e.getSource( ).equals ( patient_view.getImage_button ( ))){
                     JFileChooser filechooser = new JFileChooser();
                     filechooser.showOpenDialog(patient_view);
                     file = filechooser.getSelectedFile();
@@ -90,14 +90,14 @@ public class Patient_Controller {
 //                    byte patientImage = patient_view.getPatientImage();
 //                    inputstream = new FileInputStream(file);
 //                    int len = ( int ) file.length();
-                    if ( e.getSource( ).equals ( patient_view.getBrowse_button ( ))){
-                    JFileChooser filechooser = new JFileChooser();
-                    filechooser.showOpenDialog(patient_view);
-                    file = filechooser.getSelectedFile();
-                    String path = file.getAbsolutePath();
-                    patient_view.getImage_button().setIcon(new ImageIcon (path));
-                    
-                }//End of if
+//                    if ( e.getSource( ).equals ( patient_view.getBrowse_button ( ))){
+//                    JFileChooser filechooser = new JFileChooser();
+//                    filechooser.showOpenDialog(patient_view);
+//                    file = filechooser.getSelectedFile();
+//                    String path = file.getAbsolutePath();
+//                    patient_view.getImage_button().setIcon(new ImageIcon (path));
+//                    
+//                }//End of if
 //                                FileInputStream input = new FileInputStream(file);
 //                    int length = ( int )file.length();
 //                    patientImage = input;
@@ -117,7 +117,7 @@ public class Patient_Controller {
         patient_view.getOk_button().addActionListener ( actionListener );
         patient_view.getConnect_button().addActionListener ( actionListener );
         patient_view.getClose_button().addActionListener ( actionListener );
-        patient_view.getBrowse_button().addActionListener ( actionListener );
+        patient_view.getImage_button().addActionListener ( actionListener );
         }
         catch ( Exception e ){
 //            JOptionPane.showMessageDialog(null, "Failed To Connect To The DataBase", "Not Connected", JOptionPane.ERROR_MESSAGE);
