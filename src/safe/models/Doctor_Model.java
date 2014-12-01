@@ -15,6 +15,7 @@ public class Doctor_Model {
     String doctorSname;
     int doctorPhone;
     String doctorDepartment;
+    String doctorEmail;
     
     /**
      * 
@@ -23,13 +24,16 @@ public class Doctor_Model {
      * @param doctorSname
      * @param doctorPhone 
      * @param doctorDepartment 
+     * @param doctorEmail 
      */
-    public Doctor_Model ( String doctorId, String doctorFname, String doctorSname, int doctorPhone, String doctorDepartment ){
+    public Doctor_Model ( String doctorId, String doctorFname, String doctorSname, int doctorPhone, String doctorDepartment,
+            String doctorEmail ){
         this.doctorId = doctorId;
         this.doctorFname = doctorFname;
         this.doctorSname = doctorSname;
         this.doctorPhone = doctorPhone;
         this.doctorDepartment = doctorDepartment;
+        this.doctorEmail = doctorEmail;
     }//End of Doctor_Model
     
     /**
