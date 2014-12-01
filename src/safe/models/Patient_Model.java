@@ -5,8 +5,6 @@
  */
 package safe.models;
 
-import java.sql.Date;
-
 /**
  *
  * @author Fredrick Abayie
@@ -28,6 +26,7 @@ public class Patient_Model {
     String patientCity;
     int patientPin;
     String patientEmail;
+    byte patientImage;
     
     /**
      * 
@@ -47,10 +46,12 @@ public class Patient_Model {
      * @param patientCity 
      * @param patientPin 
      * @param patientEmail 
+//     * @param patientImage 
      */
     public Patient_Model ( String patientId, String patientFname, String patientSname, int patientAge, String patientAddress, 
             int patientPhone, String patientGender, String patientOccupation, String patientBloodgroup, String patientMaritalstatus,
-            String patientBirthdate, String patientNational, String patientCountry, String patientCity, int patientPin, String patientEmail ){
+            String patientBirthdate, String patientNational, String patientCountry, String patientCity, int patientPin,
+            String patientEmail ){
         this.patientId = patientId;
         this.patientFname = patientFname;
         this.patientSname = patientSname;
@@ -67,6 +68,7 @@ public class Patient_Model {
         this.patientCountry = patientCountry;
         this.patientNational = patientNational;
         this.patientMaritalstatus = patientMaritalstatus;
+//        this.patientImage = patientImage;
         
     }//End of Patient_Model
     
@@ -310,12 +312,28 @@ public class Patient_Model {
         return patientEmail;
     }//End of getPatientEmail
     
+    /**
+     * 
+     * @param patientImage
+     */
+    public void setPatientImage ( byte patientImage ){
+        this.patientImage = patientImage;
+    }//End of setPatientImage
+    
+    /**
+     * 
+     * @return 
+     */
+    public byte getPatientImage ( ){
+        return patientImage;
+    }//End of getPatientImage
+    
     @Override
     public String toString (){
         return  patientId+" "+patientFname+" "+patientSname+" "+patientAge+" "+patientAddress+" "+patientPhone+" "+patientGender+
                 " "+patientOccupation+" "+patientBloodgroup+" "+patientMaritalstatus+" "+patientBirthdate+" "+patientNational+
                 " "+patientEmail+" "+patientCountry+" "+patientCity+" "+patientPin;
-    }
+    }//End of toString
     
     
     

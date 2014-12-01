@@ -5,8 +5,14 @@
  */
 package safe.controllers;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.*;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import safe.views.Patient_View;
 
 /**
  *
@@ -14,6 +20,7 @@ import java.sql.*;
  */
 public class Database_Controller {
     Connection connection = null;
+    Patient_View patient_view;
     
     
     /**
@@ -49,16 +56,27 @@ public class Database_Controller {
      * @param patientCountry 
      * @param patientCity 
      * @param patientPin 
+     * @param patientEmail 
      */
     public void insertTodatabase ( String patientId, String patientFname, String patientSname, int patientAge, String patientAddress, 
             int patientPhone, String patientGender, String patientOccupation, String patientBloodgroup, String patientMaritalstatus,
-            String patientBirthdate, String patientNational, String patientCountry, String patientCity, int patientPin, String patientEmail ){
+            String patientBirthdate, String patientNational, String patientCountry, String patientCity, int patientPin, 
+            String patientEmail ) {
+//        JFileChooser filechooser = new JFileChooser();
+//                    filechooser.showOpenDialog(patient_view);
+//                    File file = filechooser.getSelectedFile();
+//                    String path = file.getAbsolutePath();
+//                    patient_view.getImage_button().setIcon(new ImageIcon (path));
          try
         {
+//            FileInputStream input = new FileInputStream(file);
+//            int length = ( int )file.length();
+//            patientImage = input;
+            
             PreparedStatement pStatement = connection.prepareStatement ( "Insert Into patients set patientId=?, patientFname=?,"
                     + " patientSname=?, patientAge=?, patientAddress=?, patientPhone=?, patientGender=?, patientOccupation=?,"
             + "patientBloodgroup=?, patientMaritalstatus=?, patientBirthdate=?, patientNational=?, patientCountry=?,"
-            + "patientCity=?, patientPin=?" );
+            + "patientCity=?, patientPin=?, patientEmail=?" );
             pStatement.setString ( 1, patientId );
             pStatement.setString ( 2, patientFname );
             pStatement.setString ( 3, patientSname );
@@ -75,6 +93,7 @@ public class Database_Controller {
             pStatement.setString ( 14, patientCity );
             pStatement.setInt ( 15, patientPin );
             pStatement.setString ( 16, patientEmail );
+//            pStatement.setBlob ( 17, patientImage );
             pStatement.execute ( );
         }//End Of Try
         catch ( SQLException e )

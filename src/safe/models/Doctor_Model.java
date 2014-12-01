@@ -14,6 +14,7 @@ public class Doctor_Model {
     String doctorFname;
     String doctorSname;
     int doctorPhone;
+    String doctorDepartment;
     
     /**
      * 
@@ -21,12 +22,14 @@ public class Doctor_Model {
      * @param doctorFname
      * @param doctorSname
      * @param doctorPhone 
+     * @param doctorDepartment 
      */
-    public Doctor_Model ( String doctorId, String doctorFname, String doctorSname, int doctorPhone ){
+    public Doctor_Model ( String doctorId, String doctorFname, String doctorSname, int doctorPhone, String doctorDepartment ){
         this.doctorId = doctorId;
         this.doctorFname = doctorFname;
         this.doctorSname = doctorSname;
         this.doctorPhone = doctorPhone;
+        this.doctorDepartment = doctorDepartment;
     }//End of Doctor_Model
     
     /**
@@ -92,5 +95,21 @@ public class Doctor_Model {
     public int getDocotorPhone ( ){
         return doctorPhone;
     }//End of getDoctorPhone
+    
+    /**
+     * 
+     * @param doctorDepartment
+     */
+    public void setDoctorDepartment ( String doctorDepartment ){
+        this.doctorDepartment = doctorDepartment;
+    }//End of setDoctorDepartment
+    
+    /**
+     * 
+     * @return 
+     */
+    public String getDoctorDepartment ( ){
+        return doctorDepartment;
+    }//End of getDoctorDepartment
     
 }//End of class
