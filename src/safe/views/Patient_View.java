@@ -53,12 +53,12 @@ public class Patient_View extends javax.swing.JFrame {
         return close_button;
     }//End of getClose_button
     
-    /**
-     * A method to get a button id
-     * @return 
-     */
-//    public JButton getBrowse_button(){
-//        return browse_button;
+//    /**
+//     * A method to get a button id
+//     * @return 
+//     */
+//    public JButton getUpdate_button(){
+//        return update_button;
 //    }//End of getBrowse_button
 
     /**
@@ -208,7 +208,6 @@ public class Patient_View extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel22 = new javax.swing.JLabel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
@@ -271,6 +270,7 @@ public class Patient_View extends javax.swing.JFrame {
         patientId = new javax.swing.JTextField();
         image_button = new javax.swing.JButton();
         close_button = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("ADD PATIENT");
@@ -280,9 +280,6 @@ public class Patient_View extends javax.swing.JFrame {
         setResizable(false);
         setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/addpatient.png"))); // NOI18N
-        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 830));
 
         jTabbedPane3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Doctor Details"));
 
@@ -445,7 +442,7 @@ public class Patient_View extends javax.swing.JFrame {
 
         connect_button.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         connect_button.setText("Connect");
-        getContentPane().add(connect_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 800, -1, -1));
+        getContentPane().add(connect_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 800, -1, -1));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Contact Details"));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -517,6 +514,9 @@ public class Patient_View extends javax.swing.JFrame {
         jPanel3.add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, -1, 20));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 190));
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/addpatient.png"))); // NOI18N
+        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 830));
 
         pack();
         setLocationRelativeTo(null);

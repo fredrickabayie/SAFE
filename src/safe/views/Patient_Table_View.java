@@ -43,9 +43,7 @@ public class Patient_Table_View extends javax.swing.JFrame {
         table_model = new DefaultTableModel ( new Vector(), vector );
         initComponents();
     }
-//    patientId, patientFname, patientSname, patientAge, patientAddress, 
-//                            patientPhone, patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate,
-//                    patientNational, patientCountry, patientCity, patientPin, patientEmail
+              
     /**
      * 
      * @param w 

@@ -142,16 +142,15 @@ public class Database_Controller {
             System.out.println(e.toString());
 //        JOptionPane.showMessageDialog(null, "Failed To Display The Data In The DataBase", "Failed", JOptionPane.ERROR_MESSAGE);
         }//End Of Catch
-        
     }
     
     public void updateDatabase(){
         System.out.println(patient_table_view.getRowCount());
         try{
-             PreparedStatement pStatement = connection.prepareStatement ( "UPDATE patients set patientFname=?,patientSname=?" 
-                    + "patientAge=?, patientAddress=?, patientPhone=?, patientGender=?, patientOccupation=?,"
-            + "patientBloodgroup=?, patientMaritalstatus=?, patientBirthdate=?, patientNational=?, patientCountry=?,"
-            + "patientCity=?, patientPin=?, patientEmail=? where patientId=?" );
+             PreparedStatement pStatement = connection.prepareStatement ( "UPDATE patients set patientFname=?,patientSname=?,"
+                     + "patientAge=?,patientAddress=?,patientPhone=?,patientGender=?,patientOccupation=?,patientBloodgroup=?,"
+                     +"patientMaritalstatus=?,patientBirthdate=?,patientNational=?,patientCountry=?,patientCity=?,patientPin=?,"
+                     +"patientEmail=? where patientId=?");
              
              for ( int i=0; i<patient_table_view.getRowCount();i++){
                  pStatement.setString ( 1, (String) patient_table_view.getValueAt(i, 1) );
@@ -171,7 +170,6 @@ public class Database_Controller {
                  pStatement.setString ( 14, (String) patient_table_view.getValueAt(i, 14) );
                  pStatement.setString ( 15, (String) patient_table_view.getValueAt(i, 15) );
                  pStatement.setString(16, (String) patient_table_view.getValueAt(i, 0));
-//                 pStatement.setString ( 2, patient_table_view.getValueAt(i,2) );
                  pStatement.executeUpdate ( );
                  pStatement.execute();
                  System.out.println ("End of update");
@@ -182,34 +180,7 @@ public class Database_Controller {
             System.out.println(e.toString());
             System.out.println("Could not update");
         }
-//         try
-//        {
-//            PreparedStatement pStatement = connection.prepareStatement ( "UPDATE Student set SURNAME=?, FIRSTNAME=?,"
-//                    + " ADMISSIONYEAR=?, GPA=?, MAJOR=? WHERE STUDENTID=?" );
-//            
-//         for ( int i = 0; i < table_model.getRowCount(); i++ )
-//            {
-//            pStatement.setString ( 1, (String) student_table.getValueAt(i,1) );
-//            pStatement.setString ( 2, (String) student_table.getValueAt(i,2) );
-//            pStatement.setString ( 3, (String) student_table.getValueAt(i,3) );
-//            pStatement.setString ( 4, (String) student_table.getValueAt(i,4) );
-//            pStatement.setString ( 5, (String) student_table.getValueAt(i,5) );
-//            pStatement.setString ( 6, (String) student_table.getValueAt(i,0) );
-//            pStatement.executeUpdate ( );
-//            pStatement.execute();
-//            }//End Of For
-////            JOptionPane.showMessageDialog(null, "Successfully Updated The Data To The DataBase", "Updated", JOptionPane.INFORMATION_MESSAGE);
-//        }//End Of Try
-//        catch ( SQLException e )
-//        {
-////            JOptionPane.showMessageDialog(null, "Failed To Update The Data To The DataBase", "Failed", JOptionPane.ERROR_MESSAGE);
-//        }//End Of Catch
+
     }
     
-}
-
-
-//String patientId, String patientFname, String patientSname, int patientAge, String patientAddress, 
-//            int patientPhone, String patientGender, String patientOccupation, String patientBloodgroup, String patientMaritalstatus,
-//            String patientBirthdate, String patientNational, String patientCountry, String patientCity, int patientPin, 
-//            String patientEmail
+}//End of class

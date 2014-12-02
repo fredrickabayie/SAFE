@@ -80,10 +80,15 @@ public class Patient_Controller {
                 if (e.getSource().equals(patient_table_view.getUpdate())){
                     database_controller.updateDatabase();
                 }
+                
+                  if (e.getSource().equals(patient_table_view.getDelete())){
+                    
+                }
             };
                patient_table_view.getConnect().addActionListener ( actionListener );
                patient_table_view.getDisplay().addActionListener ( actionListener );
                patient_table_view.getUpdate().addActionListener ( actionListener );
+               patient_table_view.getDelete().addActionListener ( actionListener );
         }
         catch( Exception e ){
         }
@@ -129,6 +134,8 @@ public class Patient_Controller {
                 if ( e.getSource( ).equals ( patient_view.getOk_button ( ))){
                     insert();
                 }//End of if
+                
+              
                 
             }//End of actionPerformed
         };//End of ActionListener
@@ -183,28 +190,28 @@ public class Patient_Controller {
     
     private void insert(){
          String patientId = patient_view.getPatientId();
-                    String patientFname = patient_view.getPatientFname();
-                    String patientSname = patient_view.getPatientSname();
-                    int patientAge = patient_view.getPatientAge();
-                    String patientAddress = patient_view.getPatientAddress();
-                    int patientPhone = patient_view.getPatientPhone();
-                    String patientEmail = patient_view.getPatientEmail();
-                    String patientCountry = patient_view.getPatientCountry();
-                    int patientPin = patient_view.getPatientPin();
-                    String patientNational = patient_view.getPatientNational();
-                    String patientCity = patient_view.getPatientCity();
-                    String patientBloodgroup = patient_view.getPatientBloodgroup();
-                    String patientOccupation = patient_view.getPatientOccupation();
-                    String patientGender = patient_view.getPatientGender();
-                    String patientMaritalstatus = patient_view.getPatientMaritalstatus();
-//                    byte patientImage = patient_view.getPatientImage();
-//                    inputstream = new FileInputStream(file);
-//                    int len = ( int ) file.length();
-//                    if ( e.getSource( ).equals ( patient_view.getBrowse_button ( ))){
-//                    JFileChooser filechooser = new JFileChooser();
-//                    filechooser.showOpenDialog(patient_view);
-//                    file = filechooser.getSelectedFile();
-//                    String path = file.getAbsolutePath();
+         String patientFname = patient_view.getPatientFname();
+         String patientSname = patient_view.getPatientSname();
+         int patientAge = patient_view.getPatientAge();
+          String patientAddress = patient_view.getPatientAddress();
+        int patientPhone = patient_view.getPatientPhone();
+        String patientEmail = patient_view.getPatientEmail();
+        String patientCountry = patient_view.getPatientCountry();
+        int patientPin = patient_view.getPatientPin();
+       String patientNational = patient_view.getPatientNational();
+        String patientCity = patient_view.getPatientCity();
+        String patientBloodgroup = patient_view.getPatientBloodgroup();
+        String patientOccupation = patient_view.getPatientOccupation();
+      String patientGender = patient_view.getPatientGender();
+        String patientMaritalstatus = patient_view.getPatientMaritalstatus();
+//      byte patientImage = patient_view.getPatientImage();
+//      inputstream = new FileInputStream(file);
+//      int len = ( int ) file.length();
+//     if ( e.getSource( ).equals ( patient_view.getBrowse_button ( ))){
+//      JFileChooser filechooser = new JFileChooser();
+//      filechooser.showOpenDialog(patient_view);
+//      file = filechooser.getSelectedFile();
+//                   String path = file.getAbsolutePath();
 //                    patient_view.getImage_button().setIcon(new ImageIcon (path));
 //                    
 //                }//End of if
