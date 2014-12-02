@@ -39,6 +39,12 @@ public class Main_View extends javax.swing.JFrame {
         addPatient_menu = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SAFE HOSPITAL");
@@ -54,13 +60,34 @@ public class Main_View extends javax.swing.JFrame {
 
         jMenu1.add(jMenu3);
 
-        jMenuItem1.setText("jMenuItem1");
+        jMenuItem1.setText("Table");
         jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Doctors");
+
+        jMenu6.setText("Add");
+
+        jMenuItem2.setText("New Doctor");
+        jMenu6.add(jMenuItem2);
+
+        jMenu2.add(jMenu6);
+
         jMenuBar1.add(jMenu2);
+
+        jMenu4.setText("Pharmacist");
+
+        jMenu7.setText("jMenu7");
+        jMenu4.add(jMenu7);
+
+        jMenuBar1.add(jMenu4);
+
+        jMenu5.setText("DocPham");
+        jMenuBar1.add(jMenu5);
+
+        jMenu8.setText("Logout");
+        jMenuBar1.add(jMenu8);
 
         setJMenuBar(jMenuBar1);
 
@@ -119,7 +146,13 @@ public class Main_View extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     // End of variables declaration//GEN-END:variables
 }

@@ -48,15 +48,7 @@ public class Patient_Controller {
      this.patient_view = patient_view;   
      this.database_controller = database_controller;
      this.patient_table_view = patient_table_view;
-//     vector = new Vector ();
-//     vector.add ("PATIENT ID");
-//     vector.add ("PATIENT FIRSTNAME");
-//     vector.add ("PATIENT SURNAME");
-//     vector.add ("PATIENT PHONE");
-//     vector.add ("PATIENT EMAIL");
-//     table_model = new DefaultTableModel (new Vector(), vector);
-//     vector.add ("PATIENT ID");
-     
+    
     }//End of Patient_Controller
     
     /**
@@ -82,7 +74,7 @@ public class Patient_Controller {
                 }
                 
                   if (e.getSource().equals(patient_table_view.getDelete())){
-                    
+                    database_controller.deleteDatabase();
                 }
             };
                patient_table_view.getConnect().addActionListener ( actionListener );
@@ -204,6 +196,8 @@ public class Patient_Controller {
         String patientOccupation = patient_view.getPatientOccupation();
       String patientGender = patient_view.getPatientGender();
         String patientMaritalstatus = patient_view.getPatientMaritalstatus();
+        String patientBirthdate = patient_view.getPatientBirthdate();
+        
 //      byte patientImage = patient_view.getPatientImage();
 //      inputstream = new FileInputStream(file);
 //      int len = ( int ) file.length();
@@ -219,7 +213,7 @@ public class Patient_Controller {
 //                    int length = ( int )file.length();
 //                    patientImage = input;
                    
-                    String patientBirthdate = patient_view.getPatientBirthdate();
+                    
                     Patient_Model patient_model = new Patient_Model ( patientId, patientFname, patientSname, patientAge, patientAddress, 
                             patientPhone, patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate,
                     patientNational, patientCountry, patientCity, patientPin, patientEmail );
@@ -227,6 +221,26 @@ public class Patient_Controller {
                             patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate, patientNational, 
                             patientCountry, patientCity, patientPin, patientEmail );
                     System.out.println ( ""+patient_model.toString() );
+                    resetTextFields();
+    }
+    
+    private void resetTextFields(){
+        patient_view.setPatientId();
+         patient_view.setPatientFname();
+        patient_view.setPatientSname();
+     patient_view.setPatientAge();
+        patient_view.setPatientAddress();
+       patient_view.setPatientPhone();
+      patient_view.setPatientEmail();
+       patient_view.setPatientCountry();
+      patient_view.setPatientPin();
+      patient_view.setPatientNational();
+       patient_view.setPatientCity();
+        patient_view.setPatientBloodgroup();
+       patient_view.setPatientOccupation();
+      patient_view.setPatientGender();
+       patient_view.setPatientMaritalstatus();
+       patient_view.setPatientBirthdate();
     }
     
     

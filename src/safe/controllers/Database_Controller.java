@@ -183,4 +183,28 @@ public class Database_Controller {
 
     }
     
+    public void deleteDatabase(){
+//         int row=patient_table_view.getSelectedRow();
+        String deleteThis=patient_table_view.getValueAt(patient_table_view.getSelectedRow(),0);
+        System.out.println(deleteThis);
+         try
+        {
+//            PreparedStatement pStatement = connection.prepareStatement ( "Delete From patients Where patientId="+deleteThis+";" );
+            PreparedStatement pStatement = connection.prepareStatement ( "Delete From patients Where patientId=?" );
+            pStatement.setString(1, deleteThis);
+            pStatement.executeUpdate();
+            pStatement.execute();
+            System.out.println("Deleted from database");
+//        JOptionPane.showMessageDialog(null, "Successfully Deleted The Data From The DataBase", "Deleted", JOptionPane.INFORMATION_MESSAGE);
+        
+            if ( patient_table_view.getSelectedRow ( ) >= 0 )
+            patient_table_view.deleteRow ( );
+        }//End Of Try
+        catch ( SQLException e )
+        {
+            System.out.println(e.toString());
+            System.out.println("Could not delete");
+//            JOptionPane.showMessageDialog(null, "Failed To Delete The Data From The DataBase", "Not Deleted", JOptionPane.ERROR_MESSAGE);
+        }//End Of Catch
+    }
 }//End of class

@@ -56,13 +56,29 @@ public class Patient_Table_View extends javax.swing.JFrame {
         return table_model.getRowCount();
     }
     
-//    public String getValueAt(int i, int j ){
-//         return (String) table_model.getValueAt(i,j);
-//    }
-    
+    /**
+     * A method to get a value in the table
+     * @param i
+     * @param j
+     * @return 
+     */
      public String getValueAt(int i, int j){
         return (String) table_model.getValueAt(i, j);
+    }//End of getValueAt
+     
+     public void deleteRow()
+    {
+         if ( patient_table.getSelectedRow ( ) >= 0 )
+            table_model.removeRow ( patient_table.getSelectedRow ( ) );
     }
+     
+     /**
+      * A method to return a selected row
+      * @return 
+      */
+     public int getSelectedRow(){
+         return patient_table.getSelectedRow();
+     }//End of getSelectedRow
     
     public void setRowCount( int i){
         i=0;

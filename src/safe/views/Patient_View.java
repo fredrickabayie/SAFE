@@ -53,14 +53,6 @@ public class Patient_View extends javax.swing.JFrame {
         return close_button;
     }//End of getClose_button
     
-//    /**
-//     * A method to get a button id
-//     * @return 
-//     */
-//    public JButton getUpdate_button(){
-//        return update_button;
-//    }//End of getBrowse_button
-
     /**
      * A method to get a button id
      * @return 
@@ -77,6 +69,10 @@ public class Patient_View extends javax.swing.JFrame {
         return patientId.getText();
     }//End of getPatientId
     
+    public void setPatientId(){
+        patientId.setText(null);
+    }
+    
     /**
      * A method to get a string in a text field id
      * @return 
@@ -84,6 +80,10 @@ public class Patient_View extends javax.swing.JFrame {
     public String getPatientFname(){
         return patientFname.getText();
     }//End of getPatientFname
+    
+    public void setPatientFname(){
+         patientFname.setText(null);
+    }
 
     /**
      * A method to get a string in a text field id
@@ -93,6 +93,10 @@ public class Patient_View extends javax.swing.JFrame {
         return patientSname.getText();
     }//End of getPatientSname
     
+    public void setPatientSname(){
+         patientSname.setText(null);
+    }
+    
     /**
      * A method to get a string in a text field id
      * @return 
@@ -100,6 +104,10 @@ public class Patient_View extends javax.swing.JFrame {
     public int getPatientAge(){
         return Integer.parseInt(patientAge.getText());
     }//End of getPatientAge
+    
+    public void setPatientAge(){
+         patientAge.setText(null);
+    }
     
     /**
      * A method to get a string in a text field id
@@ -109,6 +117,10 @@ public class Patient_View extends javax.swing.JFrame {
         return patientAddress.getText();
     }//End of getPatientAddress
     
+    public void setPatientAddress(){
+         patientAddress.setText(null);
+    }
+    
     /**
      * A method to get a string in a text field id
      * @return 
@@ -116,6 +128,10 @@ public class Patient_View extends javax.swing.JFrame {
     public int getPatientPhone(){
         return Integer.parseInt(patientPhone.getText());
     }//End of getPatientPhone
+    
+    public void setPatientPhone(){
+         patientPhone.setText(null);
+    }
     
     /**
      * A method to get items in a combo box id
@@ -125,6 +141,10 @@ public class Patient_View extends javax.swing.JFrame {
         return patientGender.getSelectedItem().toString();
     }//End of getPatientGender
     
+    public void setPatientGender(){
+         patientGender.setSelectedIndex(0);
+    }
+    
     /**
      * A method to get a string in a text field id
      * @return 
@@ -132,6 +152,10 @@ public class Patient_View extends javax.swing.JFrame {
     public String getPatientOccupation(){
         return patientOccupation.getText();
     }//End of getPatientOccupation
+    
+      public void setPatientOccupation(){
+         patientOccupation.setText(null);
+    }
     
     /**
      * A method to get items in a combo box id
@@ -141,6 +165,10 @@ public class Patient_View extends javax.swing.JFrame {
         return patientBloodgroup.getSelectedItem().toString();
     }//End of getPatientBloodgroup
     
+      public void setPatientBloodgroup(){
+         patientBloodgroup.setSelectedIndex(0);
+    }
+    
     /**
      * A method to get items in a combo box id
      * @return 
@@ -148,6 +176,10 @@ public class Patient_View extends javax.swing.JFrame {
     public String getPatientMaritalstatus(){
         return patientMaritalstatus.getSelectedItem().toString();
     }//End of getPatientMaritalstatus
+    
+      public void setPatientMaritalstatus(){
+         patientMaritalstatus.setSelectedIndex(0);
+    }
     
     /**
      * A method to get a string in a text field id
@@ -157,6 +189,10 @@ public class Patient_View extends javax.swing.JFrame {
         return patientNational.getText();
     }//End of getPatientNational
     
+      public void setPatientNational(){
+         patientNational.setText(null);
+    }
+    
     /**
      * A method to get a string of a date in a text field id
      * @return 
@@ -164,6 +200,10 @@ public class Patient_View extends javax.swing.JFrame {
     public String getPatientBirthdate(){
         return ((JTextField)patientBirthdate.getDateEditor().getUiComponent()).getText();
     }//End of getPatientBirthdate
+    
+      public void setPatientBirthdate(){
+         patientBirthdate.setDate(null);
+    }
     
     /**
      * A method to get a string in a text field id
@@ -173,6 +213,10 @@ public class Patient_View extends javax.swing.JFrame {
         return patientCountry.getText();
     }//End of getPatientCountry
     
+      public void setPatientCountry(){
+         patientCountry.setText(null);
+    }
+    
     /**
      * A method to get a string in a text field id
      * @return 
@@ -180,6 +224,10 @@ public class Patient_View extends javax.swing.JFrame {
     public String getPatientCity(){
         return patientCity.getText();
     }//End of getPatientCity
+    
+      public void setPatientCity(){
+         patientCity.setText(null);
+    }
     
     /**
      * A method to get a string in a text field id
@@ -189,6 +237,10 @@ public class Patient_View extends javax.swing.JFrame {
         return patientEmail.getText();
     }//End of getPatientEmail
     
+      public void setPatientEmail(){
+         patientEmail.setText(null);
+    }
+    
     /**
      * A method to get a string in a text field id
      * @return 
@@ -196,6 +248,10 @@ public class Patient_View extends javax.swing.JFrame {
     public int getPatientPin(){
         return Integer.parseInt(patientPin.getText());
     }//End of getPatientPin
+    
+      public void setPatientPin(){
+         patientPin.setText(null);
+    }
     
     
 
