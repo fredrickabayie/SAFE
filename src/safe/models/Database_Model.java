@@ -26,6 +26,7 @@ public class Database_Model {
      * 
      * @param patient_view
      * @param patient_table_view 
+     * @param doctor_view 
      */
     public Database_Model(Patient_View patient_view, Patient_Table_View patient_table_view, Doctor_View doctor_view){
         this.patient_view = patient_view;
@@ -211,8 +212,26 @@ public class Database_Model {
     }//End of deleteDatabase
     
     
-    public void insertDoctordatabase(){
-        
+    public void insertDoctordatabase(String doctorId,String doctorFname,String doctorSname,int doctorPhone,String doctorEmail,
+            String doctorDepartment,String doctorDate){
+        try
+        {
+             PreparedStatement pStatement = connection.prepareStatement ("Insert into doctors set doctorId=?, doctorFname=?,"
+                     + "doctorSname=?,doctorPhone=?,doctorEmail=?,doctorDepartment=?,doctorDate=?");
+             
+             pStatement.setString (1, doctorId);
+             pStatement.setString (2, doctorFname);
+             pStatement.setString (3, doctorSname);
+             pStatement.setInt (4, doctorPhone);
+             pStatement.setString (5, doctorEmail);
+             pStatement.setString (6, doctorDepartment);
+             pStatement.setString (7, doctorDate);
+             
+             pStatement.execute ( );
+        }
+        catch (Exception e){
+            System.out.println(e.toString());
+        }
     }
     
     

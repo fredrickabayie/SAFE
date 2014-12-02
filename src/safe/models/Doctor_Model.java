@@ -16,6 +16,7 @@ public class Doctor_Model {
     int doctorPhone;
     String doctorDepartment;
     String doctorEmail;
+    String doctorDate;
     
     /**
      * 
@@ -27,13 +28,14 @@ public class Doctor_Model {
      * @param doctorEmail 
      */
     public Doctor_Model ( String doctorId, String doctorFname, String doctorSname, int doctorPhone, String doctorDepartment,
-            String doctorEmail ){
+            String doctorEmail,String doctorDate ){
         this.doctorId = doctorId;
         this.doctorFname = doctorFname;
         this.doctorSname = doctorSname;
         this.doctorPhone = doctorPhone;
         this.doctorDepartment = doctorDepartment;
         this.doctorEmail = doctorEmail;
+        this.doctorDate = doctorDate;
     }//End of Doctor_Model
     
     /**
@@ -115,5 +117,31 @@ public class Doctor_Model {
     public String getDoctorDepartment ( ){
         return doctorDepartment;
     }//End of getDoctorDepartment
+    
+    /**
+     * 
+     * @param doctorDate 
+     */
+    public void setDoctorDate( String doctorDate ){
+        this.doctorDate = doctorDate;
+    }//End of setDoctorDate
+    
+    /**
+     * 
+     * @return 
+     */
+    public String getDoctorDate ( ){
+        return doctorDate;
+    }//End of getDoctorDate
+    
+    /**
+     * 
+     * @return 
+     */
+    @Override
+    public String toString(){
+        return doctorId+" "+doctorFname+" "+doctorSname+" "+doctorPhone+" "+doctorEmail+" "
+                +doctorDepartment+" "+doctorDate;
+    }//End of toString
     
 }//End of class

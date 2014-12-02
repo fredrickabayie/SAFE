@@ -225,6 +225,9 @@ public class Patient_Controller {
                     resetTextFields();
     }
     
+    /**
+     * 
+     */
     private void resetTextFields(){
         patient_view.setPatientId();
          patient_view.setPatientFname();

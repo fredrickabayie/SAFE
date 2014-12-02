@@ -28,6 +28,15 @@ public class Doctor_View extends javax.swing.JFrame {
     public JButton getClose_button(){
         return close_button;
     }
+    
+    /**
+     * 
+     * @return 
+     */
+    public JButton getOk_button(){
+        return ok_button;
+    }
+    
     /**
      * 
      * @return 

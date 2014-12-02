@@ -34,6 +34,10 @@ try
       if (e.getSource().equals(doctor_view.getClose_button())){
            doctor_view.dispose();
         }
+      
+      if (e.getSource().equals(doctor_view.getOk_button())){
+          
+      }
       }  
      };
     doctor_view.getClose_button().addActionListener ( actionListener );
