@@ -22,10 +22,7 @@ public class Patient_Model {
     String patientMaritalstatus;
     String patientBirthdate;
     String patientNational;
-    String patientCountry;
     String patientCity;
-    int patientPin;
-    String patientEmail;
     byte patientImage;
     
     /**
@@ -43,15 +40,10 @@ public class Patient_Model {
      * @param patientBirthdate 
      * @param patientNational 
      * @param patientCountry 
-     * @param patientCity 
-     * @param patientPin 
-     * @param patientEmail 
-//     * @param patientImage 
      */
     public Patient_Model ( String patientId, String patientFname, String patientSname, int patientAge, String patientAddress, 
             int patientPhone, String patientGender, String patientOccupation, String patientBloodgroup, String patientMaritalstatus,
-            String patientBirthdate, String patientNational, String patientCountry, String patientCity, int patientPin,
-            String patientEmail ){
+            String patientBirthdate, String patientNational, String patientCity ){
         this.patientId = patientId;
         this.patientFname = patientFname;
         this.patientSname = patientSname;
@@ -60,12 +52,9 @@ public class Patient_Model {
         this.patientPhone = patientPhone;
         this.patientGender = patientGender;
         this.patientBloodgroup = patientBloodgroup;
-        this.patientCity = patientCity;
         this.patientBirthdate = patientBirthdate;
         this.patientOccupation = patientOccupation;
-        this.patientPin = patientPin;
-        this.patientEmail = patientEmail;
-        this.patientCountry = patientCountry;
+        this.patientCity = patientCity;
         this.patientNational = patientNational;
         this.patientMaritalstatus = patientMaritalstatus;
 //        this.patientImage = patientImage;
@@ -252,22 +241,6 @@ public class Patient_Model {
      * 
      * @param patientCountry
      */
-    public void setPatientCountry ( String patientCountry ){
-        this.patientCountry = patientCountry;
-    }//End of setPatientCountry
-    
-    /**
-     * 
-     * @return 
-     */
-    public String getPatientCountry ( ){
-        return patientCountry;
-    }//End of getPatientCountry
-    
-    /**
-     * 
-     * @param patientCity
-     */
     public void setPatientCity ( String patientCity ){
         this.patientCity = patientCity;
     }//End of setPatientCity
@@ -280,37 +253,8 @@ public class Patient_Model {
         return patientCity;
     }//End of getPatientCity
     
-    /**
-     * 
-     * @param patientPin
-     */
-    public void setPatientPin ( int patientPin ){
-        this.patientPin = patientPin;
-    }//End of setPatientPin
-    
-    /**
-     * 
-     * @return 
-     */
-    public int getPatientPin ( ){
-        return patientPin;
-    }//End of getPatientPin
-    
-    /**
-     * 
-     * @param patientEmail
-     */
-    public void setPatientEmail ( String patientEmail ){
-        this.patientEmail = patientEmail;
-    }//End of setPatientEmail
-    
-    /**
-     * 
-     * @return 
-     */
-    public String getPatientEmail ( ){
-        return patientEmail;
-    }//End of getPatientEmail
+ 
+   
     
     /**
      * 
@@ -332,7 +276,7 @@ public class Patient_Model {
     public String toString (){
         return  patientId+" "+patientFname+" "+patientSname+" "+patientAge+" "+patientAddress+" "+patientPhone+" "+patientGender+
                 " "+patientOccupation+" "+patientBloodgroup+" "+patientMaritalstatus+" "+patientBirthdate+" "+patientNational+
-                " "+patientEmail+" "+patientCountry+" "+patientCity+" "+patientPin;
+                " "+patientCity;
     }//End of toString
     
     

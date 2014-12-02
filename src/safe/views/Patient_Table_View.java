@@ -34,10 +34,7 @@ public class Patient_Table_View extends javax.swing.JFrame {
         vector.add ("MARITAL STATUS");
         vector.add ("BIRTH DATE");
         vector.add ("NATIONAL");
-        vector.add ("COUNTRY");
         vector.add ("CITY");
-        vector.add ("PIN");
-        vector.add ("EMAIL");
 //        table_model = new DefaultTableModel ( new Object[][]{},new String []{"ID","Fname","Sname"});
         table_model = new DefaultTableModel ( new Vector(), vector );
         initComponents();
@@ -149,9 +146,12 @@ public class Patient_Table_View extends javax.swing.JFrame {
 
         patient_table.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         patient_table.setModel(table_model);
+        patient_table.setCellSelectionEnabled(true);
+        patient_table.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        patient_table.setRowHeight(25);
         jScrollPane1.setViewportView(patient_table);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1560, 696));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1360, 570));
 
         connect.setText("connect");
         getContentPane().add(connect, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));

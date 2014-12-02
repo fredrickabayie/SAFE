@@ -72,8 +72,7 @@ public class Database_Model {
      */
     public void insertPatientdatabase ( String patientId, String patientFname, String patientSname, int patientAge, String patientAddress, 
             int patientPhone, String patientGender, String patientOccupation, String patientBloodgroup, String patientMaritalstatus,
-            String patientBirthdate, String patientNational, String patientCountry, String patientCity, int patientPin, 
-            String patientEmail ) {
+            String patientBirthdate, String patientNational, String patientCity ) {
 //        JFileChooser filechooser = new JFileChooser();
 //                    filechooser.showOpenDialog(patient_view);
 //                    File file = filechooser.getSelectedFile();
@@ -87,8 +86,7 @@ public class Database_Model {
             
             PreparedStatement pStatement = connection.prepareStatement ( "Insert Into patients set patientId=?, patientFname=?,"
                     + " patientSname=?, patientAge=?, patientAddress=?, patientPhone=?, patientGender=?, patientOccupation=?,"
-            + "patientBloodgroup=?, patientMaritalstatus=?, patientBirthdate=?, patientNational=?, patientCountry=?,"
-            + "patientCity=?, patientPin=?, patientEmail=?" );
+            + "patientBloodgroup=?, patientMaritalstatus=?, patientBirthdate=?, patientNational=?,patientCity=?" );
             pStatement.setString ( 1, patientId );
             pStatement.setString ( 2, patientFname );
             pStatement.setString ( 3, patientSname );
@@ -101,10 +99,7 @@ public class Database_Model {
             pStatement.setString ( 10, patientMaritalstatus );
             pStatement.setString ( 11, patientBirthdate );
             pStatement.setString ( 12, patientNational );
-            pStatement.setString ( 13, patientCountry );
-            pStatement.setString ( 14, patientCity );
-            pStatement.setInt ( 15, patientPin );
-            pStatement.setString ( 16, patientEmail );
+            pStatement.setString ( 13, patientCity );
 //            pStatement.setBlob ( 17, patientImage );
             pStatement.execute ( );
         }//End Of Try
@@ -129,8 +124,7 @@ public class Database_Model {
                  resultSet.getString ( "patientAge" ),resultSet.getString ( "patientAddress" ),resultSet.getString ( "patientPhone" ),
              resultSet.getString ( "patientGender" ),resultSet.getString ( "patientOccupation" ),resultSet.getString ( "patientBloodgroup" ),
              resultSet.getString ( "patientMaritalstatus" ),resultSet.getString ( "patientBirthdate" ),resultSet.getString ( "patientNational" ),
-             resultSet.getString ( "patientCountry" ),resultSet.getString ( "patientCity" ),resultSet.getString ( "patientPin" ),
-             resultSet.getString ( "patientEmail" )};
+             resultSet.getString ( "patientCity" )};
 //             resultSet.getString ( "patientAge" ),resultSet.getString ( "patientAddress" ), resultSet.getString ( "patientPhone" ),resultSet.getString ( "Travel" ),
 //             resultSet.getString ( "Departure" ),resultSet.getString ( "Price" ),resultSet.getString ( "Traveldate" ),resultSet.getString ( "Age" )};
              System.out.println(""+Arrays.toString(w));
@@ -152,8 +146,7 @@ public class Database_Model {
         try{
              PreparedStatement pStatement = connection.prepareStatement ( "UPDATE patients set patientFname=?,patientSname=?,"
                      + "patientAge=?,patientAddress=?,patientPhone=?,patientGender=?,patientOccupation=?,patientBloodgroup=?,"
-                     +"patientMaritalstatus=?,patientBirthdate=?,patientNational=?,patientCountry=?,patientCity=?,patientPin=?,"
-                     +"patientEmail=? where patientId=?");
+                     +"patientMaritalstatus=?,patientBirthdate=?,patientNational=?,patientCity=? where patientId=?");
              
              for ( int i=0; i<patient_table_view.getRowCount();i++){
                  pStatement.setString ( 1, (String) patient_table_view.getValueAt(i, 1) );
@@ -169,10 +162,10 @@ public class Database_Model {
                  pStatement.setString ( 10, (String) patient_table_view.getValueAt(i, 10) );
                  pStatement.setString ( 11, (String) patient_table_view.getValueAt(i, 11) );
                  pStatement.setString ( 12, (String) patient_table_view.getValueAt(i, 12) );
-                 pStatement.setString ( 13, (String) patient_table_view.getValueAt(i, 13) );
-                 pStatement.setString ( 14, (String) patient_table_view.getValueAt(i, 14) );
-                 pStatement.setString ( 15, (String) patient_table_view.getValueAt(i, 15) );
-                 pStatement.setString(16, (String) patient_table_view.getValueAt(i, 0));
+                 pStatement.setString ( 13, (String) patient_table_view.getValueAt(i, 0) );
+//                 pStatement.setString ( 14, (String) patient_table_view.getValueAt(i, 14) );
+//                 pStatement.setString ( 15, (String) patient_table_view.getValueAt(i, 15) );
+//                 pStatement.setString(16, (String) patient_table_view.getValueAt(i, 0));
                  pStatement.executeUpdate ( );
                  pStatement.execute();
                  System.out.println ("End of update");

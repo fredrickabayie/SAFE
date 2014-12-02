@@ -188,9 +188,6 @@ public class Patient_Controller {
          int patientAge = patient_view.getPatientAge();
           String patientAddress = patient_view.getPatientAddress();
         int patientPhone = patient_view.getPatientPhone();
-        String patientEmail = patient_view.getPatientEmail();
-        String patientCountry = patient_view.getPatientCountry();
-        int patientPin = patient_view.getPatientPin();
        String patientNational = patient_view.getPatientNational();
         String patientCity = patient_view.getPatientCity();
         String patientBloodgroup = patient_view.getPatientBloodgroup();
@@ -217,11 +214,11 @@ public class Patient_Controller {
                     
    Patient_Model patient_model = new Patient_Model ( patientId, patientFname, patientSname, patientAge, patientAddress, 
         patientPhone, patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate,
-        patientNational, patientCountry, patientCity, patientPin, patientEmail );
+        patientNational, patientCity );
                     
    database_controller.insertPatientdatabase(patientId, patientFname, patientSname, patientAge, patientAddress, patientPhone,
         patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate, patientNational, 
-        patientCountry, patientCity, patientPin, patientEmail );
+        patientCity );
         System.out.println ( ""+patient_model.toString() );
         resetTextFields();
     }
@@ -236,9 +233,6 @@ public class Patient_Controller {
      patient_view.setPatientAge();
         patient_view.setPatientAddress();
        patient_view.setPatientPhone();
-      patient_view.setPatientEmail();
-       patient_view.setPatientCountry();
-      patient_view.setPatientPin();
       patient_view.setPatientNational();
        patient_view.setPatientCity();
         patient_view.setPatientBloodgroup();
