@@ -59,8 +59,8 @@ public class SAFE {
                 
 //               
 //                patient_view.setVisible ( true );
-//                patient_table_view.setVisible(true);
-                doctor_view.setVisible(true);
+                patient_table_view.setVisible(true);
+//                doctor_view.setVisible(true);
                 patient_controller.doctorController();
                 doctor_controller.doctorButton();
                 patient_controller.patientButton();

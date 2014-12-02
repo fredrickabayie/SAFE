@@ -215,14 +215,15 @@ public class Patient_Controller {
 //                    patientImage = input;
                    
                     
-                    Patient_Model patient_model = new Patient_Model ( patientId, patientFname, patientSname, patientAge, patientAddress, 
-                            patientPhone, patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate,
-                    patientNational, patientCountry, patientCity, patientPin, patientEmail );
-                    database_controller.insertPatientdatabase(patientId, patientFname, patientSname, patientAge, patientAddress, patientPhone,
-                            patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate, patientNational, 
-                            patientCountry, patientCity, patientPin, patientEmail );
-                    System.out.println ( ""+patient_model.toString() );
-                    resetTextFields();
+   Patient_Model patient_model = new Patient_Model ( patientId, patientFname, patientSname, patientAge, patientAddress, 
+        patientPhone, patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate,
+        patientNational, patientCountry, patientCity, patientPin, patientEmail );
+                    
+   database_controller.insertPatientdatabase(patientId, patientFname, patientSname, patientAge, patientAddress, patientPhone,
+        patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate, patientNational, 
+        patientCountry, patientCity, patientPin, patientEmail );
+        System.out.println ( ""+patient_model.toString() );
+        resetTextFields();
     }
     
     /**

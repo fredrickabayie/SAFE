@@ -7,7 +7,6 @@ package safe.views;
 
 import java.util.Vector;
 import javax.swing.JButton;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -52,6 +51,10 @@ public class Patient_Table_View extends javax.swing.JFrame {
         table_model.addRow(w);
     }//End of getPatient_table
     
+    /**
+     * 
+     * @return 
+     */
     public int getRowCount(){
         return table_model.getRowCount();
     }
@@ -66,6 +69,9 @@ public class Patient_Table_View extends javax.swing.JFrame {
         return (String) table_model.getValueAt(i, j);
     }//End of getValueAt
      
+     /**
+      * 
+      */
      public void deleteRow()
     {
          if ( patient_table.getSelectedRow ( ) >= 0 )
@@ -80,23 +86,43 @@ public class Patient_Table_View extends javax.swing.JFrame {
          return patient_table.getSelectedRow();
      }//End of getSelectedRow
     
+     /**
+      * 
+      * @param i 
+      */
     public void setRowCount( int i){
         i=0;
         table_model.setRowCount(i);
     }
     
+    /**
+     * 
+     * @return 
+     */
     public JButton getDisplay(){
         return display;
     }
     
+    /**
+     * 
+     * @return 
+     */
     public JButton getConnect(){
         return connect;
     }
     
+    /**
+     * 
+     * @return 
+     */
     public JButton getUpdate(){
         return update;
     }
     
+    /**
+     * 
+     * @return 
+     */
     public JButton getDelete(){
         return delete;
     }

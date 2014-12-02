@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import safe.views.Doctor_View;
 import safe.models.Database_Model;
+import safe.models.Doctor_Model;
 
 /**
  *
@@ -36,15 +37,33 @@ try
         }
       
       if (e.getSource().equals(doctor_view.getOk_button())){
-          
+          insert();
       }
       }  
      };
     doctor_view.getClose_button().addActionListener ( actionListener );
+    doctor_view.getOk_button().addActionListener ( actionListener );
    }
    catch(Exception e){
             
      }
-}//End of doctorListener
+}//End of doctorButton
+
+public void insert(){
+    String doctorId = doctor_view.getDoctorId();
+    String doctorFname = doctor_view.getDoctorFname();
+    String doctorSname = doctor_view.getDoctorSname();
+    int doctorPhone = Integer.parseInt(doctor_view.getDoctorPhone());
+    String doctorEmail = doctor_view.getDoctorEmail();
+    String doctorDepartment = doctor_view.getDoctorDepartment();
+    String doctorDate = doctor_view.getDoctorDate();
+    
+    Doctor_Model doctor_model = new Doctor_Model(doctorId,doctorFname,doctorSname,doctorPhone,doctorEmail,
+            doctorDepartment,doctorDate);
+    
+    database_controller.insertDoctordatabase(doctorId, doctorFname, doctorSname, doctorPhone, doctorEmail, 
+            doctorDepartment, doctorDate);
+    System.out.println(""+doctor_model.toString());
+}
     
 }
