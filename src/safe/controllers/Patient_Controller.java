@@ -5,6 +5,7 @@
  */
 package safe.controllers;
 
+import safe.models.Patient_Database_Model;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -19,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
 import safe.views.Patient_View;
 import safe.models.Patient_Model;
 import safe.views.Patient_Table_View;
-//import safe.controllers.Database_Controller;
+//import safe.controllers.Patient_Database_Model;
 
 /**
  *
@@ -27,7 +28,7 @@ import safe.views.Patient_Table_View;
  */
 public class Patient_Controller {
     private final Patient_View patient_view;
-    private final Database_Controller database_controller;
+    private final Patient_Database_Model database_controller;
     private final Patient_Table_View patient_table_view;
     private ActionListener actionListener;
     File file;
@@ -42,7 +43,7 @@ public class Patient_Controller {
      * @param database_controller 
      * @param patient_table_view 
      */
-    public Patient_Controller( Patient_View patient_view, Database_Controller database_controller, 
+    public Patient_Controller( Patient_View patient_view, Patient_Database_Model database_controller, 
             Patient_Table_View patient_table_view ){
         
      this.patient_view = patient_view;   

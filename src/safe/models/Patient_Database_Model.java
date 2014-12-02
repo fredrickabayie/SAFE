@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package safe.controllers;
+package safe.models;
 
 import java.sql.Connection;
 import java.sql.*;
@@ -17,7 +17,7 @@ import safe.views.Patient_Table_View;
  *
  * @author chokayg3
  */
-public class Database_Controller {
+public class Patient_Database_Model {
     Connection connection = null;
     Patient_View patient_view;
     Patient_Table_View patient_table_view;
@@ -27,7 +27,7 @@ public class Database_Controller {
      * @param patient_view
      * @param patient_table_view 
      */
-    public Database_Controller(Patient_View patient_view, Patient_Table_View patient_table_view){
+    public Patient_Database_Model(Patient_View patient_view, Patient_Table_View patient_table_view){
         this.patient_view = patient_view;
         this.patient_table_view = patient_table_view;
     }
