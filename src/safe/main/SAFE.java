@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 package safe.main;
-import safe.models.Patient_Database_Model;
+import safe.controllers.Doctor_Controller;
+import safe.models.Database_Model;
 import safe.controllers.Patient_Controller;
+import safe.views.Doctor_View;
 import safe.views.Patient_Table_View;
 import safe.views.Patient_View;
 
@@ -46,12 +48,22 @@ public class SAFE {
             public void run() {
                 Patient_View patient_view = new Patient_View ( );
                 Patient_Table_View patient_table_view = new Patient_Table_View();
-                Patient_Database_Model database_controller = new Patient_Database_Model ( patient_view,patient_table_view );
-//                patient_view.setVisible ( true );
-                patient_table_view.setVisible(true);
+                
+                Doctor_View doctor_view = new Doctor_View ( );
+                
+                
+                Database_Model database_controller = new Database_Model ( patient_view,patient_table_view,doctor_view );
                 Patient_Controller patient_controller = new Patient_Controller ( patient_view, database_controller, patient_table_view );
-                patient_controller.controller();
-                patient_controller.mmm();
+                Doctor_Controller doctor_controller = new Doctor_Controller (doctor_view,database_controller);
+                
+                
+//               
+//                patient_view.setVisible ( true );
+//                patient_table_view.setVisible(true);
+                doctor_view.setVisible(true);
+                patient_controller.doctorController();
+                doctor_controller.doctorButton();
+                patient_controller.patientButton();
             }
         });
     }

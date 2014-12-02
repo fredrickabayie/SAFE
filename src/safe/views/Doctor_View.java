@@ -6,6 +6,7 @@
 package safe.views;
 
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 /**
  *
@@ -67,6 +68,18 @@ public class Doctor_View extends javax.swing.JFrame {
         return doctorEmail.getText();
     }//End of getDoctorEmail
     
+    /**
+     * 
+     * @return 
+     */
+    public String getDoctorDepartment(){
+        return doctorDepartment.getSelectedItem().toString();
+    }
+    
+    public String getDoctorDate(){
+        return ((JTextField)doctorDate.getDateEditor().getUiComponent()).getText();
+    }
+    
     
    
 
@@ -79,7 +92,7 @@ public class Doctor_View extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
+        doctorBackgroundImage = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         doctorImage = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -95,12 +108,13 @@ public class Doctor_View extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         doctorEmail = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        doctorDepartment = new javax.swing.JComboBox();
         jLabel8 = new javax.swing.JLabel();
+        doctorDate = new com.toedter.calendar.JDateChooser();
+        jPanel3 = new javax.swing.JPanel();
         ok_button = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/newdoctor3.png"))); // NOI18N
+        doctorBackgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/newdoctor3.png"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -110,24 +124,26 @@ public class Doctor_View extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Unique Details"));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        doctorImage.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         doctorImage.setText("PHOTO");
         doctorImage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 doctorImageActionPerformed(evt);
             }
         });
-        jPanel1.add(doctorImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 230, 160));
+        jPanel1.add(doctorImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 230, 160));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jLabel1.setText("Doctor ID");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, -1, 30));
-        jPanel1.add(doctorId, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 210, 40));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, -1, 40));
+        jPanel1.add(doctorId, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, 230, 40));
 
         close_button.setText("x");
-        jPanel1.add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, -1, -1));
+        jPanel1.add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 40, 20));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 180));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 190));
 
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Doctor Details"));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         doctorFname.addActionListener(new java.awt.event.ActionListener() {
@@ -135,43 +151,56 @@ public class Doctor_View extends javax.swing.JFrame {
                 doctorFnameActionPerformed(evt);
             }
         });
-        jPanel2.add(doctorFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 230, 40));
+        jPanel2.add(doctorFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 230, 40));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jLabel3.setText("First Name");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, 40));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 40));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jLabel4.setText("Surname");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, 40));
-        jPanel2.add(doctorSname, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 230, 40));
-        jPanel2.add(doctorPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 230, 40));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 40));
+        jPanel2.add(doctorSname, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 230, 40));
+
+        doctorPhone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                doctorPhoneActionPerformed(evt);
+            }
+        });
+        jPanel2.add(doctorPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 230, 40));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jLabel5.setText("Phone");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, 40));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, 40));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jLabel6.setText("Email");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, -1, 40));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, 40));
         jPanel2.add(doctorEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 230, 40));
 
         jLabel7.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jLabel7.setText("Deparment");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, -1, 40));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, 40));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cardiology", "ENT", "Gynaecology", "Haematology", "Oncology", " " }));
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 130, 40));
+        doctorDepartment.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "null", "Cardiology", "ENT", "Gynaecology", "Haematology", "Oncology" }));
+        jPanel2.add(doctorDepartment, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 70, 230, 40));
 
         jLabel8.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jLabel8.setText("Date Joined");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, -1, 40));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, -1, 40));
+
+        doctorDate.setDateFormatString("yyyy-MM-dd");
+        doctorDate.setMaxSelectableDate(new java.util.Date(1418346060000L));
+        jPanel2.add(doctorDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, 230, 40));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 730, 170));
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         ok_button.setText("Ok");
-        jPanel2.add(ok_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, -1, -1));
-        jPanel2.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 150, 40));
+        jPanel3.add(ok_button);
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 790, 270));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 730, 40));
 
         pack();
         setLocationRelativeTo(null);
@@ -184,6 +213,10 @@ public class Doctor_View extends javax.swing.JFrame {
     private void doctorImageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorImageActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_doctorImageActionPerformed
+
+    private void doctorPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorPhoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_doctorPhoneActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,16 +255,16 @@ public class Doctor_View extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton close_button;
+    private javax.swing.JLabel doctorBackgroundImage;
+    private com.toedter.calendar.JDateChooser doctorDate;
+    private javax.swing.JComboBox doctorDepartment;
     private javax.swing.JTextField doctorEmail;
     private javax.swing.JTextField doctorFname;
     private javax.swing.JTextField doctorId;
     private javax.swing.JButton doctorImage;
     private javax.swing.JTextField doctorPhone;
     private javax.swing.JTextField doctorSname;
-    private javax.swing.JComboBox jComboBox1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -240,6 +273,7 @@ public class Doctor_View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JButton ok_button;
     // End of variables declaration//GEN-END:variables
 }

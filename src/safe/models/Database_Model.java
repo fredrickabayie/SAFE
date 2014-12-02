@@ -8,8 +8,7 @@ package safe.models;
 import java.sql.Connection;
 import java.sql.*;
 import java.util.Arrays;
-import java.util.Vector;
-import javax.swing.JOptionPane;
+import safe.views.Doctor_View;
 import safe.views.Patient_View;
 import safe.views.Patient_Table_View;
 
@@ -17,25 +16,28 @@ import safe.views.Patient_Table_View;
  *
  * @author chokayg3
  */
-public class Patient_Database_Model {
+public class Database_Model {
     Connection connection = null;
     Patient_View patient_view;
     Patient_Table_View patient_table_view;
+    Doctor_View doctor_view;
     
     /**
      * 
      * @param patient_view
      * @param patient_table_view 
      */
-    public Patient_Database_Model(Patient_View patient_view, Patient_Table_View patient_table_view){
+    public Database_Model(Patient_View patient_view, Patient_Table_View patient_table_view, Doctor_View doctor_view){
         this.patient_view = patient_view;
         this.patient_table_view = patient_table_view;
+        this.doctor_view = doctor_view;
+        connectTodatabase();
     }
     
     /**
      * A method to connect to the database
      */
-    public void connectTodatabase ( ){
+    public final void connectTodatabase ( ){
     try
         {
             Class.forName ( "com.mysql.jdbc.Driver" ).newInstance ( );
@@ -67,7 +69,7 @@ public class Patient_Database_Model {
      * @param patientPin 
      * @param patientEmail 
      */
-    public void insertTodatabase ( String patientId, String patientFname, String patientSname, int patientAge, String patientAddress, 
+    public void insertPatientdatabase ( String patientId, String patientFname, String patientSname, int patientAge, String patientAddress, 
             int patientPhone, String patientGender, String patientOccupation, String patientBloodgroup, String patientMaritalstatus,
             String patientBirthdate, String patientNational, String patientCountry, String patientCity, int patientPin, 
             String patientEmail ) {
@@ -114,7 +116,7 @@ public class Patient_Database_Model {
     /**
      * 
      */
-    public void displayDatabase ( ) {
+    public void displayPatientdatabase ( ) {
          patient_table_view.setRowCount(0);        
         try 
         {
@@ -144,7 +146,7 @@ public class Patient_Database_Model {
         }//End Of Catch
     }
     
-    public void updateDatabase(){
+    public void updatePatientdatabase(){
         System.out.println(patient_table_view.getRowCount());
         try{
              PreparedStatement pStatement = connection.prepareStatement ( "UPDATE patients set patientFname=?,patientSname=?,"
@@ -183,7 +185,7 @@ public class Patient_Database_Model {
 
     }
     
-    public void deleteDatabase(){
+    public void deletePatientdatabase(){
 //         int row=patient_table_view.getSelectedRow();
         String deleteThis=patient_table_view.getValueAt(patient_table_view.getSelectedRow(),0);
         System.out.println(deleteThis);
@@ -206,5 +208,12 @@ public class Patient_Database_Model {
             System.out.println("Could not delete");
 //            JOptionPane.showMessageDialog(null, "Failed To Delete The Data From The DataBase", "Not Deleted", JOptionPane.ERROR_MESSAGE);
         }//End Of Catch
+    }//End of deleteDatabase
+    
+    
+    public void insertDoctordatabase(){
+        
     }
+    
+    
 }//End of class

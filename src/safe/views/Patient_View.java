@@ -264,6 +264,7 @@ public class Patient_View extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel22 = new javax.swing.JLabel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
@@ -326,7 +327,8 @@ public class Patient_View extends javax.swing.JFrame {
         patientId = new javax.swing.JTextField();
         image_button = new javax.swing.JButton();
         close_button = new javax.swing.JButton();
-        jLabel22 = new javax.swing.JLabel();
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/addpatient.png"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("ADD PATIENT");
@@ -556,23 +558,20 @@ public class Patient_View extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jLabel16.setText("Patient ID");
-        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, 40));
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, -1, 40));
 
         patientId.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jPanel3.add(patientId, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 230, 39));
+        jPanel3.add(patientId, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, 230, 40));
 
         image_button.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         image_button.setMnemonic('p');
         image_button.setText("PHOTO");
-        jPanel3.add(image_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 230, 160));
+        jPanel3.add(image_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 230, 160));
 
         close_button.setText("x");
         jPanel3.add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, -1, 20));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 190));
-
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/addpatient.png"))); // NOI18N
-        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 830));
 
         pack();
         setLocationRelativeTo(null);

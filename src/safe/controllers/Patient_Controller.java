@@ -5,7 +5,7 @@
  */
 package safe.controllers;
 
-import safe.models.Patient_Database_Model;
+import safe.models.Database_Model;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
 import safe.views.Patient_View;
 import safe.models.Patient_Model;
 import safe.views.Patient_Table_View;
-//import safe.controllers.Patient_Database_Model;
+//import safe.controllers.Database_Model;
 
 /**
  *
@@ -28,7 +28,7 @@ import safe.views.Patient_Table_View;
  */
 public class Patient_Controller {
     private final Patient_View patient_view;
-    private final Patient_Database_Model database_controller;
+    private final Database_Model database_controller;
     private final Patient_Table_View patient_table_view;
     private ActionListener actionListener;
     File file;
@@ -43,7 +43,7 @@ public class Patient_Controller {
      * @param database_controller 
      * @param patient_table_view 
      */
-    public Patient_Controller( Patient_View patient_view, Patient_Database_Model database_controller, 
+    public Patient_Controller( Patient_View patient_view, Database_Model database_controller, 
             Patient_Table_View patient_table_view ){
         
      this.patient_view = patient_view;   
@@ -55,7 +55,7 @@ public class Patient_Controller {
     /**
      * 
      */
-    public void mmm (){
+    public void patientButton (){
         try
         {
             actionListener = (ActionEvent e) -> {
@@ -66,16 +66,16 @@ public class Patient_Controller {
                 
                 //Displaying what is in the database
                 if (e.getSource().equals(patient_table_view.getDisplay())){
-                    database_controller.displayDatabase();
+                    database_controller.displayPatientdatabase();
                 }
                 
                 //Updating the database
                 if (e.getSource().equals(patient_table_view.getUpdate())){
-                    database_controller.updateDatabase();
+                    database_controller.updatePatientdatabase();
                 }
                 
                   if (e.getSource().equals(patient_table_view.getDelete())){
-                    database_controller.deleteDatabase();
+                    database_controller.deletePatientdatabase();
                 }
             };
                patient_table_view.getConnect().addActionListener ( actionListener );
@@ -91,7 +91,7 @@ public class Patient_Controller {
     /**
      * A method to connect to the database
      */
-    public void controller ( ){
+    public void doctorController ( ){
 //                JFileChooser filechooser = new JFileChooser();
 //                    filechooser.showOpenDialog(patient_view);
 //                    File file = filechooser.getSelectedFile();
@@ -218,7 +218,7 @@ public class Patient_Controller {
                     Patient_Model patient_model = new Patient_Model ( patientId, patientFname, patientSname, patientAge, patientAddress, 
                             patientPhone, patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate,
                     patientNational, patientCountry, patientCity, patientPin, patientEmail );
-                    database_controller.insertTodatabase(patientId, patientFname, patientSname, patientAge, patientAddress, patientPhone,
+                    database_controller.insertPatientdatabase(patientId, patientFname, patientSname, patientAge, patientAddress, patientPhone,
                             patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate, patientNational, 
                             patientCountry, patientCity, patientPin, patientEmail );
                     System.out.println ( ""+patient_model.toString() );
