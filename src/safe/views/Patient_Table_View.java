@@ -58,14 +58,17 @@ public class Patient_Table_View extends javax.swing.JFrame {
         return table_model.getRowCount();
     }
     
-    public int getValueAt(){
-//        i=0;
-//        j=1;
-//        for ()
-        return Integer.parseInt((String)table_model.getValueAt(patient_table.getSelectedRow(),2));
-//        return (String)table_model.getValueAt(WIDTH, WIDTH);
-//        return Integer.parseInt((String)table_model.getValueAt(WIDTH, WIDTH));
-//        return (String) table_model.getValueAt(i, j);
+//    public String getValueAt(int i, int j ){
+//         return (String) table_model.getValueAt(i,j);
+//    }
+    
+     public String getValueAt(int i, int j){
+        return (String) table_model.getValueAt(i, j);
+    }
+    
+    public void setRowCount( int i){
+        i=0;
+        table_model.setRowCount(i);
     }
     
     public JButton getDisplay(){
@@ -166,7 +169,7 @@ public class Patient_Table_View extends javax.swing.JFrame {
     private javax.swing.JButton delete;
     private javax.swing.JButton display;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable patient_table;
+    public static javax.swing.JTable patient_table;
     private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }

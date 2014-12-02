@@ -8,6 +8,7 @@ package safe.controllers;
 import java.sql.Connection;
 import java.sql.*;
 import java.util.Arrays;
+import java.util.Vector;
 import javax.swing.JOptionPane;
 import safe.views.Patient_View;
 import safe.views.Patient_Table_View;
@@ -114,7 +115,7 @@ public class Database_Controller {
      * 
      */
     public void displayDatabase ( ) {
-//         patient_table_view.setRowCount(0);        
+         patient_table_view.setRowCount(0);        
         try 
         {
              Statement statement = connection.createStatement ( );
@@ -145,22 +146,41 @@ public class Database_Controller {
     }
     
     public void updateDatabase(){
+        System.out.println(patient_table_view.getRowCount());
         try{
-             PreparedStatement pStatement = connection.prepareStatement ( "UPDATE patients set patientFname=? where patientId=?");
-//                    + " patientSname=?, patientAge=?, patientAddress=?, patientPhone=?, patientGender=?, patientOccupation=?,"
-//            + "patientBloodgroup=?, patientMaritalstatus=?, patientBirthdate=?, patientNational=?, patientCountry=?,"
-//            + "patientCity=?, patientPin=?, patientEmail=?" );
+             PreparedStatement pStatement = connection.prepareStatement ( "UPDATE patients set patientFname=?,patientSname=?" 
+                    + "patientAge=?, patientAddress=?, patientPhone=?, patientGender=?, patientOccupation=?,"
+            + "patientBloodgroup=?, patientMaritalstatus=?, patientBirthdate=?, patientNational=?, patientCountry=?,"
+            + "patientCity=?, patientPin=?, patientEmail=? where patientId=?" );
              
              for ( int i=0; i<patient_table_view.getRowCount();i++){
-//                 pStatement.setString ( 1, patient_table_view.getValueAt(i, 2) );
+                 pStatement.setString ( 1, (String) patient_table_view.getValueAt(i, 1) );
+                 pStatement.setString ( 2, (String) patient_table_view.getValueAt(i, 2) );
+                 System.out.println(i);
+                 pStatement.setString (3, (String) (patient_table_view.getValueAt(i, 3)));
+                 pStatement.setString ( 4, (String) patient_table_view.getValueAt(i, 4) );
+                 pStatement.setString ( 5, (String) patient_table_view.getValueAt(i, 5) );
+                 pStatement.setString ( 6, (String) patient_table_view.getValueAt(i, 6) );
+                 pStatement.setString ( 7, (String) patient_table_view.getValueAt(i, 7) );
+                 pStatement.setString ( 8, (String) patient_table_view.getValueAt(i, 8) );
+                 pStatement.setString ( 9, (String) patient_table_view.getValueAt(i, 9) );
+                 pStatement.setString ( 10, (String) patient_table_view.getValueAt(i, 10) );
+                 pStatement.setString ( 11, (String) patient_table_view.getValueAt(i, 11) );
+                 pStatement.setString ( 12, (String) patient_table_view.getValueAt(i, 12) );
+                 pStatement.setString ( 13, (String) patient_table_view.getValueAt(i, 13) );
+                 pStatement.setString ( 14, (String) patient_table_view.getValueAt(i, 14) );
+                 pStatement.setString ( 15, (String) patient_table_view.getValueAt(i, 15) );
+                 pStatement.setString(16, (String) patient_table_view.getValueAt(i, 0));
 //                 pStatement.setString ( 2, patient_table_view.getValueAt(i,2) );
                  pStatement.executeUpdate ( );
                  pStatement.execute();
+                 System.out.println ("End of update");
              }
              
         }
         catch( Exception e ){
-            
+            System.out.println(e.toString());
+            System.out.println("Could not update");
         }
 //         try
 //        {

@@ -83,6 +83,7 @@ public class Patient_Controller {
             };
                patient_table_view.getConnect().addActionListener ( actionListener );
                patient_table_view.getDisplay().addActionListener ( actionListener );
+               patient_table_view.getUpdate().addActionListener ( actionListener );
         }
         catch( Exception e ){
         }
@@ -103,9 +104,11 @@ public class Patient_Controller {
         actionListener = new ActionListener ( ){
             @Override
             public void actionPerformed ( ActionEvent e ){
+                
                 if ( e.getSource( ).equals ( patient_view.getCancel_button ( ))){
                     patient_view.dispose();
                 }//End of if
+                
                 if ( e.getSource( ).equals ( patient_view.getImage_button ( ))){
                     JFileChooser filechooser = new JFileChooser();
                     filechooser.showOpenDialog(patient_view);
@@ -114,15 +117,19 @@ public class Patient_Controller {
                     patient_view.getImage_button().setIcon(new ImageIcon (path));
                     
                 }//End of if
+                
                 if ( e.getSource( ).equals ( patient_view.getConnect_button ( ))){
                     database_controller.connectTodatabase();
                 }//End of if
+                
                 if ( e.getSource( ).equals( patient_view.getClose_button ( ))){
                     patient_view.dispose();
                 }//End of if
+                
                 if ( e.getSource( ).equals ( patient_view.getOk_button ( ))){
                     insert();
                 }//End of if
+                
             }//End of actionPerformed
         };//End of ActionListener
         patient_view.getCancel_button().addActionListener ( actionListener );
