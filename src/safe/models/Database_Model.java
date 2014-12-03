@@ -8,6 +8,7 @@ package safe.models;
 import java.sql.Connection;
 import java.sql.*;
 import java.util.Arrays;
+import safe.views.Doctor_Table_View;
 import safe.views.Doctor_View;
 import safe.views.Patient_View;
 import safe.views.Patient_Table_View;
@@ -21,17 +22,21 @@ public class Database_Model {
     Patient_View patient_view;
     Patient_Table_View patient_table_view;
     Doctor_View doctor_view;
+    Doctor_Table_View doctor_table_view;
     
     /**
      * 
      * @param patient_view
      * @param patient_table_view 
      * @param doctor_view 
+     * @param doctor_table_view 
      */
-    public Database_Model(Patient_View patient_view, Patient_Table_View patient_table_view, Doctor_View doctor_view){
+    public Database_Model(Patient_View patient_view, Patient_Table_View patient_table_view, Doctor_View doctor_view,
+            Doctor_Table_View doctor_table_view){
         this.patient_view = patient_view;
         this.patient_table_view = patient_table_view;
         this.doctor_view = doctor_view;
+        this.doctor_table_view = doctor_table_view;
         connectTodatabase();
     }
     
@@ -141,6 +146,46 @@ public class Database_Model {
         }//End Of Catch
     }
     
+    
+    /**
+     * display method for doctor
+     */
+    public void displayDoctordatabase ( ) {
+         doctor_table_view.setRowCount(0);        
+        try 
+        {
+             Statement statement = connection.createStatement ( );
+             ResultSet resultSet = statement.executeQuery ( "SELECT * FROM doctors" );
+         while ( resultSet.next ( ) )
+         {
+             Object [] w = {resultSet.getString ( "doctorId" ),resultSet.getString ( "doctorFname" ),resultSet.getString ( "doctorSname" ),
+                 resultSet.getString ( "doctorPhone" ),resultSet.getString ( "doctorEmail" ),resultSet.getString ( "doctorDepartment" ),
+             resultSet.getString ( "doctorDate" )};
+            
+             System.out.println(""+Arrays.toString(w));
+             System.out.println(resultSet.getString("doctorId"));
+             doctor_table_view.addRow(w);
+         }//End Of While
+         System.out.println("Displayed");
+//         JOptionPane.showMessageDialog(null, "Successfully Dispalyed The Data In The DataBase", "Displayed", JOptionPane.INFORMATION_MESSAGE);     
+        }//End Of Try
+        catch ( SQLException e ) 
+        {
+            System.out.println(e.toString());
+//        JOptionPane.showMessageDialog(null, "Failed To Display The Data In The DataBase", "Failed", JOptionPane.ERROR_MESSAGE);
+        }//End Of Catch
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+/**
+ * update method for patients
+ */
     public void updatePatientdatabase(){
         System.out.println(patient_table_view.getRowCount());
         try{
@@ -179,20 +224,54 @@ public class Database_Model {
 
     }
     
+    /**
+     * method to update the doctors database
+     */
+    public void updateDoctordatabase(){
+        System.out.println(doctor_table_view.getRowCount());
+        try{
+             PreparedStatement pStatement = connection.prepareStatement ( "UPDATE doctors set doctorFname=?,doctorSname=?,"
+                     + "doctorPhone=?,doctorEmail=?,doctorDepartment=?,doctorDate=? where doctorId=?");
+             
+             for ( int i=0; i<doctor_table_view.getRowCount();i++){
+                 pStatement.setString ( 1, (String) doctor_table_view.getValueAt(i, 1) );
+                 pStatement.setString ( 2, (String) doctor_table_view.getValueAt(i, 2) );
+                 System.out.println(i);
+                 pStatement.setString (3, (String) doctor_table_view.getValueAt(i, 3));
+                 pStatement.setString ( 4, (String) doctor_table_view.getValueAt(i, 4) );
+                 pStatement.setString ( 5, (String) doctor_table_view.getValueAt(i, 5) );
+                 pStatement.setString ( 6, (String) doctor_table_view.getValueAt(i, 6) );
+                 pStatement.setString ( 7, (String) doctor_table_view.getValueAt(i, 0) );
+                
+                 pStatement.executeUpdate ( );
+                 pStatement.execute();
+                 System.out.println ("End of update");
+             }
+             
+        }
+        catch( Exception e ){
+            System.out.println(e.toString());
+            System.out.println("Could not update");
+        }
+
+    }
+    
+    
+/**
+ * delete method for patients
+ */
     public void deletePatientdatabase(){
 //         int row=patient_table_view.getSelectedRow();
         String deleteThis=patient_table_view.getValueAt(patient_table_view.getSelectedRow(),0);
         System.out.println(deleteThis);
          try
         {
-//            PreparedStatement pStatement = connection.prepareStatement ( "Delete From patients Where patientId="+deleteThis+";" );
             PreparedStatement pStatement = connection.prepareStatement ( "Delete From patients Where patientId=?" );
             pStatement.setString(1, deleteThis);
             pStatement.executeUpdate();
             pStatement.execute();
             System.out.println("Deleted from database");
-//        JOptionPane.showMessageDialog(null, "Successfully Deleted The Data From The DataBase", "Deleted", JOptionPane.INFORMATION_MESSAGE);
-        
+            
             if ( patient_table_view.getSelectedRow ( ) >= 0 )
             patient_table_view.deleteRow ( );
         }//End Of Try
@@ -203,8 +282,46 @@ public class Database_Model {
 //            JOptionPane.showMessageDialog(null, "Failed To Delete The Data From The DataBase", "Not Deleted", JOptionPane.ERROR_MESSAGE);
         }//End Of Catch
     }//End of deleteDatabase
+
     
     
+/**
+ * delete method for doctors database
+ */
+    public void deleteDoctordatabase(){
+//         int row=patient_table_view.getSelectedRow();
+        String deleteThis=doctor_table_view.getValueAt(doctor_table_view.getSelectedRow(),0);
+        System.out.println(deleteThis);
+         try
+        {
+            PreparedStatement pStatement = connection.prepareStatement ( "Delete From doctors Where doctorId=?" );
+            pStatement.setString(1, deleteThis);
+            pStatement.executeUpdate();
+            pStatement.execute();
+            System.out.println("Deleted from database");
+            
+            if ( doctor_table_view.getSelectedRow ( ) >= 0 )
+            doctor_table_view.deleteRow ( );
+        }//End Of Try
+        catch ( SQLException e )
+        {
+            System.out.println(e.toString());
+            System.out.println("Could not delete");
+//            JOptionPane.showMessageDialog(null, "Failed To Delete The Data From The DataBase", "Not Deleted", JOptionPane.ERROR_MESSAGE);
+        }//End Of Catch
+    }//End of deleteDatabase
+
+    
+    /**
+     * method to insert data into the doctors database
+     * @param doctorId
+     * @param doctorFname
+     * @param doctorSname
+     * @param doctorPhone
+     * @param doctorEmail
+     * @param doctorDepartment
+     * @param doctorDate 
+     */
     public void insertDoctordatabase(String doctorId,String doctorFname,String doctorSname,int doctorPhone,String doctorEmail,
             String doctorDepartment,String doctorDate){
         try

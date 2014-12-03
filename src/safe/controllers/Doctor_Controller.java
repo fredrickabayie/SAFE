@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import safe.views.Doctor_View;
 import safe.models.Database_Model;
 import safe.models.Doctor_Model;
+import safe.views.Doctor_Table_View;
 
 /**
  *
@@ -17,13 +18,15 @@ import safe.models.Doctor_Model;
  */
 public class Doctor_Controller {
     Doctor_View doctor_view;
-    Database_Model database_controller;
+    Database_Model database_model;
     ActionListener actionListener;
+    Doctor_Table_View doctor_table_view;
     
     
-public Doctor_Controller (Doctor_View doctor_view, Database_Model database_controller){
+public Doctor_Controller (Doctor_View doctor_view, Database_Model database_model, Doctor_Table_View doctor_table_view){
         this.doctor_view = doctor_view;
-        this.database_controller = database_controller;
+        this.database_model = database_model;
+        this.doctor_table_view = doctor_table_view;
     }
     
     
@@ -39,16 +42,35 @@ try
       if (e.getSource().equals(doctor_view.getOk_button())){
           insert();
       }
+      
+      if (e.getSource().equals(doctor_table_view.getDisplay())){
+          database_model.displayDoctordatabase();
+      }
+      
+      if (e.getSource().equals(doctor_table_view.getUpdate())){
+          database_model.updateDoctordatabase();
+      }
+      
+      if (e.getSource().equals(doctor_table_view.getDelete())){
+          database_model.deleteDoctordatabase();
+      }
+      
       }  
      };
     doctor_view.getClose_button().addActionListener ( actionListener );
     doctor_view.getOk_button().addActionListener ( actionListener );
+    doctor_table_view.getDisplay().addActionListener ( actionListener );
+    doctor_table_view.getUpdate().addActionListener ( actionListener );
+    doctor_table_view.getDelete().addActionListener ( actionListener );
    }
    catch(Exception e){
             
      }
 }//End of doctorButton
 
+/**
+ * 
+ */
 public void insert(){
     String doctorId = doctor_view.getDoctorId();
     String doctorFname = doctor_view.getDoctorFname();
@@ -61,7 +83,7 @@ public void insert(){
     Doctor_Model doctor_model = new Doctor_Model(doctorId,doctorFname,doctorSname,doctorPhone,doctorEmail,
             doctorDepartment,doctorDate);
     
-    database_controller.insertDoctordatabase(doctorId, doctorFname, doctorSname, doctorPhone, doctorEmail, 
+    database_model.insertDoctordatabase(doctorId, doctorFname, doctorSname, doctorPhone, doctorEmail, 
             doctorDepartment, doctorDate);
     System.out.println(""+doctor_model.toString());
 }
