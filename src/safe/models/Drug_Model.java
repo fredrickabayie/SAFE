@@ -112,4 +112,13 @@ public class Drug_Model {
         return drugUsage;
     }//End of getDrugUsage
     
+    /**
+     * 
+     * @return 
+     */
+    @Override
+    public String toString(){
+        return drugBarcode+" "+drugName+" "+drugManufacturer+" "+drugExpiredate+" "+drugUsage;
+    }
+    
 }//End of class

@@ -3,10 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/fred/Desktop/SAFE/SAFE/src/safe/views/Patient_View.java</file>
-            <file>file:/C:/Users/fred/Desktop/SAFE/SAFE/src/safe/main/SAFE.java</file>
-            <file>file:/C:/Users/fred/Desktop/SAFE/SAFE/src/safe/controllers/Patient_Controller.java</file>
-            <file>file:/C:/Users/fred/Desktop/SAFE/SAFE/src/safe/models/Patient_Model.java</file>
+            <file>file:/C:/Users/fred/Desktop/SAFE/SAFE/src/safe/models/Drug_Model.java</file>
+            <file>file:/C:/Users/fred/Desktop/SAFE/SAFE/src/safe/controllers/Drug_Controller.java</file>
         </group>
     </open-files>
 </project-private>
