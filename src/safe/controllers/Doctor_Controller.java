@@ -27,6 +27,7 @@ public Doctor_Controller (Doctor_View doctor_view, Database_Model database_model
         this.doctor_view = doctor_view;
         this.database_model = database_model;
         this.doctor_table_view = doctor_table_view;
+        doctorButton();
     }
     
     

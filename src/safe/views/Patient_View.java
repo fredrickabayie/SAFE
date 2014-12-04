@@ -25,25 +25,9 @@ public class Patient_View extends javax.swing.JFrame {
      * A method to get a button id
      * @return 
      */
-    public JButton getCancel_button(){
-        return cancel_button;
-    }//End of getCancel_button
-    
-    /**
-     * A method to get a button id
-     * @return 
-     */
     public JButton getOk_button(){
         return ok_button;
     }//End of getOk_button
-    
-    /**
-     * A method to get a button id
-     * @return 
-     */
-    public JButton getConnect_button(){
-        return connect_button;
-    }//End of getConnect_button
     
     /**
      * A method to get a button id
@@ -205,18 +189,67 @@ public class Patient_View extends javax.swing.JFrame {
          patientBirthdate.setDate(null);
     }
        
-    /**
-     * A method to get a string in a text field id
+      /**
+       * 
+       * @return 
+       */
+      public String getDrugName(){
+          return drugInstruction.getText();
+      }
+      
+      /**
+       * 
+       */
+      public void setDrugName(){
+          drugName.setText(null);
+      }
+      
+      /**
+       * 
+       * @return 
+       */
+      public String getPatientDisease(){
+          return patientDisease.getText();
+      }
+      
+      /**
+       * 
+       */
+      public void setPatientDisease(){
+          patientDisease.setText(null);
+      }
+      
+      /**
+       * 
      * @return 
-     */   
-    public String getPatientCity(){
-        return patientCity.getText();
-    }//End of getPatientCity
-    
-      public void setPatientCity(){
-         patientCity.setText(null);
-    }
-    
+       */
+      public String getPatientSymptoms(){
+          return patientSymptom.getText();
+      }
+      
+      /**
+       * 
+       */
+      public void setPatientSymptom(){
+          patientSymptom.setText(null);
+      }
+      
+      /**
+       * 
+       * @return 
+       */
+     public String getDrugInstruction(){
+         return drugInstruction.getText();
+     }
+      
+     /**
+      * 
+      */
+     public void setDrugInstruction(){
+         drugInstruction.setText(null);
+     }
+      
+      
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -226,29 +259,29 @@ public class Patient_View extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel22 = new javax.swing.JLabel();
+        addPatientBackground = new javax.swing.JLabel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox();
         jLabel19 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        patientDisease = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        patientSymptom = new javax.swing.JTextArea();
         jPanel8 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jTextField5 = new javax.swing.JTextField();
+        drugInstruction = new javax.swing.JTextArea();
+        drugName = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         patientFname = new javax.swing.JTextField();
@@ -269,24 +302,21 @@ public class Patient_View extends javax.swing.JFrame {
         patientBloodgroup = new javax.swing.JComboBox();
         patientGender = new javax.swing.JComboBox();
         ok_button = new javax.swing.JButton();
-        connect_button = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         patientAddress = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        patientCity = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         patientPhone = new javax.swing.JTextField();
-        cancel_button = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         patientId = new javax.swing.JTextField();
         image_button = new javax.swing.JButton();
         close_button = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
 
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/addpatient.png"))); // NOI18N
+        addPatientBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/addpatient.png"))); // NOI18N
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ADD PATIENT");
         setAlwaysOnTop(true);
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -303,9 +333,6 @@ public class Patient_View extends javax.swing.JFrame {
         jLabel26.setText("Doctor ID");
         jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 40));
 
-        jTextField1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jPanel4.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 230, 40));
-
         jLabel17.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jLabel17.setText("First Name");
         jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, 40));
@@ -314,19 +341,21 @@ public class Patient_View extends javax.swing.JFrame {
         jLabel18.setText("Department");
         jPanel4.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, 40));
 
-        jTextField2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jPanel4.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 230, 40));
-
-        jComboBox1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "null", "Cardiotherapy", "Surgery" }));
-        jPanel4.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 230, 40));
-
         jLabel19.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jLabel19.setText("Surname");
         jPanel4.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, 40));
 
-        jTextField3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jPanel4.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, 230, 40));
+        jLabel11.setText("jLabel11");
+        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 220, -1));
+
+        jLabel14.setText("jLabel14");
+        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 210, -1));
+
+        jLabel15.setText("jLabel15");
+        jPanel4.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 200, -1));
+
+        jLabel22.setText("jLabel22");
+        jPanel4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 200, -1));
 
         jTabbedPane3.addTab("Doctor", jPanel4);
 
@@ -336,17 +365,17 @@ public class Patient_View extends javax.swing.JFrame {
         jLabel25.setText("Patient Disease");
         jPanel7.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, -1, 30));
 
-        jTextField4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jPanel7.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 230, 40));
+        patientDisease.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jPanel7.add(patientDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 230, 40));
 
         jLabel20.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jLabel20.setText("Patient Symptoms");
         jPanel7.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 0, -1, 30));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        patientSymptom.setColumns(20);
+        patientSymptom.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        patientSymptom.setRows(5);
+        jScrollPane1.setViewportView(patientSymptom);
 
         jPanel7.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 440, 80));
 
@@ -359,22 +388,22 @@ public class Patient_View extends javax.swing.JFrame {
         jPanel8.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, -1, 30));
 
         jLabel21.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        jLabel21.setText("Medication");
+        jLabel21.setText("Instruction");
         jPanel8.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, -1, 30));
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        drugInstruction.setColumns(20);
+        drugInstruction.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        drugInstruction.setRows(5);
+        jScrollPane2.setViewportView(drugInstruction);
 
         jPanel8.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 440, 80));
 
-        jTextField5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jPanel8.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 230, 40));
+        drugName.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jPanel8.add(drugName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 230, 40));
 
         jTabbedPane3.addTab("Prescription", jPanel8);
 
-        getContentPane().add(jTabbedPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 580, 730, 170));
+        getContentPane().add(jTabbedPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 730, 170));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Patient Details"));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -448,15 +477,11 @@ public class Patient_View extends javax.swing.JFrame {
         patientGender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "null", "Male", "Female" }));
         jPanel1.add(patientGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 230, 40));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 730, 270));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 730, 270));
 
         ok_button.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         ok_button.setText("OK");
-        getContentPane().add(ok_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 750, -1, -1));
-
-        connect_button.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        connect_button.setText("Connect");
-        getContentPane().add(connect_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 750, -1, -1));
+        getContentPane().add(ok_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 720, -1, -1));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Contact Details"));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -468,25 +493,14 @@ public class Patient_View extends javax.swing.JFrame {
         patientAddress.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jPanel2.add(patientAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 228, 40));
 
-        jLabel12.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        jLabel12.setText("City");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, 40));
-
-        patientCity.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jPanel2.add(patientCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 230, 40));
-
         jLabel13.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jLabel13.setText("Contact No");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 40));
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, 40));
 
         patientPhone.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jPanel2.add(patientPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 230, 40));
+        jPanel2.add(patientPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 230, 40));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 730, 120));
-
-        cancel_button.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        cancel_button.setText("Cancel");
-        getContentPane().add(cancel_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 750, -1, -1));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 730, 70));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Unique Information"));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -504,9 +518,13 @@ public class Patient_View extends javax.swing.JFrame {
         jPanel3.add(image_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 230, 160));
 
         close_button.setText("x");
-        jPanel3.add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, -1, 20));
+        jPanel3.add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 40, -1));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 190));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 730, 190));
+
+        jLabel23.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel23.setText("ADD PATIENT");
+        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 180, 20));
 
         pack();
         setLocationRelativeTo(null);
@@ -551,15 +569,17 @@ public class Patient_View extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton cancel_button;
+    private javax.swing.JLabel addPatientBackground;
     private javax.swing.JButton close_button;
-    private javax.swing.JButton connect_button;
+    private javax.swing.JTextArea drugInstruction;
+    private javax.swing.JTextField drugName;
     private javax.swing.JButton image_button;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -568,6 +588,7 @@ public class Patient_View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
@@ -587,19 +608,12 @@ public class Patient_View extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JButton ok_button;
     private javax.swing.JTextField patientAddress;
     private javax.swing.JTextField patientAge;
     private com.toedter.calendar.JDateChooser patientBirthdate;
     private javax.swing.JComboBox patientBloodgroup;
-    private javax.swing.JTextField patientCity;
+    private javax.swing.JTextField patientDisease;
     private javax.swing.JTextField patientFname;
     private javax.swing.JComboBox patientGender;
     private javax.swing.JTextField patientId;
@@ -608,5 +622,6 @@ public class Patient_View extends javax.swing.JFrame {
     private javax.swing.JTextField patientOccupation;
     private javax.swing.JTextField patientPhone;
     private javax.swing.JTextField patientSname;
+    private javax.swing.JTextArea patientSymptom;
     // End of variables declaration//GEN-END:variables
 }

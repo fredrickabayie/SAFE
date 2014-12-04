@@ -59,14 +59,14 @@ public class SAFE {
                 Doctor_Controller doctor_controller = new Doctor_Controller (doctor_view,database_controller,doctor_table_view);
                 
                 
-               doctor_table_view.setVisible(true);
+//               doctor_table_view.setVisible(true);
                
 //                patient_view.setVisible ( true );
 //                patient_table_view.setVisible(true);
 //                doctor_view.setVisible(true);
 //                patient_controller.doctorController();
-                doctor_controller.doctorButton();
-//                patient_controller.patientButton();
+//                doctor_controller.doctorButton();
+                patient_controller.patientButton();
             }
         });
     }

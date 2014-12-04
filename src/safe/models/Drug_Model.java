@@ -10,43 +10,50 @@ package safe.models;
  * @author chokayg3
  */
 public class Drug_Model {
-    String drugBarcode;
+    String drugId;
     String drugName;
     String drugManufacturer;
-    String drugExpiredate;
+    String drugExpire;
     String drugUsage;
+    double drugPrice;
+    int drugQuantity;
     
     /**
      * 
-     * @param drugBarcode
+     * @param drugId
      * @param drugName
      * @param drugManufacturer
-     * @param drugExpiredate
+     * @param drugExpire
      * @param drugUsage 
+     * @param drugPrice 
+     * @param drugQuantity 
      */
-    public Drug_Model ( String drugBarcode, String drugName, String drugManufacturer, String drugExpiredate, String drugUsage ){
-        this.drugBarcode = drugBarcode;
+    public Drug_Model ( String drugId, String drugName, String drugManufacturer, String drugExpire, String drugUsage,
+            double drugPrice, int drugQuantity){
+        this.drugId = drugId;
         this.drugName = drugName;
         this.drugManufacturer = drugManufacturer;
-        this.drugExpiredate = drugExpiredate;
+        this.drugExpire = drugExpire;
         this.drugUsage = drugUsage;
+        this.drugPrice = drugPrice;
+        this.drugQuantity = drugQuantity;
     }//End of Drug_Model
     
     /**
      * 
-     * @param drugBarcode
+     * @param drugId
      */
-    public void setDrugBarcode ( String drugBarcode ){
-        this.drugBarcode = drugBarcode;
-    }//End of setDrugBarcode
+    public void setDrugBarcode ( String drugId ){
+        this.drugId = drugId;
+    }//End of setDrugId
     
     /**
      * 
      * @return 
      */
-    public String getDrugBarcode ( ){
-        return drugBarcode;
-    }//End of getDrugBarcode
+    public String getDrugId ( ){
+        return drugId;
+    }//End of getDrugId
     
     /**
      * 
@@ -82,19 +89,19 @@ public class Drug_Model {
     
      /**
      * 
-     * @param drugExpiredate 
+     * @param drugExpire
      */
-    public void setDrugExpiredate ( String drugExpiredate){
-        this.drugExpiredate = drugExpiredate;
-    }//End of setDrugExpiredate
+    public void setDrugExpire ( String drugExpire ){
+        this.drugExpire = drugExpire;
+    }//End of setDrugExpire
     
     /**
      * 
      * @return 
      */
-    public String getDrugExpiredate ( ){
-        return drugExpiredate;
-    }//End of getDrugExpiredate
+    public String getDrugExpire( ){
+        return drugExpire;
+    }//End of getDrugExpire
     
      /**
      * 
@@ -114,11 +121,43 @@ public class Drug_Model {
     
     /**
      * 
+     * @param drugPrice 
+     */
+    public void setDrugPirce ( double drugPrice ){
+        this.drugPrice = drugPrice;
+    }//End of setDrugPrice
+    
+    /**
+     * 
+     * @return 
+     */
+    public double getDrugPrice ( ){
+        return drugPrice;
+    }//End of getDrugPrice
+    
+    /**
+     * 
+     * @param drugQuantity 
+     */
+    public void setDrugQuantity ( int drugQuantity ){
+        this.drugQuantity = drugQuantity;
+    }//End of setDrugQuantity
+    
+    /**
+     * 
+     * @return 
+     */
+    public int getDrugQuantity ( ){
+        return drugQuantity;
+    }//End of getDrugQuantity
+    
+    /**
+     * 
      * @return 
      */
     @Override
     public String toString(){
-        return drugBarcode+" "+drugName+" "+drugManufacturer+" "+drugExpiredate+" "+drugUsage;
+        return drugId+" "+drugName+" "+drugManufacturer+" "+drugExpire+" "+drugUsage;
     }
     
 }//End of class

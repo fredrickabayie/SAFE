@@ -31,10 +31,13 @@ public class Patient_Table_View extends javax.swing.JFrame {
         vector.add ("GENDER");
         vector.add ("OCCUPATION");
         vector.add ("BLOODGROUP");
-        vector.add ("MARITAL STATUS");
-        vector.add ("BIRTH DATE");
+        vector.add ("STATUS");
+        vector.add ("BIRTHDATE");
         vector.add ("NATIONAL");
-        vector.add ("CITY");
+        vector.add ("DISEASE");
+        vector.add ("SYMPTOM");
+        vector.add ("DRUG");
+        vector.add ("INSTRUCTION");
 //        table_model = new DefaultTableModel ( new Object[][]{},new String []{"ID","Fname","Sname"});
         table_model = new DefaultTableModel ( new Vector(), vector );
         initComponents();
@@ -123,6 +126,14 @@ public class Patient_Table_View extends javax.swing.JFrame {
     public JButton getDelete(){
         return delete;
     }
+    
+    /**
+     * 
+     * @return 
+     */
+    public JButton getClose(){
+        return close_button;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -139,9 +150,12 @@ public class Patient_Table_View extends javax.swing.JFrame {
         display = new javax.swing.JButton();
         update = new javax.swing.JButton();
         delete = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        close_button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         patient_table.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -151,19 +165,26 @@ public class Patient_Table_View extends javax.swing.JFrame {
         patient_table.setRowHeight(25);
         jScrollPane1.setViewportView(patient_table);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1360, 570));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 1560, 600));
 
         connect.setText("connect");
-        getContentPane().add(connect, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+        getContentPane().add(connect, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, -1, -1));
 
         display.setText("display");
-        getContentPane().add(display, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, -1, -1));
+        getContentPane().add(display, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, -1, -1));
 
         update.setText("update");
-        getContentPane().add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, -1, -1));
+        getContentPane().add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, -1, -1));
 
         delete.setText("delete");
-        getContentPane().add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, -1, -1));
+        getContentPane().add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 70, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel1.setText("PATIENT TABLE");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 200, -1));
+
+        close_button.setText("X");
+        getContentPane().add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1460, 110, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -205,9 +226,11 @@ public class Patient_Table_View extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton close_button;
     private javax.swing.JButton connect;
     private javax.swing.JButton delete;
     private javax.swing.JButton display;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JTable patient_table;
     private javax.swing.JButton update;
