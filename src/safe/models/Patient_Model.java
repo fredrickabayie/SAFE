@@ -45,6 +45,7 @@ public class Patient_Model {
      * @param patientDisease 
      * @param patientSymptom 
      * @param drugName 
+     * @param drugInstruction 
      */
     public Patient_Model ( String patientId, String patientFname, String patientSname, int patientAge, String patientAddress, 
             int patientPhone, String patientGender, String patientOccupation, String patientBloodgroup, String patientMaritalstatus,

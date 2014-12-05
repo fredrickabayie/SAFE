@@ -56,6 +56,10 @@ try
           database_model.deleteDoctordatabase();
       }
       
+      if (e.getSource().equals(doctor_table_view.getClose())){
+          doctor_table_view.dispose();
+      }
+      
       }  
      };
     doctor_view.getClose_button().addActionListener ( actionListener );
@@ -63,6 +67,7 @@ try
     doctor_table_view.getDisplay().addActionListener ( actionListener );
     doctor_table_view.getUpdate().addActionListener ( actionListener );
     doctor_table_view.getDelete().addActionListener ( actionListener );
+    doctor_table_view.getClose().addActionListener ( actionListener );
    }
    catch(Exception e){
             

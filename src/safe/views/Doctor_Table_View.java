@@ -117,6 +117,14 @@ Vector vector;
     public JButton getDelete(){
         return delete;
     }
+    
+    /**
+     * Method to return close button
+     * @return 
+     */
+    public JButton getClose(){
+        return close;
+    }//End of getClose
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -132,8 +140,10 @@ Vector vector;
         update = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         doctor_table = new javax.swing.JTable();
+        close = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         display.setText("Display");
 
@@ -146,6 +156,8 @@ Vector vector;
         doctor_table.setRowHeight(25);
         jScrollPane1.setViewportView(doctor_table);
 
+        close.setText("x");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -157,7 +169,9 @@ Vector vector;
                 .addComponent(delete)
                 .addGap(165, 165, 165)
                 .addComponent(update)
-                .addContainerGap(683, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 438, Short.MAX_VALUE)
+                .addComponent(close)
+                .addGap(205, 205, 205))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
@@ -166,12 +180,17 @@ Vector vector;
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(display)
-                    .addComponent(delete)
-                    .addComponent(update))
-                .addGap(91, 91, 91)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(display)
+                            .addComponent(delete)
+                            .addComponent(update)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(close)))
+                .addGap(68, 68, 68)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -216,6 +235,7 @@ Vector vector;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton close;
     private javax.swing.JButton delete;
     private javax.swing.JButton display;
     private javax.swing.JTable doctor_table;

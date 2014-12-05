@@ -20,9 +20,38 @@ public class Main_View extends javax.swing.JFrame {
         initComponents();
     }
     
+    /**
+     * Method to return add patient menu item
+     * @return 
+     */
     public JMenuItem getAddPatient_menu(){
         return addPatient_menu;
     }//End of getAddPatient
+    
+    /**
+     * Method to return patient table menu item
+     * @return 
+     */
+    public JMenuItem getPatientTable_menu(){
+        return patientTable_menu;
+    }//End of getPatientTable_menu
+    
+    /**
+     * Method to return add doctor menu item
+     * @return 
+     */
+    public JMenuItem getAddDoctor_menu(){
+        return addDoctor_menu;
+    }//End of getAddDoctor_menu
+    
+    /**
+     * Method to return doctor table menu item
+     * @return 
+     */
+    public JMenuItem getDoctorTable_menu(){
+        return doctorTable_menu;
+    }//End of getDoctorTable_menu
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,14 +66,16 @@ public class Main_View extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         addPatient_menu = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        patientTable_menu = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        addDoctor_menu = new javax.swing.JMenuItem();
+        doctorTable_menu = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
+        jMenu9 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SAFE HOSPITAL");
@@ -60,8 +91,8 @@ public class Main_View extends javax.swing.JFrame {
 
         jMenu1.add(jMenu3);
 
-        jMenuItem1.setText("Table");
-        jMenu1.add(jMenuItem1);
+        patientTable_menu.setText("Table");
+        jMenu1.add(patientTable_menu);
 
         jMenuBar1.add(jMenu1);
 
@@ -69,10 +100,13 @@ public class Main_View extends javax.swing.JFrame {
 
         jMenu6.setText("Add");
 
-        jMenuItem2.setText("New Doctor");
-        jMenu6.add(jMenuItem2);
+        addDoctor_menu.setText("New Doctor");
+        jMenu6.add(addDoctor_menu);
 
         jMenu2.add(jMenu6);
+
+        doctorTable_menu.setText("Table");
+        jMenu2.add(doctorTable_menu);
 
         jMenuBar1.add(jMenu2);
 
@@ -88,6 +122,9 @@ public class Main_View extends javax.swing.JFrame {
 
         jMenu8.setText("Logout");
         jMenuBar1.add(jMenu8);
+
+        jMenu9.setText("Login");
+        jMenuBar1.add(jMenu9);
 
         setJMenuBar(jMenuBar1);
 
@@ -142,7 +179,9 @@ public class Main_View extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem addDoctor_menu;
     private javax.swing.JMenuItem addPatient_menu;
+    private javax.swing.JMenuItem doctorTable_menu;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -151,8 +190,8 @@ public class Main_View extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem patientTable_menu;
     // End of variables declaration//GEN-END:variables
 }

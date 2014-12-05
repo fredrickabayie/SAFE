@@ -26,7 +26,7 @@
                 </MenuItem>
               </SubComponents>
             </Menu>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+            <MenuItem class="javax.swing.JMenuItem" name="patientTable_menu">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Table"/>
               </Properties>
@@ -43,13 +43,18 @@
                 <Property name="text" type="java.lang.String" value="Add"/>
               </Properties>
               <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+                <MenuItem class="javax.swing.JMenuItem" name="addDoctor_menu">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="New Doctor"/>
                   </Properties>
                 </MenuItem>
               </SubComponents>
             </Menu>
+            <MenuItem class="javax.swing.JMenuItem" name="doctorTable_menu">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Table"/>
+              </Properties>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu4">
@@ -72,6 +77,11 @@
         <Menu class="javax.swing.JMenu" name="jMenu8">
           <Properties>
             <Property name="text" type="java.lang.String" value="Logout"/>
+          </Properties>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu9">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Login"/>
           </Properties>
         </Menu>
       </SubComponents>

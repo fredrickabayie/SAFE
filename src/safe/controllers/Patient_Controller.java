@@ -5,6 +5,9 @@
  */
 package safe.controllers;
 
+/**
+ * Importing of java directories
+ */
 import safe.models.Database_Model;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -36,7 +39,7 @@ public final class Patient_Controller {
     DefaultTableModel table_model;
     
     /**
-     * 
+     * COnstructor for the patient controller class
      * @param patient_view 
      * @param database_controller 
      * @param patient_table_view 
@@ -47,18 +50,18 @@ public final class Patient_Controller {
      this.patient_view = patient_view;   
      this.database_controller = database_controller;
      this.patient_table_view = patient_table_view;
-//     this.setVisible(true);
     patientController();
     patientButton();
     }//End of Patient_Controller
     
     /**
-     * 
+     * method to handle buttons pressed
      */
     public void patientButton (){
         try
         {
             actionListener = (ActionEvent e) -> {
+                
                 //Connection to database
                 if ( e.getSource().equals(patient_table_view.getConnect())){
                     database_controller.connectTodatabase();
@@ -69,15 +72,17 @@ public final class Patient_Controller {
                     database_controller.displayPatientdatabase();
                 }
                 
-                //Updating the database
+                //Updating what is in the patient database
                 if (e.getSource().equals(patient_table_view.getUpdate())){
                     database_controller.updatePatientdatabase();
                 }
                 
+                //Deleting a row from the patient database
                   if (e.getSource().equals(patient_table_view.getDelete())){
                     database_controller.deletePatientdatabase();
                 }
                   
+                  //The button to close the window
                   if (e.getSource().equals(patient_table_view.getClose())){
                       System.out.println("Close button pressed");
                     patient_table_view.dispose();
@@ -123,13 +128,13 @@ public final class Patient_Controller {
                 }//End of if
                 
                 if ( e.getSource( ).equals ( patient_view.getOk_button ( ))){
-                    try{
-                        patientValidate();
-                        
-                    }
-                    catch(Exception ex){
+//                    try{
+//                        patientValidate();
+//                        
+//                    }
+//                    catch(Exception ex){
                     insert();
-                    }
+//                    }
                 }//End of if
                 
               
@@ -142,10 +147,14 @@ public final class Patient_Controller {
         }
         catch ( Exception e ){
 //            JOptionPane.showMessageDialog(null, "Failed To Connect To The DataBase", "Not Connected", JOptionPane.ERROR_MESSAGE);
-//            System.out.print(e.toString());
+            System.out.print(e.toString());
         }
     }//End of controller    
     
+    
+    /**
+     * Method to insert into the database
+     */
     private void insert(){
          String patientId = patient_view.getPatientId();
          String patientFname = patient_view.getPatientFname();
@@ -191,7 +200,7 @@ public final class Patient_Controller {
     }
     
     /**
-     * 
+     * Method to reset the text fields
      */
     private void resetTextFields(){
         patient_view.setPatientId();
@@ -214,7 +223,7 @@ public final class Patient_Controller {
    
     
 /**
- * 
+ * Method to check for validation of input
  * @return 
  */
 public boolean patientValidate ( ){
