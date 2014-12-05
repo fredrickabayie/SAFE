@@ -194,7 +194,7 @@ public class Patient_View extends javax.swing.JFrame {
        * @return 
        */
       public String getDrugName(){
-          return drugInstruction.getText();
+          return drugName.getText();
       }
       
       /**

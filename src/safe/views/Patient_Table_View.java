@@ -6,16 +6,27 @@
 package safe.views;
 
 import java.util.Vector;
+import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 
 /**
  *
  * @author chokayg3
  */
-public class Patient_Table_View extends javax.swing.JFrame {
+public final class Patient_Table_View extends javax.swing.JFrame {
     DefaultTableModel table_model;
     Vector vector;
+    TableColumn gender;
+    TableColumn blood;
+    TableColumn status;
+    TableColumn id;
+    JComboBox status_combo;
+    JComboBox blood_combo;
+    JComboBox gender_combo;
+    
 
     /**
      * Creates new form Patient_Table_View
@@ -38,10 +49,50 @@ public class Patient_Table_View extends javax.swing.JFrame {
         vector.add ("SYMPTOM");
         vector.add ("DRUG");
         vector.add ("INSTRUCTION");
-//        table_model = new DefaultTableModel ( new Object[][]{},new String []{"ID","Fname","Sname"});
         table_model = new DefaultTableModel ( new Vector(), vector );
         initComponents();
+        
+        //Combo box for gender
+        gender = patient_table.getColumnModel().getColumn(6);
+        gender_combo = new JComboBox();
+        gender_combo.addItem ("Male");
+        gender_combo.addItem ("Female");
+        gender.setCellEditor( new DefaultCellEditor(gender_combo));
+        
+        //Combo box for blood group
+        blood = patient_table.getColumnModel().getColumn(8);
+        blood_combo = new JComboBox();
+        blood_combo.addItem ("O+");
+        blood_combo.addItem ("O-");
+        blood_combo.addItem ("A+");
+        blood_combo.addItem ("A-");
+        blood_combo.addItem ("B+");
+        blood_combo.addItem ("B-");
+        blood_combo.addItem ("AB+");
+        blood_combo.addItem ("AB-");
+        blood.setCellEditor( new DefaultCellEditor(blood_combo));
+        
+        //Combo box for marital status
+        status = patient_table.getColumnModel().getColumn(9);
+        status_combo = new JComboBox();
+        status_combo.addItem ("Single");
+        status_combo.addItem ("Married");
+        status.setCellEditor( new DefaultCellEditor(status_combo));
+        
+        id = patient_table.getColumnModel().getColumn(0);
+//        id.setCellEditor(new DefaultCellEditor(null));
+//        isCellEditable(0,0);
+        
     }
+    
+//    //overide this to allow editing of some columns/rows
+//    public boolean isCellEditable(int row, int col) {
+//        if ((col == 0)) { 
+//            return false;
+//        }
+//        else 
+//            return true;
+//    }
               
     /**
      * 

@@ -6,17 +6,21 @@
 package safe.views;
 
 import java.util.Vector;
+import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
-import static safe.views.Patient_Table_View.patient_table;
+import javax.swing.table.TableColumn;
 
 /**
  *
- * @author chokayg3
+ * @author Abayie Fredrick
  */
 public class Doctor_Table_View extends javax.swing.JFrame {
 DefaultTableModel table_model;
 Vector vector;
+TableColumn department;
+JComboBox department_combo;
     /**
      * Creates new form Doctor_Table_View
      */
@@ -30,9 +34,18 @@ Vector vector;
         vector.add ("DEPARTMENT");
         vector.add ("DATE JOINED");
         table_model = new DefaultTableModel ( new Vector(),vector);
-     
         initComponents();
-    }
+        
+        department = doctor_table.getColumnModel().getColumn(5);
+        department_combo = new JComboBox();
+        department_combo.addItem("Cardiology");
+        department_combo.addItem("ENT");
+        department_combo.addItem("Gynaecology");
+        department_combo.addItem("Haematology");
+        department_combo.addItem("Oncology");
+        department.setCellEditor ( new DefaultCellEditor (department_combo));
+//        blood.setCellEditor( new DefaultCellEditor(blood_combo));
+   }
     
      /**
      * 

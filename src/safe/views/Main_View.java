@@ -79,6 +79,7 @@ public class Main_View extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SAFE HOSPITAL");
+        setType(java.awt.Window.Type.UTILITY);
 
         jMenuBar1.setBorder(null);
 
