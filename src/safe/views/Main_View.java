@@ -82,24 +82,31 @@ public class Main_View extends javax.swing.JFrame {
         setType(java.awt.Window.Type.UTILITY);
 
         jMenuBar1.setBorder(null);
+        jMenuBar1.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
 
         jMenu1.setText("Patients");
+        jMenu1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jMenu3.setText("Add");
+        jMenu3.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
 
+        addPatient_menu.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         addPatient_menu.setText("New Patient");
         jMenu3.add(addPatient_menu);
 
         jMenu1.add(jMenu3);
 
+        patientTable_menu.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         patientTable_menu.setText("Table");
         jMenu1.add(patientTable_menu);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Doctors");
+        jMenu2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jMenu6.setText("Add");
+        jMenu6.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
 
         addDoctor_menu.setText("New Doctor");
         jMenu6.add(addDoctor_menu);
@@ -112,6 +119,7 @@ public class Main_View extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu4.setText("Pharmacist");
+        jMenu4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jMenu7.setText("jMenu7");
         jMenu4.add(jMenu7);
@@ -119,12 +127,15 @@ public class Main_View extends javax.swing.JFrame {
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("DocPham");
+        jMenu5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenuBar1.add(jMenu5);
 
         jMenu8.setText("Logout");
+        jMenu8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenuBar1.add(jMenu8);
 
         jMenu9.setText("Login");
+        jMenu9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenuBar1.add(jMenu9);
 
         setJMenuBar(jMenuBar1);
@@ -137,7 +148,7 @@ public class Main_View extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 690, Short.MAX_VALUE)
+            .addGap(0, 686, Short.MAX_VALUE)
         );
 
         pack();

@@ -5,16 +5,12 @@
  */
 package safe.views;
 
-import java.util.Enumeration;
 import java.util.Vector;
-//import javafx.stage.FileChooser;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JFileChooser;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
-import safe.controllers.Patient_Controller;
 
 /**
  *
@@ -30,8 +26,6 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     JComboBox status_combo;
     JComboBox blood_combo;
     JComboBox gender_combo;
-//    JFileChooser filechooser;
-//    Patient_Controller patient_controller;
 
     /**
      * Creates new form Patient_Table_View
@@ -248,7 +242,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         getContentPane().add(connect, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, -1, -1));
 
         display.setText("display");
-        getContentPane().add(display, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, -1, -1));
+        getContentPane().add(display, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, -1, -1));
 
         update.setText("update");
         getContentPane().add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, -1, -1));
@@ -261,7 +255,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 200, -1));
 
         close_button.setText("X");
-        getContentPane().add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1460, 110, -1, -1));
+        getContentPane().add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1520, 0, -1, -1));
 
         open.setText("import");
         getContentPane().add(open, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 70, -1, -1));

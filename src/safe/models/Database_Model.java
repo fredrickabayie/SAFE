@@ -47,7 +47,7 @@ public class Database_Model {
     try
         {
             Class.forName ( "com.mysql.jdbc.Driver" ).newInstance ( );
-             connection = java.sql.DriverManager.getConnection("jdbc:mysql://localhost/safe?user=root&password=Ashesi@2016?");
+             connection = java.sql.DriverManager.getConnection("jdbc:mysql://10.10.30.127/safe?user=safe&password=");
              System.out.println ( "Connected" );
         }//End Of Try
         catch ( ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException e )

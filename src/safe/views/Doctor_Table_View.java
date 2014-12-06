@@ -17,8 +17,8 @@ import javax.swing.table.TableColumn;
  * @author Abayie Fredrick
  */
 public class Doctor_Table_View extends javax.swing.JFrame {
-DefaultTableModel table_model;
-Vector vector;
+public static DefaultTableModel table_model;
+public static Vector vector;
 TableColumn department;
 JComboBox department_combo;
     /**
@@ -138,6 +138,22 @@ JComboBox department_combo;
     public JButton getClose(){
         return close;
     }//End of getClose
+    
+    /**
+     * Method to return open button
+     * @return 
+     */
+    public JButton getOpen(){
+        return open;
+    }//End of getOpen
+    
+    /**
+     * MEthod to return save button
+     * @return 
+     */
+    public JButton getSave(){
+        return save;
+    }//End of getSave
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -154,6 +170,8 @@ JComboBox department_combo;
         jScrollPane1 = new javax.swing.JScrollPane();
         doctor_table = new javax.swing.JTable();
         close = new javax.swing.JButton();
+        open = new javax.swing.JButton();
+        save = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -171,6 +189,10 @@ JComboBox department_combo;
 
         close.setText("x");
 
+        open.setText("Import");
+
+        save.setText("Export");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -182,7 +204,11 @@ JComboBox department_combo;
                 .addComponent(delete)
                 .addGap(165, 165, 165)
                 .addComponent(update)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 438, Short.MAX_VALUE)
+                .addGap(158, 158, 158)
+                .addComponent(open)
+                .addGap(55, 55, 55)
+                .addComponent(save)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                 .addComponent(close)
                 .addGap(205, 205, 205))
             .addGroup(layout.createSequentialGroup()
@@ -202,7 +228,12 @@ JComboBox department_combo;
                             .addComponent(update)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(51, 51, 51)
-                        .addComponent(close)))
+                        .addComponent(close))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(open)
+                            .addComponent(save))))
                 .addGap(68, 68, 68)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE)
                 .addContainerGap())
@@ -251,8 +282,10 @@ JComboBox department_combo;
     private javax.swing.JButton close;
     private javax.swing.JButton delete;
     private javax.swing.JButton display;
-    private javax.swing.JTable doctor_table;
+    public static javax.swing.JTable doctor_table;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton open;
+    private javax.swing.JButton save;
     private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }

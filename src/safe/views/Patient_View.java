@@ -518,7 +518,7 @@ public class Patient_View extends javax.swing.JFrame {
         jPanel3.add(image_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 230, 160));
 
         close_button.setText("x");
-        jPanel3.add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 40, -1));
+        jPanel3.add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, -1, -1));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 730, 190));
 

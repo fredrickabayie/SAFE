@@ -31,7 +31,11 @@
               <Component id="delete" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
               <Component id="update" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="438" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+              <Component id="open" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+              <Component id="save" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="97" max="32767" attributes="0"/>
               <Component id="close" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="205" max="-2" attributes="0"/>
           </Group>
@@ -57,6 +61,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                       <Component id="close" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="open" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="save" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
@@ -99,12 +110,25 @@
             </Property>
             <Property name="rowHeight" type="int" value="25"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JButton" name="close">
       <Properties>
         <Property name="text" type="java.lang.String" value="x"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="open">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Import"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="save">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Export"/>
       </Properties>
     </Component>
   </SubComponents>
