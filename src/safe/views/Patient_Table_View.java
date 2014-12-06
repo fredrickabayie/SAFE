@@ -5,20 +5,24 @@
  */
 package safe.views;
 
+import java.util.Enumeration;
 import java.util.Vector;
+//import javafx.stage.FileChooser;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFileChooser;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
+import safe.controllers.Patient_Controller;
 
 /**
  *
  * @author chokayg3
  */
 public final class Patient_Table_View extends javax.swing.JFrame {
-    DefaultTableModel table_model;
-    Vector vector;
+    public static DefaultTableModel table_model;
+    public static Vector vector;
     TableColumn gender;
     TableColumn blood;
     TableColumn status;
@@ -26,7 +30,8 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     JComboBox status_combo;
     JComboBox blood_combo;
     JComboBox gender_combo;
-    
+//    JFileChooser filechooser;
+//    Patient_Controller patient_controller;
 
     /**
      * Creates new form Patient_Table_View
@@ -50,6 +55,8 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         vector.add ("DRUG");
         vector.add ("INSTRUCTION");
         table_model = new DefaultTableModel ( new Vector(), vector );
+        
+//        filechooser = new JFileChooser();
         initComponents();
         
         //Combo box for gender
@@ -185,7 +192,24 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     public JButton getClose(){
         return close_button;
     }
-
+    
+    /**
+     * 
+     * @return 
+     */
+    public JButton getOpen(){
+        return open;
+    }
+    
+    /**
+     * 
+     * @return 
+     */
+    public JButton getSave(){
+        return save;
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -203,6 +227,8 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         delete = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         close_button = new javax.swing.JButton();
+        open = new javax.swing.JButton();
+        save = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -236,6 +262,12 @@ public final class Patient_Table_View extends javax.swing.JFrame {
 
         close_button.setText("X");
         getContentPane().add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1460, 110, -1, -1));
+
+        open.setText("import");
+        getContentPane().add(open, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 70, -1, -1));
+
+        save.setText("export");
+        getContentPane().add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 70, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -283,7 +315,9 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     private javax.swing.JButton display;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton open;
     public static javax.swing.JTable patient_table;
+    private javax.swing.JButton save;
     private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }

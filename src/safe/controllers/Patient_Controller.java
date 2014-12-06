@@ -11,16 +11,28 @@ package safe.controllers;
 import safe.models.Database_Model;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Enumeration;
+import java.util.Scanner;
 import java.util.Vector;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 //import javax.swing.JOptionPane;
 import safe.views.Patient_View;
 import safe.models.Patient_Model;
 import safe.views.Patient_Table_View;
+import static safe.views.Patient_Table_View.patient_table;
+import static safe.views.Patient_Table_View.table_model;
+import static safe.views.Patient_Table_View.vector;
 //import safe.controllers.Database_Model;
 
 /**
@@ -36,7 +48,10 @@ public final class Patient_Controller {
     FileInputStream inputstream;
     JFileChooser filechooser;
     Vector vector;
-    DefaultTableModel table_model;
+//    DefaultTableModel table_model;
+     Scanner input;
+//    JFileChooser filechooser;
+    PrintWriter print;
     
     /**
      * COnstructor for the patient controller class
@@ -50,6 +65,24 @@ public final class Patient_Controller {
      this.patient_view = patient_view;   
      this.database_controller = database_controller;
      this.patient_table_view = patient_table_view;
+     
+       vector = new Vector();
+        vector.add ("ID");
+        vector.add ("FIRST NAME");
+        vector.add ("SURNAME");
+        vector.add ("AGE");
+        vector.add ("ADDRESS");
+        vector.add ("PHONE");
+        vector.add ("GENDER");
+        vector.add ("OCCUPATION");
+        vector.add ("BLOODGROUP");
+        vector.add ("STATUS");
+        vector.add ("BIRTHDATE");
+        vector.add ("NATIONAL");
+        vector.add ("DISEASE");
+        vector.add ("SYMPTOM");
+        vector.add ("DRUG");
+        vector.add ("INSTRUCTION");
     patientController();
     patientButton();
     }//End of Patient_Controller
@@ -87,12 +120,32 @@ public final class Patient_Controller {
                       System.out.println("Close button pressed");
                     patient_table_view.dispose();
                 }
+                  
+                  //Import button pressed
+                  if (e.getSource().equals(patient_table_view.getOpen())){
+                      System.out.println("Open button pressed");
+                     JFileChooser chooser = new JFileChooser();
+                        chooser.showOpenDialog(patient_table_view);
+                      file = chooser.getSelectedFile();
+                      open(file);
+                  }
+                  
+                  //Export button pressed
+                  if (e.getSource().equals(patient_table_view.getSave())){
+                      System.out.println("Save button pressed");
+                       JFileChooser chooser = new JFileChooser();
+                        chooser.showSaveDialog(patient_table_view);
+                     file = chooser.getSelectedFile();
+                      save(file);
+                  }
             };
                patient_table_view.getConnect().addActionListener ( actionListener );
                patient_table_view.getDisplay().addActionListener ( actionListener );
                patient_table_view.getUpdate().addActionListener ( actionListener );
                patient_table_view.getDelete().addActionListener ( actionListener );
                patient_table_view.getClose().addActionListener ( actionListener );
+               patient_table_view.getOpen().addActionListener ( actionListener );
+               patient_table_view.getSave().addActionListener ( actionListener );
         }
         catch( Exception e ){
         }
@@ -254,6 +307,80 @@ public boolean patientValidate ( ){
 //        return valid;
         return false;
     }
+
+ public void open(File file)
+    {
+        table_model.setRowCount(0);
+        String splitHere=",";
+        try
+        {
+            input = new Scanner ( new BufferedReader ( new FileReader( file )));
+            input.nextLine();
+            while (input.hasNextLine()){
+             String [] oneTicket=input.nextLine().split(splitHere);
+                Vector row=new Vector();
+                for(int i=0;i<oneTicket.length;i++){
+                    row.add(oneTicket[i]);
+                }
+                table_model.addRow(row);
+            }
+         input.close();
+         System.out.println("OPened data");
+//         JOptionPane.showMessageDialog ( null, "Successfully Opened The File " +file.getName(), "OPENED", JOptionPane.INFORMATION_MESSAGE);
+        }//End Of Try
+        catch (IOException ex)
+        { 
+            System.out.println(ex.toString());
+//        JOptionPane.showMessageDialog(null, "Failed To Open File " +file.getName(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        }//End Of Catch
+    }
+    
+//    public Vector getColumnNames()
+//    {
+//         Vector <String> vector = new Vector < > ( );
+//        for ( int i=0; i < patient_table_view.getColumnCount ( ); i++ )
+//            vector.add ( patient_table_view.getColumnName ( i ) );
+//        return vector;
+//    }
+ 
+ 
+     /**
+     * 
+     * @return 
+     */
+     public Vector getColumnNames()
+    {
+         Vector <String> vector = new Vector < > ( );
+        for ( int i=0; i < patient_table.getColumnCount ( ); i++ )
+            vector.add ( patient_table.getColumnName ( i ) );
+        return vector;
+    }
+     
+    
+    public void save (File file)
+    {
+        try
+        {
+            print = new PrintWriter ( new BufferedWriter (new FileWriter (file+".csv")) );
+            String headers=getColumnNames().toString();
+            print.println(headers.substring(1,headers.length()-1));
+            Enumeration veNums=table_model.getDataVector().elements();
+//            Enumeration veNums=patient_table_view.getTable_model();
+            while(veNums.hasMoreElements()){
+                String row=veNums.nextElement().toString();
+              print.println(row.substring(1,row.length()-1)); 
+            }
+//            System.out.println(table_model.getDataVector().elementAt(0));
+            print.close();          
+            System.out.println("Saved data to file");
+//         JOptionPane.showMessageDialog(null, "Data Saved Successfully To " +file.getName(), "SAVED", JOptionPane.INFORMATION_MESSAGE);
+        }//End Of Try
+        catch (IOException ex) 
+        { 
+            System.out.println(""+ex.toString());
+        }
+//            JOptionPane.showMessageDialog(null, "Failed To Save Data", "ERROR "+file.getName(), JOptionPane.ERROR_MESSAGE);
+        }//End Of Catch 
     
 }//End of class
 
