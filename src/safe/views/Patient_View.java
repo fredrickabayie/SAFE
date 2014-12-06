@@ -223,7 +223,7 @@ public class Patient_View extends javax.swing.JFrame {
        * 
      * @return 
        */
-      public String getPatientSymptoms(){
+      public String getPatientSymptom(){
           return patientSymptom.getText();
       }
       
@@ -261,15 +261,6 @@ public class Patient_View extends javax.swing.JFrame {
 
         addPatientBackground = new javax.swing.JLabel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         patientDisease = new javax.swing.JTextField();
@@ -311,8 +302,8 @@ public class Patient_View extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         patientId = new javax.swing.JTextField();
         image_button = new javax.swing.JButton();
-        close_button = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
+        close_button = new javax.swing.JButton();
 
         addPatientBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/addpatient.png"))); // NOI18N
 
@@ -326,38 +317,6 @@ public class Patient_View extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTabbedPane3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Doctor Details"));
-
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel26.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        jLabel26.setText("Doctor ID");
-        jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 40));
-
-        jLabel17.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        jLabel17.setText("First Name");
-        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, 40));
-
-        jLabel18.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        jLabel18.setText("Department");
-        jPanel4.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, 40));
-
-        jLabel19.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        jLabel19.setText("Surname");
-        jPanel4.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, 40));
-
-        jLabel11.setText("jLabel11");
-        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 220, -1));
-
-        jLabel14.setText("jLabel14");
-        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 210, -1));
-
-        jLabel15.setText("jLabel15");
-        jPanel4.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 200, -1));
-
-        jLabel22.setText("jLabel22");
-        jPanel4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 200, -1));
-
-        jTabbedPane3.addTab("Doctor", jPanel4);
 
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -517,14 +476,14 @@ public class Patient_View extends javax.swing.JFrame {
         image_button.setText("PHOTO");
         jPanel3.add(image_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 230, 160));
 
-        close_button.setText("x");
-        jPanel3.add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, -1, -1));
-
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 730, 190));
 
         jLabel23.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel23.setText("ADD PATIENT");
         getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 180, 20));
+
+        close_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/x_lowercase-26.png"))); // NOI18N
+        getContentPane().add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 40, 20));
 
         pack();
         setLocationRelativeTo(null);
@@ -576,22 +535,14 @@ public class Patient_View extends javax.swing.JFrame {
     private javax.swing.JButton image_button;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -602,7 +553,6 @@ public class Patient_View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;

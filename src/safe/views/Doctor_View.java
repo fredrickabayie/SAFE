@@ -5,6 +5,7 @@
  */
 package safe.views;
 
+import java.util.Arrays;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
@@ -85,9 +86,21 @@ public class Doctor_View extends javax.swing.JFrame {
         return doctorDepartment.getSelectedItem().toString();
     }
     
+    /**
+     * 
+     * @return 
+     */
     public String getDoctorDate(){
         return ((JTextField)doctorDate.getDateEditor().getUiComponent()).getText();
     }
+    
+    /**
+     * Method to return password text field
+     * @return 
+     */
+    public String getPassword(){
+        return Arrays.toString(doctorPassword.getPassword());
+    }//End of getPassword
     
     
    
@@ -107,6 +120,8 @@ public class Doctor_View extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         doctorId = new javax.swing.JTextField();
         close_button = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        doctorPassword = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         doctorFname = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -145,11 +160,16 @@ public class Doctor_View extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jLabel1.setText("Doctor ID");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, -1, 40));
-        jPanel1.add(doctorId, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, 230, 40));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, -1, 40));
+        jPanel1.add(doctorId, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 230, 40));
 
         close_button.setText("x");
         jPanel1.add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 40, 20));
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel2.setText("Password");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, -1, 40));
+        jPanel1.add(doctorPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, 230, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 190));
 
@@ -272,9 +292,11 @@ public class Doctor_View extends javax.swing.JFrame {
     private javax.swing.JTextField doctorFname;
     private javax.swing.JTextField doctorId;
     private javax.swing.JButton doctorImage;
+    private javax.swing.JPasswordField doctorPassword;
     private javax.swing.JTextField doctorPhone;
     private javax.swing.JTextField doctorSname;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

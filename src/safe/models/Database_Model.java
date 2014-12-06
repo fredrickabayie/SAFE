@@ -166,7 +166,7 @@ public class Database_Model {
          {
              Object [] w = {resultSet.getString ( "doctorId" ),resultSet.getString ( "doctorFname" ),resultSet.getString ( "doctorSname" ),
                  resultSet.getString ( "doctorPhone" ),resultSet.getString ( "doctorEmail" ),resultSet.getString ( "doctorDepartment" ),
-             resultSet.getString ( "doctorDate" )};
+             resultSet.getString ( "doctorDate" ),resultSet.getString("doctorPassword")};
             
              System.out.println(""+Arrays.toString(w));
              System.out.println(resultSet.getString("doctorId"));
@@ -241,7 +241,7 @@ public class Database_Model {
         System.out.println(doctor_table_view.getRowCount());
         try{
              PreparedStatement pStatement = connection.prepareStatement ( "UPDATE doctors set doctorFname=?,doctorSname=?,"
-                     + "doctorPhone=?,doctorEmail=?,doctorDepartment=?,doctorDate=? where doctorId=?");
+                     + "doctorPhone=?,doctorEmail=?,doctorDepartment=?,doctorDate=?,doctorPassword=? where doctorId=?");
              
              for ( int i=0; i<doctor_table_view.getRowCount();i++){
                  pStatement.setString ( 1, (String) doctor_table_view.getValueAt(i, 1) );
@@ -251,7 +251,8 @@ public class Database_Model {
                  pStatement.setString ( 4, (String) doctor_table_view.getValueAt(i, 4) );
                  pStatement.setString ( 5, (String) doctor_table_view.getValueAt(i, 5) );
                  pStatement.setString ( 6, (String) doctor_table_view.getValueAt(i, 6) );
-                 pStatement.setString ( 7, (String) doctor_table_view.getValueAt(i, 0) );
+                 pStatement.setString ( 7, (String) doctor_table_view.getValueAt(i, 7) );
+                 pStatement.setString ( 8, (String) doctor_table_view.getValueAt(i, 0) );
                 
                  pStatement.executeUpdate ( );
                  pStatement.execute();
@@ -331,13 +332,14 @@ public class Database_Model {
      * @param doctorEmail
      * @param doctorDepartment
      * @param doctorDate 
+     * @param doctorPassword 
      */
     public void insertDoctordatabase(String doctorId,String doctorFname,String doctorSname,int doctorPhone,String doctorEmail,
-            String doctorDepartment,String doctorDate){
+            String doctorDepartment,String doctorDate,String doctorPassword){
         try
         {
              PreparedStatement pStatement = connection.prepareStatement ("Insert into doctors set doctorId=?, doctorFname=?,"
-                     + "doctorSname=?,doctorPhone=?,doctorEmail=?,doctorDepartment=?,doctorDate=?");
+                     + "doctorSname=?,doctorPhone=?,doctorEmail=?,doctorDepartment=?,doctorDate=?, doctorPassword=?");
              
              pStatement.setString (1, doctorId);
              pStatement.setString (2, doctorFname);
@@ -346,6 +348,7 @@ public class Database_Model {
              pStatement.setString (5, doctorEmail);
              pStatement.setString (6, doctorDepartment);
              pStatement.setString (7, doctorDate);
+             pStatement.setString (8, doctorPassword);
              
              pStatement.execute ( );
         }

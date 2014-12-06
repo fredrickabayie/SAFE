@@ -5,6 +5,7 @@
  */
 package safe.views;
 
+import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
 /**
@@ -52,6 +53,14 @@ public class Main_View extends javax.swing.JFrame {
         return doctorTable_menu;
     }//End of getDoctorTable_menu
     
+    /**
+     * Method to return doctor login menu item
+     * @return 
+     */
+    public JMenuItem getDoctorLogin_menu(){
+        return doctorLogin_menu;
+    }//End of getDoctorLogin_menu
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -75,11 +84,15 @@ public class Main_View extends javax.swing.JFrame {
         jMenu7 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
+        JMenu5 = new javax.swing.JMenu();
+        doctorLogin_menu = new javax.swing.JMenuItem();
         jMenu9 = new javax.swing.JMenu();
+        shortcut = new javax.swing.JMenuItem();
+        about = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SAFE HOSPITAL");
-        setType(java.awt.Window.Type.UTILITY);
+        setPreferredSize(new java.awt.Dimension(1360, 905));
 
         jMenuBar1.setBorder(null);
         jMenuBar1.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
@@ -134,8 +147,23 @@ public class Main_View extends javax.swing.JFrame {
         jMenu8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenuBar1.add(jMenu8);
 
-        jMenu9.setText("Login");
+        JMenu5.setText("Login");
+        JMenu5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+
+        doctorLogin_menu.setText("Login");
+        JMenu5.add(doctorLogin_menu);
+
+        jMenuBar1.add(JMenu5);
+
+        jMenu9.setText("Help");
         jMenu9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+
+        shortcut.setText("Shortcuts");
+        jMenu9.add(shortcut);
+
+        about.setText("About");
+        jMenu9.add(about);
+
         jMenuBar1.add(jMenu9);
 
         setJMenuBar(jMenuBar1);
@@ -144,11 +172,11 @@ public class Main_View extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1353, Short.MAX_VALUE)
+            .addGap(0, 1360, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 686, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         pack();
@@ -191,8 +219,11 @@ public class Main_View extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu JMenu5;
+    private javax.swing.JMenuItem about;
     private javax.swing.JMenuItem addDoctor_menu;
     private javax.swing.JMenuItem addPatient_menu;
+    private javax.swing.JMenuItem doctorLogin_menu;
     private javax.swing.JMenuItem doctorTable_menu;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -205,5 +236,6 @@ public class Main_View extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem patientTable_menu;
+    private javax.swing.JMenuItem shortcut;
     // End of variables declaration//GEN-END:variables
 }

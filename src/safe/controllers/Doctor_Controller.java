@@ -101,7 +101,7 @@ try
     doctor_table_view.getDelete().addActionListener ( actionListener );
     doctor_table_view.getClose().addActionListener ( actionListener );
     doctor_table_view.getOpen().addActionListener ( actionListener );
-     doctor_table_view.getSave().addActionListener ( actionListener );
+    doctor_table_view.getSave().addActionListener ( actionListener );
    }
    catch(Exception e){
             
@@ -119,12 +119,13 @@ public void insert(){
     String doctorEmail = doctor_view.getDoctorEmail();
     String doctorDepartment = doctor_view.getDoctorDepartment();
     String doctorDate = doctor_view.getDoctorDate();
+    String doctorPassword = doctor_view.getPassword();
     
     Doctor_Model doctor_model = new Doctor_Model(doctorId,doctorFname,doctorSname,doctorPhone,doctorEmail,
-            doctorDepartment,doctorDate);
+            doctorDepartment,doctorDate,doctorPassword);
     
     database_model.insertDoctordatabase(doctorId, doctorFname, doctorSname, doctorPhone, doctorEmail, 
-            doctorDepartment, doctorDate);
+            doctorDepartment, doctorDate,doctorPassword);
     System.out.println(""+doctor_model.toString());
 }
 

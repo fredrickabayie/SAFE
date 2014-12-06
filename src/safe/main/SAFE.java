@@ -10,6 +10,7 @@ import safe.models.Database_Model;
 import safe.controllers.Patient_Controller;
 import safe.views.Doctor_Table_View;
 import safe.views.Doctor_View;
+import safe.views.Login_View;
 import safe.views.Main_View;
 import safe.views.Patient_Table_View;
 import safe.views.Patient_View;
@@ -52,6 +53,7 @@ public class SAFE {
    Patient_View patient_view = new Patient_View ( );
    Patient_Table_View patient_table_view = new Patient_Table_View();
    Main_View main_view = new Main_View ();
+   Login_View login_view = new Login_View();
                 
                 
                 
@@ -64,7 +66,7 @@ public class SAFE {
    Doctor_Controller doctor_controller = new Doctor_Controller (doctor_view,database_controller,doctor_table_view);
                 
    Main_Controller main_controller = new Main_Controller (main_view,patient_controller,patient_view,patient_table_view,doctor_view,
-   doctor_table_view);
+   doctor_table_view,login_view);
                 
 
 // doctor_table_view.setVisible(true);

@@ -33,6 +33,7 @@ JComboBox department_combo;
         vector.add ("EMAIL");
         vector.add ("DEPARTMENT");
         vector.add ("DATE JOINED");
+        vector.add ("PASSWORD");
         table_model = new DefaultTableModel ( new Vector(),vector);
         initComponents();
         
