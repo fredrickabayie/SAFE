@@ -19,13 +19,18 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
 import java.util.Enumeration;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.Vector;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 import safe.views.Patient_View;
 import safe.models.Patient_Model;
 import safe.views.Patient_Table_View;
@@ -49,12 +54,16 @@ public final class Patient_Controller {
     Vector vector;
     Scanner input;
     PrintWriter print;
+    TableRowSorter <TableModel> rowSorter;
+    long ticket_id;
+    Connection connection;
     
 /**
  * COnstructor for the patient controller class
  * @param patient_view 
  * @param database_controller 
  * @param patient_table_view 
+     * @param rowSorter 
  */
 public Patient_Controller( Patient_View patient_view, Database_Model database_controller, 
         Patient_Table_View patient_table_view ){
@@ -62,6 +71,8 @@ public Patient_Controller( Patient_View patient_view, Database_Model database_co
  this.patient_view = patient_view;
  this.database_controller = database_controller;
  this.patient_table_view = patient_table_view;
+  rowSorter = new TableRowSorter<>(patient_table.getModel());
+  patient_table.setRowSorter( rowSorter);
      
 //       vector = new Vector();
 //        vector.add ("ID");
@@ -80,9 +91,49 @@ public Patient_Controller( Patient_View patient_view, Database_Model database_co
 //        vector.add ("SYMPTOM");
 //        vector.add ("DRUG");
 //        vector.add ("INSTRUCTION");
+    generateId();
+        patient_view.setPatientId("PAT"+ticket_id);
+        patient_view.edit();
 patientController();
 patientButton();
 }//End of Patient_Controller
+
+public void generateId(){
+int x =0;
+do{
+Random ran = new Random();
+x = ran.nextInt(100000) + 1000;
+
+
+}while(checkId(x)==true);
+
+ticket_id=x;
+}
+
+public boolean checkId(long x){
+boolean valid=true;
+try {
+java.sql.Statement s = connection.createStatement();
+java.sql.ResultSet r = s.executeQuery("SELECT patientFname FROM patients where patientId="+x+";");
+
+try{
+   if(r==null)
+	 valid= false; 
+   else
+       valid= true; 
+} catch(Exception e){
+    System.out.println(e.toString());
+   
+//valid= true;  
+}                                               
+ s.close();       
+}catch (Exception e) {
+//System.out.println("Error " + e.toString());
+valid= false; 
+//System.exit(0);
+	}
+   return valid;     
+}
     
 /**
  * method to handle buttons pressed
@@ -98,28 +149,33 @@ if ( e.getSource().equals(patient_table_view.getConnect())){
 }
 
 //Displaying what is in the database
-if (e.getSource().equals(patient_table_view.getDisplay())){
+if (e.getSource().equals(patient_table_view.getDisplay())
+   ||e.getSource().equals(patient_table_view.getDisplay_menu())){
     database_controller.displayPatientdatabase();
 }
 
 //Updating what is in the patient database
-if (e.getSource().equals(patient_table_view.getUpdate())){
+if (e.getSource().equals(patient_table_view.getUpdate())
+   ||e.getSource().equals(patient_table_view.getUpdate_menu())){
     database_controller.updatePatientdatabase();
 }
 
 //Deleting a row from the patient database
-  if (e.getSource().equals(patient_table_view.getDelete())){
+  if (e.getSource().equals(patient_table_view.getDelete())
+     ||e.getSource().equals(patient_table_view.getDelete_menu())){
     database_controller.deletePatientdatabase();
 }
 
   //The button to close the window
-  if (e.getSource().equals(patient_table_view.getClose())){
+  if (e.getSource().equals(patient_table_view.getClose())
+     ||e.getSource().equals(patient_table_view.getExit_menu())){
       System.out.println("Close button pressed");
     patient_table_view.dispose();
 }
 
   //Import button pressed
-  if (e.getSource().equals(patient_table_view.getOpen())){
+  if (e.getSource().equals(patient_table_view.getOpen())
+     ||e.getSource().equals(patient_table_view.getImport_menu())){
       System.out.println("Open button pressed");
      JFileChooser chooser = new JFileChooser();
         chooser.showOpenDialog(patient_table_view);
@@ -128,21 +184,34 @@ if (e.getSource().equals(patient_table_view.getUpdate())){
   }
 
   //Export button pressed
-  if (e.getSource().equals(patient_table_view.getSave())){
+  if (e.getSource().equals(patient_table_view.getSave())
+     ||e.getSource().equals(patient_table_view.getExport_menu())){
       System.out.println("Save button pressed");
        JFileChooser chooser = new JFileChooser();
         chooser.showSaveDialog(patient_table_view);
      file = chooser.getSelectedFile();
       save(file);
   }
+  
+  //Search button pressed
+  if (e.getSource().equals(patient_table_view.getSearch_button())){
+      search();
+  }
 };
    patient_table_view.getConnect().addActionListener ( actionListener );
    patient_table_view.getDisplay().addActionListener ( actionListener );
+   patient_table_view.getDisplay_menu().addActionListener ( actionListener );
    patient_table_view.getUpdate().addActionListener ( actionListener );
+   patient_table_view.getUpdate_menu().addActionListener ( actionListener );
    patient_table_view.getDelete().addActionListener ( actionListener );
+   patient_table_view.getDelete_menu().addActionListener ( actionListener );
    patient_table_view.getClose().addActionListener ( actionListener );
+   patient_table_view.getExit_menu().addActionListener ( actionListener );
    patient_table_view.getOpen().addActionListener ( actionListener );
+   patient_table_view.getImport_menu().addActionListener ( actionListener );
    patient_table_view.getSave().addActionListener ( actionListener );
+   patient_table_view.getExport_menu().addActionListener ( actionListener );
+   patient_table_view.getSearch_button().addActionListener(actionListener);
 }
 catch( Exception e ){
     System.out.println(e.toString());
@@ -254,7 +323,7 @@ database_controller.insertPatientdatabase(patientId, patientFname, patientSname,
  * Method to reset the text fields
  */
 private void resetTextFields(){
-    patient_view.setPatientId();
+//    patient_view.setPatientId();
      patient_view.setPatientFname();
     patient_view.setPatientSname();
  patient_view.setPatientAge();
@@ -362,6 +431,16 @@ JOptionPane.showMessageDialog(patient_table_view, "Data Saved Successfully To " 
     }
    JOptionPane.showMessageDialog(patient_table_view, "Failed To Save Data", "ERROR "+file.getName(), JOptionPane.ERROR_MESSAGE);
 }//End Of Catch
+
+/**
+ * A method to allow searching of data in the table
+ */
+public void search ( ){
+if ( patient_table_view.getSearch().trim().length() == 0 )
+           rowSorter.setRowFilter( null );
+        else
+         rowSorter.setRowFilter ( RowFilter.regexFilter ( patient_table_view.getSearch() ) );
+}//End of search
     
 }//End of class
 

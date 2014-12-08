@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package safe.main;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 import safe.controllers.Doctor_Controller;
 import safe.controllers.Main_Controller;
 import safe.models.Database_Model;
@@ -13,6 +15,7 @@ import safe.views.Doctor_View;
 import safe.views.Login_View;
 import safe.views.Main_View;
 import safe.views.Patient_Table_View;
+import static safe.views.Patient_Table_View.patient_table;
 import safe.views.Patient_View;
 
 /**
@@ -54,6 +57,7 @@ public class SAFE {
    Patient_Table_View patient_table_view = new Patient_Table_View();
    Main_View main_view = new Main_View ();
    Login_View login_view = new Login_View();
+//   TableRowSorter <TableModel> rowSorter = new TableRowSorter<>(patient_table.getModel());
                 
                 
                 
@@ -71,7 +75,7 @@ public class SAFE {
 
 // doctor_table_view.setVisible(true);
    main_view.setVisible(true);
-   main_controller.menu();
+//   main_controller.menu();
 // patient_view.setVisible ( true );
 // patient_table_view.setVisible(true);
 // doctor_view.setVisible(true);

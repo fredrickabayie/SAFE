@@ -9,6 +9,7 @@ import java.util.Vector;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JMenuItem;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
@@ -203,6 +204,67 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         return save;
     }
     
+      /**
+     * Method to return table menu item
+     * @return 
+     */
+    public JMenuItem getImport_menu(){
+        return import_menu;
+    }//End of getImport_menu
+    
+    /**
+     * Method to return table menu item
+     * @return 
+     */
+    public JMenuItem getExport_menu(){
+        return export_menu;
+    }//End of getExport_menu
+    
+    /**
+     * Method to return table menu item
+     * @return 
+     */
+    public JMenuItem getExit_menu(){
+        return exit_menu;
+    }//End of getExit_menu
+    
+    /**
+     * Method to return table menu item
+     * @return 
+     */
+    public JMenuItem getDisplay_menu(){
+        return display_menu;
+    }//End of getDisplay_menu
+    
+    /**
+     * Method to return table menu item
+     * @return 
+     */
+    public JMenuItem getUpdate_menu(){
+        return update_menu;
+    }//End of getUpdate_menu
+    
+    
+    /**
+     * Method to return table menu item
+     * @return 
+     */
+    public JMenuItem getDelete_menu(){
+        return delete_menu;
+    }//End of getDelete_menu
+    
+    /**
+     * Method to return search text field
+     * @return 
+     */
+    public String getSearch(){
+        return search_field.getText();
+    }//End of getSearch
+    
+    public JButton getSearch_button(){
+        return search_button;
+    }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -213,9 +275,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        patient_table = new javax.swing.JTable();
-        close_button = new javax.swing.JButton();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
         jToolBar1 = new javax.swing.JToolBar();
         connect = new javax.swing.JButton();
         display = new javax.swing.JButton();
@@ -223,8 +283,13 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         delete = new javax.swing.JButton();
         open = new javax.swing.JButton();
         save = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        close_button = new javax.swing.JButton();
+        search_field = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        search_button = new javax.swing.JButton();
+        jDesktopPane2 = new javax.swing.JDesktopPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        patient_table = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         import_menu = new javax.swing.JMenuItem();
@@ -240,20 +305,9 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        patient_table.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        patient_table.setModel(table_model);
-        patient_table.setCellSelectionEnabled(true);
-        patient_table.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        patient_table.setRowHeight(25);
-        jScrollPane1.setViewportView(patient_table);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1560, 600));
-
-        close_button.setText("X");
-        getContentPane().add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1520, 0, -1, -1));
-
         jToolBar1.setRollover(true);
 
+        connect.setForeground(new java.awt.Color(255, 255, 255));
         connect.setText("connect");
         jToolBar1.add(connect);
 
@@ -272,15 +326,40 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         save.setText("export");
         jToolBar1.add(save);
 
-        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 30));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1335, 0, 180, 30));
+        close_button.setText("X");
+        jToolBar1.add(close_button);
+
+        jDesktopPane1.add(jToolBar1);
+        jToolBar1.setBounds(0, 0, 1050, 50);
+        jDesktopPane1.add(search_field);
+        search_field.setBounds(1220, 10, 240, 30);
 
         jLabel1.setText("Search");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 0, 50, 30));
+        jDesktopPane1.add(jLabel1);
+        jLabel1.setBounds(1170, 10, 50, 30);
+
+        search_button.setText("Search");
+        jDesktopPane1.add(search_button);
+        search_button.setBounds(1460, 10, 69, 30);
+
+        getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1530, 50));
+
+        patient_table.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        patient_table.setModel(table_model);
+        patient_table.setCellSelectionEnabled(true);
+        patient_table.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        patient_table.setRowHeight(25);
+        jScrollPane1.setViewportView(patient_table);
+
+        jDesktopPane2.add(jScrollPane1);
+        jScrollPane1.setBounds(0, 0, 1530, 610);
+
+        getContentPane().add(jDesktopPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 61, 1530, 610));
 
         jMenuBar1.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
 
         jMenu1.setText("File");
+        jMenu1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         import_menu.setText("Import");
         jMenu1.add(import_menu);
@@ -294,6 +373,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Database");
+        jMenu2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         display_menu.setText("Display");
         jMenu2.add(display_menu);
@@ -357,16 +437,19 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     private javax.swing.JMenuItem exit_menu;
     private javax.swing.JMenuItem export_menu;
     private javax.swing.JMenuItem import_menu;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton open;
     public static javax.swing.JTable patient_table;
     private javax.swing.JButton save;
+    private javax.swing.JButton search_button;
+    private javax.swing.JTextField search_field;
     private javax.swing.JButton update;
     private javax.swing.JMenuItem update_menu;
     // End of variables declaration//GEN-END:variables

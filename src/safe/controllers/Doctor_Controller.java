@@ -18,6 +18,9 @@ import java.util.Enumeration;
 import java.util.Scanner;
 import java.util.Vector;
 import javax.swing.JFileChooser;
+import javax.swing.RowFilter;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 import safe.views.Doctor_View;
 import safe.models.Database_Model;
 import safe.models.Doctor_Model;
@@ -37,6 +40,7 @@ public class Doctor_Controller {
     Scanner input;
     PrintWriter print;
     File file;
+    TableRowSorter <TableModel> rowSorter;
     
     
 public Doctor_Controller (Doctor_View doctor_view, Database_Model database_model, Doctor_Table_View doctor_table_view){
@@ -44,6 +48,8 @@ public Doctor_Controller (Doctor_View doctor_view, Database_Model database_model
         this.database_model = database_model;
         this.doctor_table_view = doctor_table_view;
         doctorButton();
+         rowSorter = new TableRowSorter<>(doctor_table.getModel());
+         doctor_table.setRowSorter( rowSorter);
     }
     
     
@@ -60,23 +66,28 @@ try
           insert();
       }
       
-      if (e.getSource().equals(doctor_table_view.getDisplay())){
+      if (e.getSource().equals(doctor_table_view.getDisplay())
+          ||e.getSource().equals(doctor_table_view.getDisplay_menu())){
           database_model.displayDoctordatabase();
       }
       
-      if (e.getSource().equals(doctor_table_view.getUpdate())){
+      if (e.getSource().equals(doctor_table_view.getUpdate())
+         ||e.getSource().equals(doctor_table_view.getUpdate_menu())){
           database_model.updateDoctordatabase();
       }
       
-      if (e.getSource().equals(doctor_table_view.getDelete())){
+      if (e.getSource().equals(doctor_table_view.getDelete())
+              ||e.getSource().equals(doctor_table_view.getDelete_menu())){
           database_model.deleteDoctordatabase();
       }
       
-      if (e.getSource().equals(doctor_table_view.getClose())){
+      if (e.getSource().equals(doctor_table_view.getClose())
+          ||e.getSource().equals(doctor_table_view.getExit_menu())){
           doctor_table_view.dispose();
       }
       
-      if (e.getSource().equals(doctor_table_view.getOpen())){
+      if (e.getSource().equals(doctor_table_view.getOpen())
+         ||e.getSource().equals(doctor_table_view.getImport_menu())){
           System.out.println("Open button pressed");
          JFileChooser chooser = new JFileChooser();
          chooser.showOpenDialog(doctor_table_view);
@@ -84,24 +95,37 @@ try
           open(file);
       }
       
-       if (e.getSource().equals(doctor_table_view.getSave())){
+       if (e.getSource().equals(doctor_table_view.getSave())
+          ||e.getSource().equals(doctor_table_view.getExport_menu())){
           System.out.println("Save button pressed");
          JFileChooser chooser = new JFileChooser();
          chooser.showSaveDialog(doctor_table_view);
           file = chooser.getSelectedFile();
           save(file);
       }
+       
+       //Statement to get the search button
+       if (e.getSource().equals(doctor_table_view.getSearch_button())){
+           search();
+       }
       
       }  
      };
     doctor_view.getClose_button().addActionListener ( actionListener );
     doctor_view.getOk_button().addActionListener ( actionListener );
     doctor_table_view.getDisplay().addActionListener ( actionListener );
+    doctor_table_view.getDisplay_menu().addActionListener ( actionListener );
     doctor_table_view.getUpdate().addActionListener ( actionListener );
+    doctor_table_view.getUpdate_menu().addActionListener ( actionListener );
     doctor_table_view.getDelete().addActionListener ( actionListener );
+    doctor_table_view.getDelete_menu().addActionListener ( actionListener );
     doctor_table_view.getClose().addActionListener ( actionListener );
+    doctor_table_view.getExit_menu().addActionListener ( actionListener );
     doctor_table_view.getOpen().addActionListener ( actionListener );
+    doctor_table_view.getImport_menu().addActionListener ( actionListener );
     doctor_table_view.getSave().addActionListener ( actionListener );
+    doctor_table_view.getExport_menu().addActionListener ( actionListener );
+    doctor_table_view.getSearch_button().addActionListener ( actionListener );
    }
    catch(Exception e){
             
@@ -200,5 +224,15 @@ public void insert(){
         }
 //            JOptionPane.showMessageDialog(null, "Failed To Save Data", "ERROR "+file.getName(), JOptionPane.ERROR_MESSAGE);
         }//End Of Catch 
+    
+    /**
+ * A method to allow searching of data in the table
+ */
+public void search ( ){
+if ( doctor_table_view.getSearch().trim().length() == 0 )
+           rowSorter.setRowFilter( null );
+        else
+         rowSorter.setRowFilter ( RowFilter.regexFilter ( doctor_table_view.getSearch() ) );
+}//End of search
     
 }

@@ -9,6 +9,7 @@ import java.util.Vector;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JMenuItem;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
@@ -108,14 +109,6 @@ JComboBox department_combo;
         return display;
     }
     
-//    /**
-//     * 
-//     * @return 
-//     */
-//    public JButton getConnect(){
-//        return connect;
-//    }
-    
     /**
      * 
      * @return 
@@ -155,6 +148,70 @@ JComboBox department_combo;
     public JButton getSave(){
         return save;
     }//End of getSave
+    
+          /**
+     * Method to return table menu item
+     * @return 
+     */
+    public JMenuItem getImport_menu(){
+        return import_menu;
+    }//End of getImport_menu
+    
+    /**
+     * Method to return table menu item
+     * @return 
+     */
+    public JMenuItem getExport_menu(){
+        return export_menu;
+    }//End of getExport_menu
+    
+    /**
+     * Method to return table menu item
+     * @return 
+     */
+    public JMenuItem getExit_menu(){
+        return exit_menu;
+    }//End of getExit_menu
+    
+    /**
+     * Method to return table menu item
+     * @return 
+     */
+    public JMenuItem getDisplay_menu(){
+        return display_menu;
+    }//End of getDisplay_menu
+    
+    /**
+     * Method to return table menu item
+     * @return 
+     */
+    public JMenuItem getUpdate_menu(){
+        return update_menu;
+    }//End of getUpdate_menu
+    
+    /**
+     * Method to return table menu item
+     * @return 
+     */
+    public JMenuItem getDelete_menu(){
+        return delete_menu;
+    }//End of getDelete_menu
+    
+    /**
+     * Method to return the search text field
+     * @return 
+     */
+    public String getSearch(){
+        return search_field.getText();
+    }//End of getSearch
+    
+    /**
+     * Method to return the search button
+     * @return 
+     */
+    public JButton getSearch_button(){
+        return search_button;
+    }//End of getSearch
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -165,94 +222,115 @@ JComboBox department_combo;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        doctor_table = new javax.swing.JTable();
+        jDesktopPane2 = new javax.swing.JDesktopPane();
+        jToolBar1 = new javax.swing.JToolBar();
         display = new javax.swing.JButton();
         delete = new javax.swing.JButton();
         update = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        doctor_table = new javax.swing.JTable();
-        close = new javax.swing.JButton();
         open = new javax.swing.JButton();
         save = new javax.swing.JButton();
+        close = new javax.swing.JButton();
+        search_field = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        search_button = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        import_menu = new javax.swing.JMenuItem();
+        export_menu = new javax.swing.JMenuItem();
+        exit_menu = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        display_menu = new javax.swing.JMenuItem();
+        update_menu = new javax.swing.JMenuItem();
+        delete_menu = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-
-        display.setText("Display");
-
-        delete.setText("Delete");
-
-        update.setText("Update");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         doctor_table.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         doctor_table.setModel(table_model);
         doctor_table.setRowHeight(25);
         jScrollPane1.setViewportView(doctor_table);
 
-        close.setText("x");
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1300, Short.MAX_VALUE)
+        );
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jDesktopPane1.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1300, -1));
+
+        jDesktopPane2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jToolBar1.setRollover(true);
+
+        display.setText("Display");
+        jToolBar1.add(display);
+
+        delete.setText("Delete");
+        jToolBar1.add(delete);
+
+        update.setText("Update");
+        jToolBar1.add(update);
 
         open.setText("Import");
+        jToolBar1.add(open);
 
         save.setText("Export");
+        jToolBar1.add(save);
+
+        close.setText("x");
+        jToolBar1.add(close);
+
+        jDesktopPane2.add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 50));
+        jDesktopPane2.add(search_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 10, 230, 30));
+
+        jLabel1.setText("Search");
+        jDesktopPane2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 10, 45, 30));
+
+        search_button.setText("Search");
+        jDesktopPane2.add(search_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1213, 10, 80, 30));
+
+        getContentPane().add(jDesktopPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 50));
 
         jMenu1.setText("File");
+
+        import_menu.setText("Import");
+        jMenu1.add(import_menu);
+
+        export_menu.setText("Export");
+        jMenu1.add(export_menu);
+
+        exit_menu.setText("Exit");
+        jMenu1.add(exit_menu);
+
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Database");
+
+        display_menu.setText("Display");
+        jMenu2.add(display_menu);
+
+        update_menu.setText("Update");
+        jMenu2.add(update_menu);
+
+        delete_menu.setText("Delete");
+        jMenu2.add(delete_menu);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(775, 775, 775)
-                        .addComponent(open)
-                        .addGap(55, 55, 55)
-                        .addComponent(save))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(display)
-                        .addGap(165, 165, 165)
-                        .addComponent(delete)
-                        .addGap(166, 166, 166)
-                        .addComponent(update)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
-                .addComponent(close)
-                .addGap(205, 205, 205))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(display)
-                            .addComponent(delete)
-                            .addComponent(update)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(close))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(open)
-                            .addComponent(save))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83))
-        );
 
         pack();
         setLocationRelativeTo(null);
@@ -296,14 +374,26 @@ JComboBox department_combo;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton close;
     private javax.swing.JButton delete;
+    private javax.swing.JMenuItem delete_menu;
     private javax.swing.JButton display;
+    private javax.swing.JMenuItem display_menu;
     public static javax.swing.JTable doctor_table;
+    private javax.swing.JMenuItem exit_menu;
+    private javax.swing.JMenuItem export_menu;
+    private javax.swing.JMenuItem import_menu;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDesktopPane jDesktopPane2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton open;
     private javax.swing.JButton save;
+    private javax.swing.JButton search_button;
+    private javax.swing.JTextField search_field;
     private javax.swing.JButton update;
+    private javax.swing.JMenuItem update_menu;
     // End of variables declaration//GEN-END:variables
 }
