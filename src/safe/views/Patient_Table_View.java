@@ -215,14 +215,25 @@ public final class Patient_Table_View extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         patient_table = new javax.swing.JTable();
+        close_button = new javax.swing.JButton();
+        jToolBar1 = new javax.swing.JToolBar();
         connect = new javax.swing.JButton();
         display = new javax.swing.JButton();
         update = new javax.swing.JButton();
         delete = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        close_button = new javax.swing.JButton();
         open = new javax.swing.JButton();
         save = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        import_menu = new javax.swing.JMenuItem();
+        export_menu = new javax.swing.JMenuItem();
+        exit_menu = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        display_menu = new javax.swing.JMenuItem();
+        update_menu = new javax.swing.JMenuItem();
+        delete_menu = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -236,32 +247,66 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         patient_table.setRowHeight(25);
         jScrollPane1.setViewportView(patient_table);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 1560, 600));
-
-        connect.setText("connect");
-        getContentPane().add(connect, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, -1, -1));
-
-        display.setText("display");
-        getContentPane().add(display, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, -1, -1));
-
-        update.setText("update");
-        getContentPane().add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, -1, -1));
-
-        delete.setText("delete");
-        getContentPane().add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 70, -1, -1));
-
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel1.setText("PATIENT TABLE");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 200, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1560, 600));
 
         close_button.setText("X");
         getContentPane().add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1520, 0, -1, -1));
 
+        jToolBar1.setRollover(true);
+
+        connect.setText("connect");
+        jToolBar1.add(connect);
+
+        display.setText("display");
+        jToolBar1.add(display);
+
+        update.setText("update");
+        jToolBar1.add(update);
+
+        delete.setText("delete");
+        jToolBar1.add(delete);
+
         open.setText("import");
-        getContentPane().add(open, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 70, -1, -1));
+        jToolBar1.add(open);
 
         save.setText("export");
-        getContentPane().add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 70, -1, -1));
+        jToolBar1.add(save);
+
+        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 30));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1335, 0, 180, 30));
+
+        jLabel1.setText("Search");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 0, 50, 30));
+
+        jMenuBar1.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+
+        jMenu1.setText("File");
+
+        import_menu.setText("Import");
+        jMenu1.add(import_menu);
+
+        export_menu.setText("Export");
+        jMenu1.add(export_menu);
+
+        exit_menu.setText("Exit");
+        jMenu1.add(exit_menu);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Database");
+
+        display_menu.setText("Display");
+        jMenu2.add(display_menu);
+
+        update_menu.setText("Update");
+        jMenu2.add(update_menu);
+
+        delete_menu.setText("Delete");
+        jMenu2.add(delete_menu);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
         setLocationRelativeTo(null);
@@ -306,12 +351,23 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     private javax.swing.JButton close_button;
     private javax.swing.JButton connect;
     private javax.swing.JButton delete;
+    private javax.swing.JMenuItem delete_menu;
     private javax.swing.JButton display;
+    private javax.swing.JMenuItem display_menu;
+    private javax.swing.JMenuItem exit_menu;
+    private javax.swing.JMenuItem export_menu;
+    private javax.swing.JMenuItem import_menu;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton open;
     public static javax.swing.JTable patient_table;
     private javax.swing.JButton save;
     private javax.swing.JButton update;
+    private javax.swing.JMenuItem update_menu;
     // End of variables declaration//GEN-END:variables
 }

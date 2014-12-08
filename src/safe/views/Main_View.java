@@ -71,6 +71,14 @@ public class Main_View extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jToolBar1 = new javax.swing.JToolBar();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -80,8 +88,6 @@ public class Main_View extends javax.swing.JFrame {
         jMenu6 = new javax.swing.JMenu();
         addDoctor_menu = new javax.swing.JMenuItem();
         doctorTable_menu = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu7 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
         JMenu5 = new javax.swing.JMenu();
@@ -93,6 +99,44 @@ public class Main_View extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SAFE HOSPITAL");
         setPreferredSize(new java.awt.Dimension(1360, 905));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jToolBar1.setRollover(true);
+
+        jButton1.setText("addpatient");
+        jButton1.setFocusable(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton1);
+
+        jLabel1.setText("jLabel1");
+        jToolBar1.add(jLabel1);
+
+        jButton2.setText("patienttable");
+        jButton2.setFocusable(false);
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton2);
+
+        jLabel2.setText("jLabel2");
+        jToolBar1.add(jLabel2);
+
+        jButton3.setText("adddoctor");
+        jButton3.setFocusable(false);
+        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton3);
+
+        jLabel3.setText("jLabel3");
+        jToolBar1.add(jLabel3);
+
+        jButton4.setText("doctortable");
+        jButton4.setFocusable(false);
+        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton4);
+
+        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 50));
 
         jMenuBar1.setBorder(null);
         jMenuBar1.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
@@ -126,18 +170,11 @@ public class Main_View extends javax.swing.JFrame {
 
         jMenu2.add(jMenu6);
 
+        doctorTable_menu.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         doctorTable_menu.setText("Table");
         jMenu2.add(doctorTable_menu);
 
         jMenuBar1.add(jMenu2);
-
-        jMenu4.setText("Pharmacist");
-        jMenu4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-
-        jMenu7.setText("jMenu7");
-        jMenu4.add(jMenu7);
-
-        jMenuBar1.add(jMenu4);
 
         jMenu5.setText("DocPham");
         jMenu5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -167,17 +204,6 @@ public class Main_View extends javax.swing.JFrame {
         jMenuBar1.add(jMenu9);
 
         setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1360, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
 
         pack();
         setLocationRelativeTo(null);
@@ -225,16 +251,22 @@ public class Main_View extends javax.swing.JFrame {
     private javax.swing.JMenuItem addPatient_menu;
     private javax.swing.JMenuItem doctorLogin_menu;
     private javax.swing.JMenuItem doctorTable_menu;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JMenuItem patientTable_menu;
     private javax.swing.JMenuItem shortcut;
     // End of variables declaration//GEN-END:variables

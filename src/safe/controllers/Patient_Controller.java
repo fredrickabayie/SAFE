@@ -47,9 +47,7 @@ public final class Patient_Controller {
     FileInputStream inputstream;
     JFileChooser filechooser;
     Vector vector;
-//    DefaultTableModel table_model;
-     Scanner input;
-//    JFileChooser filechooser;
+    Scanner input;
     PrintWriter print;
     
 /**
@@ -61,7 +59,7 @@ public final class Patient_Controller {
 public Patient_Controller( Patient_View patient_view, Database_Model database_controller, 
         Patient_Table_View patient_table_view ){
 
- this.patient_view = patient_view;   
+ this.patient_view = patient_view;
  this.database_controller = database_controller;
  this.patient_table_view = patient_table_view;
      
