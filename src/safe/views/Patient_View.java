@@ -272,17 +272,16 @@ public class Patient_View extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         patientId = new javax.swing.JTextField();
         jDesktopPane2 = new javax.swing.JDesktopPane();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         patientNational = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         patientOccupation = new javax.swing.JTextField();
         patientAge = new javax.swing.JTextField();
         patientSname = new javax.swing.JTextField();
         patientFname = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -290,26 +289,28 @@ public class Patient_View extends javax.swing.JFrame {
         patientMaritalstatus = new javax.swing.JComboBox();
         patientBloodgroup = new javax.swing.JComboBox();
         patientBirthdate = new com.toedter.calendar.JDateChooser();
+        jLabel9 = new javax.swing.JLabel();
         jDesktopPane3 = new javax.swing.JDesktopPane();
-        jPanel2 = new javax.swing.JPanel();
-        patientAddress = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
+        patientAddress = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         patientPhone = new javax.swing.JTextField();
         jDesktopPane4 = new javax.swing.JDesktopPane();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel7 = new javax.swing.JPanel();
-        jLabel25 = new javax.swing.JLabel();
+        jDesktopPane5 = new javax.swing.JDesktopPane();
         patientDisease = new javax.swing.JTextField();
-        jLabel20 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         patientSymptom = new javax.swing.JTextArea();
+        jLabel20 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
+        jDesktopPane6 = new javax.swing.JDesktopPane();
         jLabel24 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
+        drugName = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         drugInstruction = new javax.swing.JTextArea();
-        drugName = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
 
         addPatientBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/addpatient.png"))); // NOI18N
 
@@ -324,7 +325,7 @@ public class Patient_View extends javax.swing.JFrame {
 
         ok_button.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         ok_button.setText("OK");
-        getContentPane().add(ok_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 1110, -1, -1));
+        getContentPane().add(ok_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 790, -1, -1));
 
         jLabel23.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel23.setText("ADD PATIENT");
@@ -342,6 +343,7 @@ public class Patient_View extends javax.swing.JFrame {
         image_button.setBounds(10, 20, 230, 160);
 
         jLabel16.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Patient ID");
         jDesktopPane1.add(jLabel16);
         jLabel16.setBounds(370, 130, 65, 40);
@@ -352,167 +354,196 @@ public class Patient_View extends javax.swing.JFrame {
 
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 730, 190));
 
-        jDesktopPane2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Patient Details"));
-
-        jLabel1.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        jLabel1.setText("First Name");
-        jDesktopPane2.add(jLabel1);
-        jLabel1.setBounds(10, 30, 71, 30);
-
-        jLabel3.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        jLabel3.setText("Last Name");
-        jDesktopPane2.add(jLabel3);
-        jLabel3.setBounds(10, 80, 69, 30);
-
-        jLabel2.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        jLabel2.setText("Age");
-        jDesktopPane2.add(jLabel2);
-        jLabel2.setBounds(10, 130, 26, 40);
-
-        jLabel6.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        jLabel6.setText("Occupation");
-        jDesktopPane2.add(jLabel6);
-        jLabel6.setBounds(10, 180, 78, 40);
-
-        jLabel8.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        jLabel8.setText("Nationality");
-        jDesktopPane2.add(jLabel8);
-        jLabel8.setBounds(10, 230, 71, 40);
+        jDesktopPane2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Patient Details"));
 
         patientNational.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jDesktopPane2.add(patientNational);
-        patientNational.setBounds(110, 230, 230, 40);
+        patientNational.setBounds(110, 220, 230, 40);
+
+        jLabel8.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Nationality");
+        jDesktopPane2.add(jLabel8);
+        jLabel8.setBounds(10, 220, 71, 40);
+
+        jLabel6.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Occupation");
+        jDesktopPane2.add(jLabel6);
+        jLabel6.setBounds(10, 170, 78, 40);
 
         patientOccupation.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jDesktopPane2.add(patientOccupation);
-        patientOccupation.setBounds(110, 180, 230, 40);
+        patientOccupation.setBounds(110, 170, 230, 40);
 
         patientAge.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jDesktopPane2.add(patientAge);
-        patientAge.setBounds(110, 130, 230, 40);
+        patientAge.setBounds(110, 120, 230, 40);
 
         patientSname.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         patientSname.setToolTipText("");
         jDesktopPane2.add(patientSname);
-        patientSname.setBounds(110, 80, 230, 40);
+        patientSname.setBounds(110, 70, 230, 40);
 
         patientFname.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jDesktopPane2.add(patientFname);
-        patientFname.setBounds(110, 30, 230, 40);
+        patientFname.setBounds(110, 20, 230, 40);
 
-        jLabel9.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        jLabel9.setText("Date Of Birth");
-        jDesktopPane2.add(jLabel9);
-        jLabel9.setBounds(370, 30, 89, 30);
+        jLabel1.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("First Name");
+        jDesktopPane2.add(jLabel1);
+        jLabel1.setBounds(10, 20, 71, 30);
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Last Name");
+        jDesktopPane2.add(jLabel3);
+        jLabel3.setBounds(10, 70, 69, 30);
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Age");
+        jDesktopPane2.add(jLabel2);
+        jLabel2.setBounds(10, 120, 26, 40);
 
         jLabel4.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Blood Group");
         jDesktopPane2.add(jLabel4);
-        jLabel4.setBounds(370, 80, 84, 30);
+        jLabel4.setBounds(370, 70, 84, 30);
 
         jLabel7.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Marital Status");
         jDesktopPane2.add(jLabel7);
-        jLabel7.setBounds(370, 130, 93, 40);
+        jLabel7.setBounds(370, 120, 93, 40);
 
         jLabel5.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Gender");
         jDesktopPane2.add(jLabel5);
-        jLabel5.setBounds(370, 180, 50, 30);
+        jLabel5.setBounds(370, 170, 50, 30);
 
         patientGender.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         patientGender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "null", "Male", "Female" }));
         jDesktopPane2.add(patientGender);
-        patientGender.setBounds(490, 180, 230, 40);
+        patientGender.setBounds(490, 170, 230, 40);
 
         patientMaritalstatus.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         patientMaritalstatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "null", "Single", "Married" }));
         jDesktopPane2.add(patientMaritalstatus);
-        patientMaritalstatus.setBounds(490, 130, 230, 40);
+        patientMaritalstatus.setBounds(490, 120, 230, 40);
 
         patientBloodgroup.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         patientBloodgroup.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "null", "O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-" }));
         jDesktopPane2.add(patientBloodgroup);
-        patientBloodgroup.setBounds(490, 80, 230, 40);
+        patientBloodgroup.setBounds(490, 70, 230, 40);
 
         patientBirthdate.setDateFormatString("yyyy-MM-dd");
         patientBirthdate.setMaxSelectableDate(new java.util.Date(1418346077000L));
         patientBirthdate.setMinSelectableDate(new java.util.Date(-2208985123000L));
         jDesktopPane2.add(patientBirthdate);
-        patientBirthdate.setBounds(490, 30, 230, 40);
+        patientBirthdate.setBounds(490, 20, 230, 40);
 
-        getContentPane().add(jDesktopPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 730, 300));
+        jLabel9.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Date Of Birth");
+        jDesktopPane2.add(jLabel9);
+        jLabel9.setBounds(370, 20, 89, 30);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Contact Details"));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jDesktopPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 730, 270));
 
-        patientAddress.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jPanel2.add(patientAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 228, 40));
+        jDesktopPane3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Contact Details"));
 
         jLabel10.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Address");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 40));
+        jDesktopPane3.add(jLabel10);
+        jLabel10.setBounds(10, 20, 54, 40);
+
+        patientAddress.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jDesktopPane3.add(patientAddress);
+        patientAddress.setBounds(110, 20, 228, 40);
 
         jLabel13.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Contact No");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, 40));
+        jDesktopPane3.add(jLabel13);
+        jLabel13.setBounds(370, 20, 74, 40);
 
         patientPhone.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jPanel2.add(patientPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 230, 40));
+        jDesktopPane3.add(patientPhone);
+        patientPhone.setBounds(490, 20, 230, 40);
 
-        jDesktopPane3.add(jPanel2);
-        jPanel2.setBounds(0, 20, 730, 70);
+        getContentPane().add(jDesktopPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 730, 70));
 
-        getContentPane().add(jDesktopPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, 730, 90));
-        getContentPane().add(jDesktopPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 630, 730, 190));
-
-        jTabbedPane3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Doctor Details"));
+        jDesktopPane4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Health Details"));
 
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel25.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        jLabel25.setText("Patient Disease");
-        jPanel7.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, -1, 30));
-
         patientDisease.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jPanel7.add(patientDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 230, 40));
+        jDesktopPane5.add(patientDisease);
+        patientDisease.setBounds(10, 40, 230, 40);
 
-        jLabel20.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        jLabel20.setText("Patient Symptoms");
-        jPanel7.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 0, -1, 30));
+        jLabel25.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setText("Patient Disease");
+        jDesktopPane5.add(jLabel25);
+        jLabel25.setBounds(70, 10, 104, 30);
 
         patientSymptom.setColumns(20);
         patientSymptom.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         patientSymptom.setRows(5);
         jScrollPane1.setViewportView(patientSymptom);
 
-        jPanel7.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 440, 80));
+        jDesktopPane5.add(jScrollPane1);
+        jScrollPane1.setBounds(270, 40, 440, 80);
+
+        jLabel20.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("Patient Symptoms");
+        jDesktopPane5.add(jLabel20);
+        jLabel20.setBounds(430, 10, 120, 30);
+
+        jPanel7.add(jDesktopPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 730, 130));
 
         jTabbedPane3.addTab("Report", jPanel7);
 
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel24.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("Drug Name");
-        jPanel8.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, -1, 30));
+        jDesktopPane6.add(jLabel24);
+        jLabel24.setBounds(70, 10, 74, 30);
 
-        jLabel21.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        jLabel21.setText("Instruction");
-        jPanel8.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, -1, 30));
+        drugName.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jDesktopPane6.add(drugName);
+        drugName.setBounds(10, 40, 230, 40);
 
         drugInstruction.setColumns(20);
         drugInstruction.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         drugInstruction.setRows(5);
         jScrollPane2.setViewportView(drugInstruction);
 
-        jPanel8.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 440, 80));
+        jDesktopPane6.add(jScrollPane2);
+        jScrollPane2.setBounds(270, 40, 440, 80);
 
-        drugName.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jPanel8.add(drugName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 230, 40));
+        jLabel21.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("Instruction");
+        jDesktopPane6.add(jLabel21);
+        jLabel21.setBounds(450, 10, 73, 30);
+
+        jPanel8.add(jDesktopPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 730, 130));
 
         jTabbedPane3.addTab("Prescription", jPanel8);
 
-        getContentPane().add(jTabbedPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 850, 730, 170));
+        jDesktopPane4.add(jTabbedPane3);
+        jTabbedPane3.setBounds(0, 20, 730, 170);
+
+        getContentPane().add(jDesktopPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 580, 730, 200));
 
         pack();
         setLocationRelativeTo(null);
@@ -566,6 +597,8 @@ public class Patient_View extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JDesktopPane jDesktopPane3;
     private javax.swing.JDesktopPane jDesktopPane4;
+    private javax.swing.JDesktopPane jDesktopPane5;
+    private javax.swing.JDesktopPane jDesktopPane6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
@@ -583,7 +616,6 @@ public class Patient_View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;

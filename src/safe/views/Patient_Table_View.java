@@ -5,6 +5,7 @@
  */
 package safe.views;
 
+import com.toedter.calendar.JCalendar;
 import java.util.Vector;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
@@ -87,14 +88,6 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         
     }
     
-//    //overide this to allow editing of some columns/rows
-//    public boolean isCellEditable(int row, int col) {
-//        if ((col == 0)) { 
-//            return false;
-//        }
-//        else 
-//            return true;
-//    }
               
     /**
      * 

@@ -115,27 +115,27 @@ public class Doctor_View extends javax.swing.JFrame {
     private void initComponents() {
 
         doctorBackgroundImage = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        close_button = new javax.swing.JButton();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
         doctorImage = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        doctorId = new javax.swing.JTextField();
-        close_button = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         doctorPassword = new javax.swing.JPasswordField();
-        jPanel2 = new javax.swing.JPanel();
-        doctorFname = new javax.swing.JTextField();
+        doctorId = new javax.swing.JTextField();
+        jDesktopPane2 = new javax.swing.JDesktopPane();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        doctorSname = new javax.swing.JTextField();
-        doctorPhone = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        doctorPhone = new javax.swing.JTextField();
+        doctorSname = new javax.swing.JTextField();
+        doctorFname = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        doctorEmail = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        doctorDepartment = new javax.swing.JComboBox();
         jLabel8 = new javax.swing.JLabel();
         doctorDate = new com.toedter.calendar.JDateChooser();
-        jPanel3 = new javax.swing.JPanel();
+        doctorDepartment = new javax.swing.JComboBox();
+        doctorEmail = new javax.swing.JTextField();
         ok_button = new javax.swing.JButton();
 
         doctorBackgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/newdoctor3.png"))); // NOI18N
@@ -146,8 +146,14 @@ public class Doctor_View extends javax.swing.JFrame {
         setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Unique Details"));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel9.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel9.setText("ADD DOCTOR");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 160, 20));
+
+        close_button.setText("x");
+        getContentPane().add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, -1, 20));
+
+        jDesktopPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Unique Details"));
 
         doctorImage.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         doctorImage.setText("PHOTO");
@@ -156,81 +162,98 @@ public class Doctor_View extends javax.swing.JFrame {
                 doctorImageActionPerformed(evt);
             }
         });
-        jPanel1.add(doctorImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 230, 160));
+        jDesktopPane1.add(doctorImage);
+        doctorImage.setBounds(10, 20, 230, 160);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Doctor ID");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, -1, 40));
-        jPanel1.add(doctorId, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 230, 40));
-
-        close_button.setText("x");
-        jPanel1.add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 40, 20));
+        jDesktopPane1.add(jLabel1);
+        jLabel1.setBounds(380, 90, 62, 40);
 
         jLabel2.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Password");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, -1, 40));
-        jPanel1.add(doctorPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, 230, 40));
+        jDesktopPane1.add(jLabel2);
+        jLabel2.setBounds(380, 140, 64, 40);
+        jDesktopPane1.add(doctorPassword);
+        doctorPassword.setBounds(490, 140, 230, 40);
+        jDesktopPane1.add(doctorId);
+        doctorId.setBounds(490, 90, 230, 40);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 190));
+        getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 730, 190));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Doctor Details"));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        doctorFname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                doctorFnameActionPerformed(evt);
-            }
-        });
-        jPanel2.add(doctorFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 230, 40));
+        jDesktopPane2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Doctor Details"));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("First Name");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 40));
+        jDesktopPane2.add(jLabel3);
+        jLabel3.setBounds(10, 20, 71, 40);
 
         jLabel4.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Surname");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 40));
-        jPanel2.add(doctorSname, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 230, 40));
+        jDesktopPane2.add(jLabel4);
+        jLabel4.setBounds(10, 70, 61, 40);
+
+        jLabel5.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Phone");
+        jDesktopPane2.add(jLabel5);
+        jLabel5.setBounds(10, 120, 43, 40);
 
         doctorPhone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 doctorPhoneActionPerformed(evt);
             }
         });
-        jPanel2.add(doctorPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 230, 40));
+        jDesktopPane2.add(doctorPhone);
+        doctorPhone.setBounds(110, 120, 230, 40);
+        jDesktopPane2.add(doctorSname);
+        doctorSname.setBounds(110, 70, 230, 40);
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        jLabel5.setText("Phone");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, 40));
+        doctorFname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                doctorFnameActionPerformed(evt);
+            }
+        });
+        jDesktopPane2.add(doctorFname);
+        doctorFname.setBounds(110, 20, 230, 40);
 
         jLabel6.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Email");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, 40));
-        jPanel2.add(doctorEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 230, 40));
+        jDesktopPane2.add(jLabel6);
+        jLabel6.setBounds(380, 20, 37, 40);
 
         jLabel7.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Deparment");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, 40));
-
-        doctorDepartment.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "null", "Cardiology", "ENT", "Gynaecology", "Haematology", "Oncology" }));
-        jPanel2.add(doctorDepartment, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 70, 230, 40));
+        jDesktopPane2.add(jLabel7);
+        jLabel7.setBounds(380, 70, 74, 40);
 
         jLabel8.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Date Joined");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, -1, 40));
+        jDesktopPane2.add(jLabel8);
+        jLabel8.setBounds(380, 120, 80, 40);
 
         doctorDate.setDateFormatString("yyyy-MM-dd");
         doctorDate.setMaxSelectableDate(new java.util.Date(1418346060000L));
-        jPanel2.add(doctorDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, 230, 40));
+        jDesktopPane2.add(doctorDate);
+        doctorDate.setBounds(490, 120, 230, 40);
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 730, 170));
+        doctorDepartment.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "null", "Cardiology", "ENT", "Gynaecology", "Haematology", "Oncology" }));
+        jDesktopPane2.add(doctorDepartment);
+        doctorDepartment.setBounds(490, 70, 230, 40);
+        jDesktopPane2.add(doctorEmail);
+        doctorEmail.setBounds(490, 20, 230, 40);
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        getContentPane().add(jDesktopPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 730, 170));
 
         ok_button.setText("Ok");
-        jPanel3.add(ok_button);
-
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 730, 40));
+        getContentPane().add(ok_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -295,6 +318,8 @@ public class Doctor_View extends javax.swing.JFrame {
     private javax.swing.JPasswordField doctorPassword;
     private javax.swing.JTextField doctorPhone;
     private javax.swing.JTextField doctorSname;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -303,9 +328,7 @@ public class Doctor_View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JButton ok_button;
     // End of variables declaration//GEN-END:variables
 }
