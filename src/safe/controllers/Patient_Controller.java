@@ -8,7 +8,7 @@ package safe.controllers;
 /**
  * Importing of java directories
  */
-import safe.models.Database_Model;
+import safe.models.Hospital_Database_Model;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -37,7 +37,7 @@ import safe.views.Patient_Table_View;
 import static safe.views.Patient_Table_View.patient_table;
 import static safe.views.Patient_Table_View.table_model;
 import static safe.views.Patient_Table_View.vector;
-//import safe.controllers.Database_Model;
+//import safe.controllers.Hospital_Database_Model;
 
 /**
  *
@@ -45,7 +45,7 @@ import static safe.views.Patient_Table_View.vector;
  */
 public final class Patient_Controller {
     private final Patient_View patient_view;
-    private final Database_Model database_controller;
+    private final Hospital_Database_Model database_controller;
     private final Patient_Table_View patient_table_view;
     private ActionListener actionListener;
     File file;
@@ -65,7 +65,7 @@ public final class Patient_Controller {
  * @param patient_table_view 
      * @param rowSorter 
  */
-public Patient_Controller( Patient_View patient_view, Database_Model database_controller, 
+public Patient_Controller( Patient_View patient_view, Hospital_Database_Model database_controller, 
         Patient_Table_View patient_table_view ){
 
  this.patient_view = patient_view;
@@ -98,6 +98,7 @@ patientController();
 patientButton();
 }//End of Patient_Controller
 
+
 public void generateId(){
 int x =0;
 do{
@@ -115,7 +116,7 @@ boolean valid=true;
 try {
 java.sql.Statement s = connection.createStatement();
 java.sql.ResultSet r = s.executeQuery("SELECT patientFname FROM patients where patientId="+x+";");
-
+//System.out.println(r);
 try{
    if(r==null)
 	 valid= false; 

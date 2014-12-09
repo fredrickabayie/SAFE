@@ -5,17 +5,26 @@
  */
 package safe.views;
 
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
+
 /**
  *
  * @author chokayg3
  */
 public class Chat_View extends javax.swing.JFrame {
-
+    DefaultListModel list_model;
     /**
      * Creates new form Chat_View
      */
     public Chat_View() {
+        list_model = new DefaultListModel();
         initComponents();
+    }
+    
+    public void setTime(String s){
+//        list_model.addElement(s);
+         time.setText(s);
     }
 
     /**
@@ -29,8 +38,8 @@ public class Chat_View extends javax.swing.JFrame {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
-        jLabel1 = new javax.swing.JLabel();
+        list = new javax.swing.JList();
+        time = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -39,17 +48,11 @@ public class Chat_View extends javax.swing.JFrame {
 
         jDesktopPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jList1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(jList1);
+        list.setModel(list_model);
+        jScrollPane1.setViewportView(list);
 
-        jDesktopPane1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 390, 400));
-
-        jLabel1.setText("jLabel1");
-        jDesktopPane1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 270, 30));
+        jDesktopPane1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 380, 380));
+        jDesktopPane1.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 270, 30));
         jDesktopPane1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 270, 50));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -114,10 +117,10 @@ public class Chat_View extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JList jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
+    public static javax.swing.JList list;
+    private javax.swing.JLabel time;
     // End of variables declaration//GEN-END:variables
 }

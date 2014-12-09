@@ -22,7 +22,7 @@ import javax.swing.RowFilter;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import safe.views.Doctor_View;
-import safe.models.Database_Model;
+import safe.models.Hospital_Database_Model;
 import safe.models.Doctor_Model;
 import safe.views.Doctor_Table_View;
 import static safe.views.Doctor_Table_View.table_model;
@@ -34,7 +34,7 @@ import static safe.views.Doctor_Table_View.doctor_table;
  */
 public class Doctor_Controller {
     Doctor_View doctor_view;
-    Database_Model database_model;
+    Hospital_Database_Model database_model;
     ActionListener actionListener;
     Doctor_Table_View doctor_table_view;
     Scanner input;
@@ -43,7 +43,7 @@ public class Doctor_Controller {
     TableRowSorter <TableModel> rowSorter;
     
     
-public Doctor_Controller (Doctor_View doctor_view, Database_Model database_model, Doctor_Table_View doctor_table_view){
+public Doctor_Controller (Doctor_View doctor_view, Hospital_Database_Model database_model, Doctor_Table_View doctor_table_view){
         this.doctor_view = doctor_view;
         this.database_model = database_model;
         this.doctor_table_view = doctor_table_view;

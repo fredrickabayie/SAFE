@@ -8,7 +8,7 @@ import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import safe.controllers.Doctor_Controller;
 import safe.controllers.Main_Controller;
-import safe.models.Database_Model;
+import safe.models.Hospital_Database_Model;
 import safe.controllers.Patient_Controller;
 import safe.views.Doctor_Table_View;
 import safe.views.Doctor_View;
@@ -65,7 +65,7 @@ public class SAFE {
    Doctor_View doctor_view = new Doctor_View ( );
    Doctor_Table_View doctor_table_view = new Doctor_Table_View ();
                 
-   Database_Model database_controller = new Database_Model ( patient_view,patient_table_view,doctor_view,doctor_table_view );
+   Hospital_Database_Model database_controller = new Hospital_Database_Model ( patient_view,patient_table_view,doctor_view,doctor_table_view );
    Patient_Controller patient_controller = new Patient_Controller ( patient_view, database_controller, patient_table_view );
    Doctor_Controller doctor_controller = new Doctor_Controller (doctor_view,database_controller,doctor_table_view);
                 

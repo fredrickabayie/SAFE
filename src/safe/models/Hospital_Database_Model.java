@@ -17,7 +17,7 @@ import safe.views.Patient_Table_View;
  *
  * @author chokayg3
  */
-public class Database_Model {
+public class Hospital_Database_Model {
     Connection connection = null;
     Patient_View patient_view;
     Patient_Table_View patient_table_view;
@@ -31,7 +31,7 @@ public class Database_Model {
      * @param doctor_view 
      * @param doctor_table_view 
      */
-    public Database_Model(Patient_View patient_view, Patient_Table_View patient_table_view, Doctor_View doctor_view,
+    public Hospital_Database_Model(Patient_View patient_view, Patient_Table_View patient_table_view, Doctor_View doctor_view,
             Doctor_Table_View doctor_table_view){
         this.patient_view = patient_view;
         this.patient_table_view = patient_table_view;
