@@ -3,9 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/ASHESICOLLEGE/JUNIOR/PROGRAMMING%203/NetBeans%20IDE%208.0/SAFE/src/safe/main/SAFE.java</file>
-            <file>file:/E:/ASHESICOLLEGE/JUNIOR/PROGRAMMING%203/NetBeans%20IDE%208.0/SAFE/src/safe/model/Patient.java</file>
-            <file>file:/E:/ASHESICOLLEGE/JUNIOR/PROGRAMMING%203/NetBeans%20IDE%208.0/SAFE/src/safe/model/Doctor.java</file>
+            <file>file:/C:/Users/fred/Desktop/SAFE/SAFE/src/safe/views/Patient_View.java</file>
+            <file>file:/C:/Users/fred/Desktop/SAFE/SAFE/src/safe/controllers/Patient_Controller.java</file>
+            <file>file:/C:/Users/fred/Desktop/SAFE/SAFE/src/safe/views/Doctor_Table_View.java</file>
         </group>
     </open-files>
 </project-private>
