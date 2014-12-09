@@ -47,7 +47,7 @@ public class Hospital_Database_Model {
     try
         {
             Class.forName ( "com.mysql.jdbc.Driver" ).newInstance ( );
-             connection = java.sql.DriverManager.getConnection("jdbc:mysql://10.10.30.83/safe?user=safe&password=");
+             connection = java.sql.DriverManager.getConnection("jdbc:mysql://10.10.30.113/safe?user=safe&password=");
              System.out.println ( "Connected" );
         }//End Of Try
         catch ( ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException e )
@@ -74,27 +74,20 @@ public class Hospital_Database_Model {
      * @param patientSymptom 
      * @param drugName 
      * @param drugInstruction 
+     * @param patientImage 
 
      */
     public void insertPatientdatabase ( String patientId, String patientFname, String patientSname, int patientAge, String patientAddress, 
             int patientPhone, String patientGender, String patientOccupation, String patientBloodgroup, String patientMaritalstatus,
             String patientBirthdate, String patientNational, String patientDisease, String patientSymptom, String drugName,
-            String drugInstruction ) {
-//        JFileChooser filechooser = new JFileChooser();
-//                    filechooser.showOpenDialog(patient_view);
-//                    File file = filechooser.getSelectedFile();
-//                    String path = file.getAbsolutePath();
-//                    patient_view.getImage_button().setIcon(new ImageIcon (path));
+            String drugInstruction, byte[] patientImage ) {
+
          try
         {
-//            FileInputStream input = new FileInputStream(file);
-//            int length = ( int )file.length();
-//            patientImage = input;
-            
             PreparedStatement pStatement = connection.prepareStatement ( "Insert Into patients set patientId=?, patientFname=?,"
                     + " patientSname=?, patientAge=?, patientAddress=?, patientPhone=?, patientGender=?, patientOccupation=?,"
             + "patientBloodgroup=?, patientMaritalstatus=?, patientBirthdate=?, patientNational=?,patientDisease=?,patientSymptom=?,"
-                    + "drugName=?,drugInstruction=?" );
+                    + "drugName=?,drugInstruction=?,patientImage=?" );
             pStatement.setString ( 1, patientId );
             pStatement.setString ( 2, patientFname );
             pStatement.setString ( 3, patientSname );
@@ -111,7 +104,7 @@ public class Hospital_Database_Model {
             pStatement.setString ( 14, patientSymptom );
             pStatement.setString ( 15, drugName );
             pStatement.setString ( 16, drugInstruction );
-//            pStatement.setBlob ( 17, patientImage );
+            pStatement.setBytes ( 17, patientImage );
             pStatement.execute ( );
         }//End Of Try
         catch ( SQLException e )
@@ -121,7 +114,7 @@ public class Hospital_Database_Model {
     }
     
     /**
-     * 
+     *Method to display patient database
      */
     public void displayPatientdatabase ( ) {
          patient_table_view.setRowCount(0);        
@@ -181,13 +174,6 @@ public class Hospital_Database_Model {
 //        JOptionPane.showMessageDialog(null, "Failed To Display The Data In The DataBase", "Failed", JOptionPane.ERROR_MESSAGE);
         }//End Of Catch
     }
-    
-    
-    
-    
-    
-    
-    
     
 /**
  * update method for patients

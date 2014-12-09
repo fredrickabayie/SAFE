@@ -87,7 +87,6 @@ public final class Patient_Table_View extends javax.swing.JFrame {
 //        isCellEditable(0,0);
         
     }
-    
               
     /**
      * 

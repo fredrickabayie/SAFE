@@ -18,6 +18,7 @@ import java.util.Enumeration;
 import java.util.Scanner;
 import java.util.Vector;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
@@ -175,12 +176,12 @@ public void insert(){
             }
          input.close();
          System.out.println("Opened data");
-//         JOptionPane.showMessageDialog ( null, "Successfully Opened The File " +file.getName(), "OPENED", JOptionPane.INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog ( doctor_table_view, "Successfully Opened The File " +file.getName(), "OPENED", JOptionPane.INFORMATION_MESSAGE);
         }//End Of Try
         catch (IOException ex)
         { 
             System.out.println(ex.toString());
-//        JOptionPane.showMessageDialog(null, "Failed To Open File " +file.getName(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(doctor_table_view, "Failed To Open File " +file.getName(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }//End Of Catch
     }
  
@@ -216,13 +217,13 @@ public void insert(){
 //            System.out.println(table_model.getDataVector().elementAt(0));
             print.close();          
             System.out.println("Saved data to file");
-//         JOptionPane.showMessageDialog(null, "Data Saved Successfully To " +file.getName(), "SAVED", JOptionPane.INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(doctor_table_view, "Data Saved Successfully To " +file.getName(), "SAVED", JOptionPane.INFORMATION_MESSAGE);
         }//End Of Try
         catch (IOException ex) 
         { 
             System.out.println(""+ex.toString());
         }
-//            JOptionPane.showMessageDialog(null, "Failed To Save Data", "ERROR "+file.getName(), JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(doctor_table_view, "Failed To Save Data", "ERROR "+file.getName(), JOptionPane.ERROR_MESSAGE);
         }//End Of Catch 
     
     /**
@@ -235,4 +236,4 @@ if ( doctor_table_view.getSearch().trim().length() == 0 )
          rowSorter.setRowFilter ( RowFilter.regexFilter ( doctor_table_view.getSearch() ) );
 }//End of search
     
-}
+}//End of class

@@ -6,6 +6,7 @@
 package safe.views;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
@@ -44,6 +45,16 @@ public class Patient_View extends javax.swing.JFrame {
     public JButton getImage_button(){
         return image_button;
     }//End of getImage_button
+    
+    public byte[] getPath(){
+        String n = path.getText().toString();
+         byte [] byt = n.getBytes();
+         return byt;
+    }
+    
+    public void setPath(String s){
+        path.setText(s);
+    }
     
     /**
      * A method to get a string in a text field id
@@ -271,6 +282,7 @@ public class Patient_View extends javax.swing.JFrame {
         image_button = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         patientId = new javax.swing.JTextField();
+        path = new javax.swing.JTextField();
         jDesktopPane2 = new javax.swing.JDesktopPane();
         patientNational = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -351,6 +363,8 @@ public class Patient_View extends javax.swing.JFrame {
         patientId.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jDesktopPane1.add(patientId);
         patientId.setBounds(490, 130, 230, 40);
+        jDesktopPane1.add(path);
+        path.setBounds(250, 30, 460, 50);
 
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 730, 190));
 
@@ -622,6 +636,7 @@ public class Patient_View extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JButton ok_button;
+    private javax.swing.JTextField path;
     private javax.swing.JTextField patientAddress;
     private javax.swing.JTextField patientAge;
     private com.toedter.calendar.JDateChooser patientBirthdate;

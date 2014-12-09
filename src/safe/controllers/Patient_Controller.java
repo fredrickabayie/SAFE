@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
@@ -25,6 +26,7 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.Vector;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
@@ -224,11 +226,6 @@ catch( Exception e ){
  * A method to connect to the database
  */
 public void patientController ( ){
-//                JFileChooser filechooser = new JFileChooser();
-//                    filechooser.showOpenDialog(patient_view);
-//                    File file = filechooser.getSelectedFile();
-//                    String path = file.getAbsolutePath();
-//                    patient_view.getImage_button().setIcon(new ImageIcon (path));
 try
 {
 actionListener = new ActionListener ( ){
@@ -236,11 +233,14 @@ actionListener = new ActionListener ( ){
     public void actionPerformed ( ActionEvent e ){
 
     if ( e.getSource( ).equals ( patient_view.getImage_button ( ))){
-        JFileChooser filechooser = new JFileChooser();
-        filechooser.showOpenDialog(patient_view);
-        file = filechooser.getSelectedFile();
-        String path = file.getAbsolutePath();
-        patient_view.getImage_button().setIcon(new ImageIcon (path));
+//        JFileChooser filechooser = new JFileChooser();
+//        filechooser.showOpenDialog(patient_view);
+//        file = filechooser.getSelectedFile();
+//        String path = file.getAbsolutePath();
+//        System.out.println(""+path);
+//        patient_view.setPath(path);
+//        patient_view.getImage_button().setIcon(new ImageIcon (path));
+        image();
     }//End of if
 
     if ( e.getSource( ).equals( patient_view.getClose_button ( ))){
@@ -250,8 +250,6 @@ actionListener = new ActionListener ( ){
     if ( e.getSource( ).equals ( patient_view.getOk_button ( ))){
         insert();
     }//End of if
-
-
 
 }//End of actionPerformed
 };//End of ActionListener
@@ -276,37 +274,23 @@ private void insert(){
         System.out.println("Fields empty");
     }
     else{
-     String patientId = patient_view.getPatientId();
-     String patientFname = patient_view.getPatientFname();
-     String patientSname = patient_view.getPatientSname();
-     int patientAge = patient_view.getPatientAge();
-      String patientAddress = patient_view.getPatientAddress();
+    String patientId = patient_view.getPatientId();
+    String patientFname = patient_view.getPatientFname();
+    String patientSname = patient_view.getPatientSname();
+    int patientAge = patient_view.getPatientAge();
+    String patientAddress = patient_view.getPatientAddress();
     int patientPhone = patient_view.getPatientPhone();
-   String patientNational = patient_view.getPatientNational();
+    String patientNational = patient_view.getPatientNational();
     String patientBloodgroup = patient_view.getPatientBloodgroup();
     String patientOccupation = patient_view.getPatientOccupation();
-  String patientGender = patient_view.getPatientGender();
+    String patientGender = patient_view.getPatientGender();
     String patientMaritalstatus = patient_view.getPatientMaritalstatus();
     String patientBirthdate = patient_view.getPatientBirthdate();
     String patientDisease = patient_view.getPatientDisease();
     String patientSymptom = patient_view.getPatientSymptom();
     String drugName = patient_view.getDrugName();
     String drugInstruction = patient_view.getDrugInstruction();
-//      byte patientImage = patient_view.getPatientImage();
-//      inputstream = new FileInputStream(file);
-//      int len = ( int ) file.length();
-//     if ( e.getSource( ).equals ( patient_view.getBrowse_button ( ))){
-//      JFileChooser filechooser = new JFileChooser();
-//      filechooser.showOpenDialog(patient_view);
-//      file = filechooser.getSelectedFile();
-//                   String path = file.getAbsolutePath();
-//                    patient_view.getImage_button().setIcon(new ImageIcon (path));
-//                    
-//                }//End of if
-//                                FileInputStream input = new FileInputStream(file);
-//                    int length = ( int )file.length();
-//                    patientImage = input;
-//                   patientValidate();
+    patientImage = patient_view.getPath();
 
 Patient_Model patient_model = new Patient_Model ( patientId, patientFname, patientSname, patientAge, patientAddress, 
     patientPhone, patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate,
@@ -314,7 +298,7 @@ Patient_Model patient_model = new Patient_Model ( patientId, patientFname, patie
 
 database_controller.insertPatientdatabase(patientId, patientFname, patientSname, patientAge, patientAddress, patientPhone,
     patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate, patientNational, 
-    patientDisease, patientSymptom, drugName, drugInstruction );
+    patientDisease, patientSymptom, drugName, drugInstruction,patientImage );
     System.out.println ( ""+patient_model.toString() );
     resetTextFields();
     }
@@ -383,7 +367,7 @@ try
         table_model.addRow(row);
     }
  input.close();
- System.out.println("OPened data");
+ System.out.println("Opened data");
  JOptionPane.showMessageDialog ( patient_table_view, "Successfully Opened The File " +file.getName(), "OPENED", JOptionPane.INFORMATION_MESSAGE);
 }//End Of Try
 catch (IOException ex)
@@ -429,8 +413,8 @@ JOptionPane.showMessageDialog(patient_table_view, "Data Saved Successfully To " 
     catch (IOException ex) 
     { 
         System.out.println(""+ex.toString());
+        JOptionPane.showMessageDialog(patient_table_view, "Failed To Save Data", "ERROR "+file.getName(), JOptionPane.ERROR_MESSAGE);
     }
-   JOptionPane.showMessageDialog(patient_table_view, "Failed To Save Data", "ERROR "+file.getName(), JOptionPane.ERROR_MESSAGE);
 }//End Of Catch
 
 /**
@@ -442,6 +426,31 @@ if ( patient_table_view.getSearch().trim().length() == 0 )
         else
          rowSorter.setRowFilter ( RowFilter.regexFilter ( patient_table_view.getSearch() ) );
 }//End of search
+
+public void image(){
+    JFileChooser filechooser = new JFileChooser();
+        filechooser.showOpenDialog(patient_view);
+        file = filechooser.getSelectedFile();
+        String path = file.getAbsolutePath();
+        System.out.println(""+path);
+        patient_view.setPath(path);
+        patient_view.getImage_button().setIcon(new ImageIcon (path));
+        try{
+            File image = new File(path);
+            FileInputStream inputStream = new FileInputStream(image);
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            byte[] byt = new byte[1024];
+            for ( int readNum; (readNum=inputStream.read(byt))!=-1;){
+                outputStream.write(byt,0,readNum);
+            }
+            patientImage = outputStream.toByteArray();
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }
+}
+
+byte[] patientImage = null;
     
 }//End of class
 
