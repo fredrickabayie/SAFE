@@ -21,6 +21,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Random;
@@ -30,6 +31,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -196,6 +198,11 @@ if (e.getSource().equals(patient_table_view.getUpdate())
   if (e.getSource().equals(patient_table_view.getSearch_button())){
       search();
   }
+  
+    //Print menu
+  if (e.getSource().equals(patient_table_view.getPrint_menu())){
+      print();
+  }
 };
    patient_table_view.getDisplay().addActionListener ( actionListener );
    patient_table_view.getDisplay_menu().addActionListener ( actionListener );
@@ -210,6 +217,7 @@ if (e.getSource().equals(patient_table_view.getUpdate())
    patient_table_view.getSave().addActionListener ( actionListener );
    patient_table_view.getExport_menu().addActionListener ( actionListener );
    patient_table_view.getSearch_button().addActionListener(actionListener);
+   patient_table_view.getPrint_menu().addActionListener(actionListener);
 }
 catch( Exception e ){
     System.out.println(e.toString());
@@ -447,5 +455,19 @@ public void image(){
 }
 
 byte[] patientImage = null;
+
+/**
+ * Method to print the table
+ */
+public void print(){
+    MessageFormat header = new MessageFormat("Report Print");
+    MessageFormat footer = new MessageFormat("Page{0,number,integer}");
+    try{
+        patient_table.print(JTable.PrintMode.NORMAL,header,footer);
+    }
+    catch(Exception e){
+        System.out.println(e.toString());
+    }
+}
     
 }//End of class

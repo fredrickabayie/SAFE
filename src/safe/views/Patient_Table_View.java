@@ -245,9 +245,21 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         return search_field.getText();
     }//End of getSearch
     
+    /**
+     * Method to get search button
+     * @return 
+     */
     public JButton getSearch_button(){
         return search_button;
-    }
+    }//End of getSearch_button
+    
+    /**
+     * Method to return print menu
+     * @return 
+     */
+    public JMenuItem getPrint_menu(){
+        return print_menu;
+    }//End of getPrint_menu
     
     
     /**
@@ -275,7 +287,6 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         close_button = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
         search_field = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         search_button = new javax.swing.JButton();
         jDesktopPane2 = new javax.swing.JDesktopPane();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -289,9 +300,10 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         display_menu = new javax.swing.JMenuItem();
         update_menu = new javax.swing.JMenuItem();
         delete_menu = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        print_menu = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setAlwaysOnTop(true);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -338,16 +350,12 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         jDesktopPane1.add(jToolBar1);
         jToolBar1.setBounds(0, 0, 1050, 50);
         jDesktopPane1.add(search_field);
-        search_field.setBounds(1220, 10, 240, 30);
+        search_field.setBounds(1260, 10, 230, 30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/search-32.png"))); // NOI18N
-        jLabel1.setToolTipText("search");
-        jDesktopPane1.add(jLabel1);
-        jLabel1.setBounds(1180, 10, 40, 30);
-
-        search_button.setText("Search");
+        search_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/search-32.png"))); // NOI18N
+        search_button.setToolTipText("Search");
         jDesktopPane1.add(search_button);
-        search_button.setBounds(1460, 10, 69, 30);
+        search_button.setBounds(1490, 10, 40, 30);
 
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1530, 50));
 
@@ -405,6 +413,15 @@ public final class Patient_Table_View extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setText("More");
+        jMenu3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+
+        print_menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        print_menu.setText("Print");
+        jMenu3.add(print_menu);
+
+        jMenuBar1.add(jMenu3);
+
         setJMenuBar(jMenuBar1);
 
         pack();
@@ -457,12 +474,12 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     private javax.swing.JMenuItem import_menu;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JDesktopPane jDesktopPane2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar.Separator jSeparator1;
@@ -472,6 +489,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton open;
     public static javax.swing.JTable patient_table;
+    private javax.swing.JMenuItem print_menu;
     private javax.swing.JButton save;
     private javax.swing.JButton search_button;
     private javax.swing.JTextField search_field;

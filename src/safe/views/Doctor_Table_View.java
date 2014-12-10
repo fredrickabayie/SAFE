@@ -227,14 +227,20 @@ JComboBox department_combo;
         doctor_table = new javax.swing.JTable();
         jDesktopPane2 = new javax.swing.JDesktopPane();
         jToolBar1 = new javax.swing.JToolBar();
+        jSeparator6 = new javax.swing.JToolBar.Separator();
         display = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         delete = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         update = new javax.swing.JButton();
+        jSeparator5 = new javax.swing.JToolBar.Separator();
         open = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         save = new javax.swing.JButton();
+        jSeparator4 = new javax.swing.JToolBar.Separator();
         close = new javax.swing.JButton();
+        jSeparator3 = new javax.swing.JToolBar.Separator();
         search_field = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         search_button = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -275,44 +281,55 @@ JComboBox department_combo;
         jDesktopPane2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jToolBar1.setRollover(true);
+        jToolBar1.add(jSeparator6);
 
         display.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/accept_database-32.png"))); // NOI18N
         display.setToolTipText("Display data in database");
         jToolBar1.add(display);
 
+        jLabel4.setText("     ");
+        jToolBar1.add(jLabel4);
+
         delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/delete_database-32.png"))); // NOI18N
         delete.setToolTipText("Delete data from database");
         jToolBar1.add(delete);
 
+        jLabel3.setText("     ");
+        jToolBar1.add(jLabel3);
+
         update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/data_backup-32.png"))); // NOI18N
         update.setToolTipText("Update data in database");
         jToolBar1.add(update);
+        jToolBar1.add(jSeparator5);
 
         open.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/import-32.png"))); // NOI18N
         open.setToolTipText("Import data from csv");
         jToolBar1.add(open);
 
+        jLabel2.setText("     ");
+        jToolBar1.add(jLabel2);
+
         save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/export-32.png"))); // NOI18N
         save.setToolTipText("Export data to csv");
         jToolBar1.add(save);
+        jToolBar1.add(jSeparator4);
 
         close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/cancel-32.png"))); // NOI18N
         close.setToolTipText("Exit");
         jToolBar1.add(close);
+        jToolBar1.add(jSeparator3);
 
         jDesktopPane2.add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 50));
-        jDesktopPane2.add(search_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 10, 230, 30));
+        jDesktopPane2.add(search_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 10, 230, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/search-32.png"))); // NOI18N
-        jLabel1.setToolTipText("search");
-        jDesktopPane2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 10, -1, 30));
-
-        search_button.setText("Search");
-        jDesktopPane2.add(search_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1213, 10, 80, 30));
+        search_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/search-32.png"))); // NOI18N
+        search_button.setToolTipText("Search");
+        jDesktopPane2.add(search_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 10, 40, 30));
 
         getContentPane().add(jDesktopPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 50));
 
         jMenu1.setText("File");
+        jMenu1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         import_menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
         import_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/import-26.png"))); // NOI18N
@@ -332,6 +349,7 @@ JComboBox department_combo;
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Database");
+        jMenu2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         display_menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
         display_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/accept_database-26.png"))); // NOI18N
@@ -403,11 +421,17 @@ JComboBox department_combo;
     private javax.swing.JMenuItem import_menu;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JDesktopPane jDesktopPane2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JToolBar.Separator jSeparator3;
+    private javax.swing.JToolBar.Separator jSeparator4;
+    private javax.swing.JToolBar.Separator jSeparator5;
+    private javax.swing.JToolBar.Separator jSeparator6;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton open;
     private javax.swing.JButton save;
