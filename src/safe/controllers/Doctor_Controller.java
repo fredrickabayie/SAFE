@@ -5,8 +5,10 @@
  */
 package safe.controllers;
 
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.print.PrinterException;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -14,11 +16,13 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.MessageFormat;
 import java.util.Enumeration;
 import java.util.Scanner;
 import java.util.Vector;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.RowFilter;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
@@ -28,6 +32,7 @@ import safe.models.Doctor_Model;
 import safe.views.Doctor_Table_View;
 import static safe.views.Doctor_Table_View.table_model;
 import static safe.views.Doctor_Table_View.doctor_table;
+import static safe.views.Patient_Table_View.patient_table;
 
 /**
  *
@@ -58,6 +63,7 @@ public void doctorButton (){
 try
    {
     actionListener = new ActionListener ( ){
+    @Override
     public void actionPerformed ( ActionEvent e ){
       if (e.getSource().equals(doctor_view.getClose_button())){
            doctor_view.dispose();
@@ -109,6 +115,12 @@ try
        if (e.getSource().equals(doctor_table_view.getSearch_button())){
            search();
        }
+       
+       //Print report
+       if (e.getSource().equals(doctor_table_view.getPrint_button())
+          ||e.getSource().equals(doctor_table_view.getPrint_menu())){
+           print();
+       }
       
       }  
      };
@@ -127,6 +139,8 @@ try
     doctor_table_view.getSave().addActionListener ( actionListener );
     doctor_table_view.getExport_menu().addActionListener ( actionListener );
     doctor_table_view.getSearch_button().addActionListener ( actionListener );
+    doctor_table_view.getPrint_button().addActionListener ( actionListener );
+    doctor_table_view.getPrint_menu().addActionListener ( actionListener );
    }
    catch(Exception e){
             
@@ -235,5 +249,21 @@ if ( doctor_table_view.getSearch().trim().length() == 0 )
         else
          rowSorter.setRowFilter ( RowFilter.regexFilter ( doctor_table_view.getSearch() ) );
 }//End of search
+
+/**
+ * Method to print the table
+ */
+public void print(){
+    MessageFormat header = new MessageFormat("Report Print");
+    MessageFormat footer = new MessageFormat("Page{0,number,integer}");
+    try{
+        doctor_table.print(JTable.PrintMode.NORMAL,header,footer);
+    }
+    catch(PrinterException | HeadlessException e){
+        System.out.println(e.toString());
+        JOptionPane.showMessageDialog(doctor_table_view, "Failed To Print Data", "ERROR", JOptionPane.ERROR_MESSAGE);
+    }
+    JOptionPane.showMessageDialog(doctor_table_view, "Data Printed Successfully", "PRINTED", JOptionPane.INFORMATION_MESSAGE);
+}
     
 }//End of class

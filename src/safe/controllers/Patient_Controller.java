@@ -28,12 +28,10 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.Vector;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.RowFilter;
-import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import safe.views.Patient_View;
@@ -41,8 +39,6 @@ import safe.models.Patient_Model;
 import safe.views.Patient_Table_View;
 import static safe.views.Patient_Table_View.patient_table;
 import static safe.views.Patient_Table_View.table_model;
-import static safe.views.Patient_Table_View.vector;
-//import safe.controllers.Hospital_Database_Model;
 
 /**
  *
@@ -68,7 +64,6 @@ public final class Patient_Controller {
  * @param patient_view 
  * @param database_controller 
  * @param patient_table_view 
-     * @param rowSorter 
  */
 public Patient_Controller( Patient_View patient_view, Hospital_Database_Model database_controller, 
         Patient_Table_View patient_table_view ){

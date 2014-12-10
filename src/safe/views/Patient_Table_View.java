@@ -305,10 +305,17 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         import_menu = new javax.swing.JMenuItem();
         export_menu = new javax.swing.JMenuItem();
+        jSeparator6 = new javax.swing.JPopupMenu.Separator();
         exit_menu = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         display_menu = new javax.swing.JMenuItem();
+        jSeparator8 = new javax.swing.JPopupMenu.Separator();
         update_menu = new javax.swing.JMenuItem();
+        jSeparator7 = new javax.swing.JPopupMenu.Separator();
         delete_menu = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         print_menu = new javax.swing.JMenuItem();
@@ -366,13 +373,15 @@ public final class Patient_Table_View extends javax.swing.JFrame {
 
         jDesktopPane1.add(jToolBar1);
         jToolBar1.setBounds(0, 0, 1050, 50);
+
+        search_field.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jDesktopPane1.add(search_field);
-        search_field.setBounds(1260, 10, 230, 30);
+        search_field.setBounds(1260, 10, 230, 35);
 
         search_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/search-32.png"))); // NOI18N
         search_button.setToolTipText("Search");
         jDesktopPane1.add(search_button);
-        search_button.setBounds(1490, 10, 40, 30);
+        search_button.setBounds(1490, 10, 40, 35);
 
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1530, 50));
 
@@ -402,6 +411,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         export_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/export-26.png"))); // NOI18N
         export_menu.setText("Export");
         jMenu1.add(export_menu);
+        jMenu1.add(jSeparator6);
 
         exit_menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
         exit_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/cancel-26.png"))); // NOI18N
@@ -410,6 +420,26 @@ public final class Patient_Table_View extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu4.setText("Edit");
+        jMenu4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/delete-26.png"))); // NOI18N
+        jMenu5.setText("Delete");
+
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/Delete_Row-26.png"))); // NOI18N
+        jMenuItem2.setText("Row");
+        jMenu5.add(jMenuItem2);
+
+        jMenu4.add(jMenu5);
+
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/delete_file-26.png"))); // NOI18N
+        jMenuItem1.setText("Clear");
+        jMenu4.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu4);
+
         jMenu2.setText("Database");
         jMenu2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
@@ -417,11 +447,13 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         display_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/accept_database-26.png"))); // NOI18N
         display_menu.setText("Display");
         jMenu2.add(display_menu);
+        jMenu2.add(jSeparator8);
 
         update_menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
         update_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/data_backup-26.png"))); // NOI18N
         update_menu.setText("Update");
         jMenu2.add(update_menu);
+        jMenu2.add(jSeparator7);
 
         delete_menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
         delete_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/delete_database-26.png"))); // NOI18N
@@ -498,13 +530,20 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator4;
     private javax.swing.JToolBar.Separator jSeparator5;
+    private javax.swing.JPopupMenu.Separator jSeparator6;
+    private javax.swing.JPopupMenu.Separator jSeparator7;
+    private javax.swing.JPopupMenu.Separator jSeparator8;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton open;
     public static javax.swing.JTable patient_table;

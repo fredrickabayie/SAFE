@@ -212,6 +212,22 @@ JComboBox department_combo;
     public JButton getSearch_button(){
         return search_button;
     }//End of getSearch
+    
+    /**
+     * Method to return print button
+     * @return 
+     */
+    public JButton getPrint_button(){
+        return print;
+    }//End of getPrint_button
+    
+    /**
+     * Method to return print menu
+     * @return 
+     */
+    public JMenuItem getPrint_menu(){
+        return print_menu;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -238,8 +254,10 @@ JComboBox department_combo;
         jLabel2 = new javax.swing.JLabel();
         save = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
-        close = new javax.swing.JButton();
+        print = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JToolBar.Separator();
+        close = new javax.swing.JButton();
+        jSeparator7 = new javax.swing.JToolBar.Separator();
         search_field = new javax.swing.JTextField();
         search_button = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -251,9 +269,10 @@ JComboBox department_combo;
         display_menu = new javax.swing.JMenuItem();
         update_menu = new javax.swing.JMenuItem();
         delete_menu = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        print_menu = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setAlwaysOnTop(true);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -314,17 +333,25 @@ JComboBox department_combo;
         jToolBar1.add(save);
         jToolBar1.add(jSeparator4);
 
+        print.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/print-32.png"))); // NOI18N
+        print.setToolTipText("Print data");
+        print.setFocusable(false);
+        print.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        print.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(print);
+        jToolBar1.add(jSeparator3);
+
         close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/cancel-32.png"))); // NOI18N
         close.setToolTipText("Exit");
         jToolBar1.add(close);
-        jToolBar1.add(jSeparator3);
+        jToolBar1.add(jSeparator7);
 
         jDesktopPane2.add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 50));
-        jDesktopPane2.add(search_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 10, 230, 30));
+        jDesktopPane2.add(search_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 10, 230, 35));
 
         search_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/search-32.png"))); // NOI18N
         search_button.setToolTipText("Search");
-        jDesktopPane2.add(search_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 10, 40, 30));
+        jDesktopPane2.add(search_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 10, 40, 35));
 
         getContentPane().add(jDesktopPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 50));
 
@@ -367,6 +394,16 @@ JComboBox department_combo;
         jMenu2.add(delete_menu);
 
         jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("More");
+        jMenu3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+
+        print_menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        print_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/print-26.png"))); // NOI18N
+        print_menu.setText("Print");
+        jMenu3.add(print_menu);
+
+        jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
 
@@ -426,14 +463,18 @@ JComboBox department_combo;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator4;
     private javax.swing.JToolBar.Separator jSeparator5;
     private javax.swing.JToolBar.Separator jSeparator6;
+    private javax.swing.JToolBar.Separator jSeparator7;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton open;
+    private javax.swing.JButton print;
+    private javax.swing.JMenuItem print_menu;
     private javax.swing.JButton save;
     private javax.swing.JButton search_button;
     private javax.swing.JTextField search_field;

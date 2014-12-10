@@ -6,7 +6,6 @@
 package safe.views;
 
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
@@ -347,7 +346,7 @@ public class Patient_View extends javax.swing.JFrame {
         ok_button.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         ok_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/ok-26.png"))); // NOI18N
         ok_button.setToolTipText("Ok");
-        getContentPane().add(ok_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 780, -1, -1));
+        getContentPane().add(ok_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 780, 40, -1));
 
         jLabel23.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel23.setText("ADD PATIENT");

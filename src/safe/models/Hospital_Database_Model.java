@@ -108,7 +108,7 @@ public class Hospital_Database_Model {
             pStatement.setString ( 16, drugInstruction );
             pStatement.setBytes ( 17, patientImage );
             pStatement.execute ( );
-            JOptionPane.showMessageDialog(patient_table_view, "Successfully Inserted The Data In The DataBase", "Inserted", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(patient_view, "Successfully Inserted The Data In The DataBase", "Inserted", JOptionPane.INFORMATION_MESSAGE);
         }//End Of Try
         catch ( SQLException e )
         {
