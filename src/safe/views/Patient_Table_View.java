@@ -254,6 +254,14 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     }//End of getSearch_button
     
     /**
+     * Method to return print button
+     * @return 
+     */
+    public JButton getPrint_button(){
+        return print;
+    }//End of getPrint_button
+    
+    /**
      * Method to return print menu
      * @return 
      */
@@ -284,8 +292,10 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         save = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JToolBar.Separator();
-        close_button = new javax.swing.JButton();
+        print = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
+        close_button = new javax.swing.JButton();
+        jSeparator5 = new javax.swing.JToolBar.Separator();
         search_field = new javax.swing.JTextField();
         search_button = new javax.swing.JButton();
         jDesktopPane2 = new javax.swing.JDesktopPane();
@@ -342,10 +352,17 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         jToolBar1.add(save);
         jToolBar1.add(jSeparator3);
 
+        print.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/print-32.png"))); // NOI18N
+        print.setFocusable(false);
+        print.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        print.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(print);
+        jToolBar1.add(jSeparator4);
+
         close_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/cancel-32.png"))); // NOI18N
         close_button.setToolTipText("exit");
         jToolBar1.add(close_button);
-        jToolBar1.add(jSeparator4);
+        jToolBar1.add(jSeparator5);
 
         jDesktopPane1.add(jToolBar1);
         jToolBar1.setBounds(0, 0, 1050, 50);
@@ -417,6 +434,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         jMenu3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         print_menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        print_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/print-26.png"))); // NOI18N
         print_menu.setText("Print");
         jMenu3.add(print_menu);
 
@@ -486,9 +504,11 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator4;
+    private javax.swing.JToolBar.Separator jSeparator5;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton open;
     public static javax.swing.JTable patient_table;
+    private javax.swing.JButton print;
     private javax.swing.JMenuItem print_menu;
     private javax.swing.JButton save;
     private javax.swing.JButton search_button;

@@ -200,7 +200,8 @@ if (e.getSource().equals(patient_table_view.getUpdate())
   }
   
     //Print menu
-  if (e.getSource().equals(patient_table_view.getPrint_menu())){
+  if (e.getSource().equals(patient_table_view.getPrint_menu())
+      ||e.getSource().equals(patient_table_view.getPrint_button())){
       print();
   }
 };
@@ -218,6 +219,7 @@ if (e.getSource().equals(patient_table_view.getUpdate())
    patient_table_view.getExport_menu().addActionListener ( actionListener );
    patient_table_view.getSearch_button().addActionListener(actionListener);
    patient_table_view.getPrint_menu().addActionListener(actionListener);
+   patient_table_view.getPrint_button().addActionListener(actionListener);
 }
 catch( Exception e ){
     System.out.println(e.toString());
@@ -464,9 +466,11 @@ public void print(){
     MessageFormat footer = new MessageFormat("Page{0,number,integer}");
     try{
         patient_table.print(JTable.PrintMode.NORMAL,header,footer);
+        JOptionPane.showMessageDialog(patient_table_view, "Data Printed Successfully", "PRINTED", JOptionPane.INFORMATION_MESSAGE);
     }
     catch(Exception e){
         System.out.println(e.toString());
+        JOptionPane.showMessageDialog(patient_table_view, "Failed To Print Data", "ERROR", JOptionPane.ERROR_MESSAGE);
     }
 }
     
