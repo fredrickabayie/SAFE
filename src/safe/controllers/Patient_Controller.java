@@ -21,6 +21,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Random;
 import java.util.Scanner;
@@ -146,11 +147,6 @@ try
 {
     actionListener = (ActionEvent e) -> {
 
-//Connection to database
-if ( e.getSource().equals(patient_table_view.getConnect())){
-    database_controller.connectTodatabase();
-}
-
 //Displaying what is in the database
 if (e.getSource().equals(patient_table_view.getDisplay())
    ||e.getSource().equals(patient_table_view.getDisplay_menu())){
@@ -201,7 +197,6 @@ if (e.getSource().equals(patient_table_view.getUpdate())
       search();
   }
 };
-   patient_table_view.getConnect().addActionListener ( actionListener );
    patient_table_view.getDisplay().addActionListener ( actionListener );
    patient_table_view.getDisplay_menu().addActionListener ( actionListener );
    patient_table_view.getUpdate().addActionListener ( actionListener );
@@ -361,19 +356,17 @@ try
     while (input.hasNextLine()){
      String [] oneTicket=input.nextLine().split(splitHere);
         Vector row=new Vector();
-        for(int i=0;i<oneTicket.length;i++){
-            row.add(oneTicket[i]);
-        }
+        row.addAll(Arrays.asList(oneTicket));
         table_model.addRow(row);
     }
  input.close();
  System.out.println("Opened data");
- JOptionPane.showMessageDialog ( patient_table_view, "Successfully Opened The File " +file.getName(), "OPENED", JOptionPane.INFORMATION_MESSAGE);
+ JOptionPane.showMessageDialog ( patient_table_view, "Successfully Imported The File " +file.getName(), "IMPORTED", JOptionPane.INFORMATION_MESSAGE);
 }//End Of Try
 catch (IOException ex)
 { 
     System.out.println(ex.toString());
-JOptionPane.showMessageDialog(patient_table_view, "Failed To Open File " +file.getName(), "ERROR", JOptionPane.ERROR_MESSAGE);
+JOptionPane.showMessageDialog(patient_table_view, "Failed To Import File " +file.getName(), "ERROR", JOptionPane.ERROR_MESSAGE);
 }//End Of Catch
 }
     
@@ -384,10 +377,10 @@ JOptionPane.showMessageDialog(patient_table_view, "Failed To Open File " +file.g
  */
 public Vector getColumnNames()
 {
-    Vector <String> vector = new Vector < > ( );
+    Vector <String> vec = new Vector < > ( );
    for ( int i=0; i < patient_table.getColumnCount ( ); i++ )
-       vector.add ( patient_table.getColumnName ( i ) );
-   return vector;
+       vec.add ( patient_table.getColumnName ( i ) );
+   return vec;
 }
      
     
@@ -408,12 +401,12 @@ try
    }
    print.close();          
    System.out.println("Saved data to file");
-JOptionPane.showMessageDialog(patient_table_view, "Data Saved Successfully To " +file.getName(), "SAVED", JOptionPane.INFORMATION_MESSAGE);
+JOptionPane.showMessageDialog(patient_table_view, "Data Exported Successfully To " +file.getName(), "EXPORTED", JOptionPane.INFORMATION_MESSAGE);
 }//End Of Try
     catch (IOException ex) 
     { 
         System.out.println(""+ex.toString());
-        JOptionPane.showMessageDialog(patient_table_view, "Failed To Save Data", "ERROR "+file.getName(), JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(patient_table_view, "Failed To Export Data", "ERROR "+file.getName(), JOptionPane.ERROR_MESSAGE);
     }
 }//End Of Catch
 
@@ -427,10 +420,13 @@ if ( patient_table_view.getSearch().trim().length() == 0 )
          rowSorter.setRowFilter ( RowFilter.regexFilter ( patient_table_view.getSearch() ) );
 }//End of search
 
+/**
+ * Method to read and get image from a file chooser
+ */
 public void image(){
-    JFileChooser filechooser = new JFileChooser();
-        filechooser.showOpenDialog(patient_view);
-        file = filechooser.getSelectedFile();
+    JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(patient_view);
+        file = chooser.getSelectedFile();
         String path = file.getAbsolutePath();
         System.out.println(""+path);
         patient_view.setPath(path);
@@ -453,39 +449,3 @@ public void image(){
 byte[] patientImage = null;
     
 }//End of class
-
-
-
-//     /**
-//     * A method to connect to the database
-//     */
-//    public void browse ( ){
-//        try
-//        {
-//        actionListener = new ActionListener ( ){
-//            @Override
-//            public void actionPerformed ( ActionEvent e ){
-//                if ( e.getSource( ).equals ( patient_view.getBrowse_button ( ))){
-//                    filechooser = new JFileChooser("C:\\",FileSystemView.getFileSystemView ());
-//                filechooser.setFileFilter ( new FileNameExtensionFilter ("Image Files", "jpg","png","gif"));
-//                int returnVal = filechooser.showOpenDialog(patient_view);
-//                if (returnVal==JFileChooser.APPROVE_OPTION){
-//                    String filename = filechooser.getSelectedFile().getName();
-//                    String extension = filename.substring(filename.lastIndexOf("."));
-//                    if (extension.equalsIgnoreCase(".jpg")||extension.equalsIgnoreCase(".png")||
-//                     extension.equalsIgnoreCase(".bmp")||extension.equalsIgnoreCase(".tif")||extension.equalsIgnoreCase(".gif")){
-//                        
-//                    }
-//                    else{
-//                        System.out.println("Not an image file");
-//                    }
-//                }
-//                }
-//            }
-//        };
-//        }
-//        catch ( Exception e )
-//        {
-//            
-//        }
-//    }

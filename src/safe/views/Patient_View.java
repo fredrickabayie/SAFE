@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author chokayg3
+ * @author Abayie Fredrick
  */
 public class Patient_View extends javax.swing.JFrame {
 
@@ -164,9 +164,12 @@ public class Patient_View extends javax.swing.JFrame {
         return patientBloodgroup.getSelectedItem().toString();
     }//End of getPatientBloodgroup
     
+    /**
+     * Method to set patient blood group
+     */
       public void setPatientBloodgroup(){
          patientBloodgroup.setSelectedIndex(0);
-    }
+    }//End of setPatientBloodgroup
     
     /**
      * A method to get items in a combo box id
@@ -176,9 +179,12 @@ public class Patient_View extends javax.swing.JFrame {
         return patientMaritalstatus.getSelectedItem().toString();
     }//End of getPatientMaritalstatus
     
+    /**
+     * Method to set patient marital status
+     */
       public void setPatientMaritalstatus(){
          patientMaritalstatus.setSelectedIndex(0);
-    }
+    }//End of setPatientMaritalstatus
     
     /**
      * A method to get a string in a text field id
@@ -200,24 +206,27 @@ public class Patient_View extends javax.swing.JFrame {
         return ((JTextField)patientBirthdate.getDateEditor().getUiComponent()).getText();
     }//End of getPatientBirthdate
     
+    /**
+     * Method to setPatientBirthdate
+     */
       public void setPatientBirthdate(){
          patientBirthdate.setDate(null);
-    }
+       }//End of setPatientBirthdate
        
       /**
-       * 
+       * Method to return drug name
        * @return 
        */
       public String getDrugName(){
           return drugName.getText();
-      }
+      }//End of getDrugName
       
       /**
-       * 
+       * Method to setDruggName
        */
       public void setDrugName(){
           drugName.setText(null);
-      }
+      }//End of setDrugName
       
       /**
        * 
@@ -343,8 +352,9 @@ public class Patient_View extends javax.swing.JFrame {
         jLabel23.setText("ADD PATIENT");
         getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 180, 20));
 
-        close_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/x_lowercase-26.png"))); // NOI18N
-        getContentPane().add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 40, 20));
+        close_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/cancel-26.png"))); // NOI18N
+        close_button.setToolTipText("Exit");
+        getContentPane().add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 40, 30));
 
         jDesktopPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Unique Information"));
 

@@ -5,9 +5,11 @@
  */
 package safe.models;
 
+import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.*;
 import java.util.Arrays;
+import javax.swing.JOptionPane;
 import safe.views.Doctor_Table_View;
 import safe.views.Doctor_View;
 import safe.views.Patient_View;
@@ -15,7 +17,7 @@ import safe.views.Patient_Table_View;
 
 /**
  *
- * @author chokayg3
+ * @author Abayie Fredrick
  */
 public class Hospital_Database_Model {
     Connection connection = null;
@@ -25,7 +27,7 @@ public class Hospital_Database_Model {
     Doctor_Table_View doctor_table_view;
     
     /**
-     * 
+     * Constructor for the class
      * @param patient_view
      * @param patient_table_view 
      * @param doctor_view 
@@ -47,7 +49,7 @@ public class Hospital_Database_Model {
     try
         {
             Class.forName ( "com.mysql.jdbc.Driver" ).newInstance ( );
-             connection = java.sql.DriverManager.getConnection("jdbc:mysql://10.10.30.113/safe?user=safe&password=");
+             connection = java.sql.DriverManager.getConnection("jdbc:mysql://10.10.30.107/safe?user=safe&password=");
              System.out.println ( "Connected" );
         }//End Of Try
         catch ( ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException e )
@@ -57,7 +59,8 @@ public class Hospital_Database_Model {
     }
     
     /**
-     * 
+     * Method to insert data into the patient table in the 
+     * database
      * @param patientId
      * @param patientFname
      * @param patientSname
@@ -75,7 +78,6 @@ public class Hospital_Database_Model {
      * @param drugName 
      * @param drugInstruction 
      * @param patientImage 
-
      */
     public void insertPatientdatabase ( String patientId, String patientFname, String patientSname, int patientAge, String patientAddress, 
             int patientPhone, String patientGender, String patientOccupation, String patientBloodgroup, String patientMaritalstatus,
@@ -106,10 +108,12 @@ public class Hospital_Database_Model {
             pStatement.setString ( 16, drugInstruction );
             pStatement.setBytes ( 17, patientImage );
             pStatement.execute ( );
+            JOptionPane.showMessageDialog(patient_table_view, "Successfully Inserted The Data In The DataBase", "Inserted", JOptionPane.INFORMATION_MESSAGE);
         }//End Of Try
         catch ( SQLException e )
         {
             System.out.println ( e.toString ( ) );
+          JOptionPane.showMessageDialog(patient_view, "Failed To Insert The Data In The DataBase", "Failed", JOptionPane.ERROR_MESSAGE);
         }//End Of Catch
     }
     
@@ -129,25 +133,24 @@ public class Hospital_Database_Model {
              resultSet.getString ( "patientGender" ),resultSet.getString ( "patientOccupation" ),resultSet.getString ( "patientBloodgroup" ),
              resultSet.getString ( "patientMaritalstatus" ),resultSet.getString ( "patientBirthdate" ),resultSet.getString ( "patientNational" ),
              resultSet.getString ( "patientDisease" ),resultSet.getString ( "patientSymptom" ),resultSet.getString ( "drugName" ),
-             resultSet.getString ( "drugInstruction" )};
-//             
+             resultSet.getString ( "drugInstruction" )};          
              System.out.println(""+Arrays.toString(w));
              System.out.println(resultSet.getString("patientId"));
              patient_table_view.addRow(w);
          }//End Of While
          System.out.println("Displayed");
-//         JOptionPane.showMessageDialog(null, "Successfully Dispalyed The Data In The DataBase", "Displayed", JOptionPane.INFORMATION_MESSAGE);     
+         JOptionPane.showMessageDialog(patient_table_view, "Successfully Dispalyed The Data In The DataBase", "Displayed", JOptionPane.INFORMATION_MESSAGE);     
         }//End Of Try
         catch ( SQLException e ) 
         {
             System.out.println(e.toString());
-//        JOptionPane.showMessageDialog(null, "Failed To Display The Data In The DataBase", "Failed", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(patient_table_view, "Failed To Display The Data In The DataBase", "Failed", JOptionPane.ERROR_MESSAGE);
         }//End Of Catch
     }
     
     
     /**
-     * display method for doctor
+     * display method for doctor database
      */
     public void displayDoctordatabase ( ) {
          doctor_table_view.setRowCount(0);        
@@ -166,12 +169,12 @@ public class Hospital_Database_Model {
              doctor_table_view.addRow(w);
          }//End Of While
          System.out.println("Displayed");
-//         JOptionPane.showMessageDialog(null, "Successfully Dispalyed The Data In The DataBase", "Displayed", JOptionPane.INFORMATION_MESSAGE);     
+         JOptionPane.showMessageDialog(doctor_table_view, "Successfully Dispalyed The Data In The DataBase", "Displayed", JOptionPane.INFORMATION_MESSAGE);     
         }//End Of Try
         catch ( SQLException e ) 
         {
             System.out.println(e.toString());
-//        JOptionPane.showMessageDialog(null, "Failed To Display The Data In The DataBase", "Failed", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(doctor_table_view, "Failed To Display The Data In The DataBase", "Failed", JOptionPane.ERROR_MESSAGE);
         }//End Of Catch
     }
     
@@ -204,18 +207,16 @@ public class Hospital_Database_Model {
                  pStatement.setString ( 14, (String) patient_table_view.getValueAt(i, 14) );
                  pStatement.setString ( 15, (String) patient_table_view.getValueAt(i, 15) );
                  pStatement.setString ( 16, (String) patient_table_view.getValueAt(i, 0) );
-//                 pStatement.setString ( 14, (String) patient_table_view.getValueAt(i, 14) );
-//                 pStatement.setString ( 15, (String) patient_table_view.getValueAt(i, 15) );
-//                 pStatement.setString(16, (String) patient_table_view.getValueAt(i, 0));
                  pStatement.executeUpdate ( );
                  pStatement.execute();
                  System.out.println ("End of update");
              }
-             
+             JOptionPane.showMessageDialog(patient_table_view, "Successfully Updated The Data In The DataBase", "Update", JOptionPane.INFORMATION_MESSAGE);
         }
-        catch( Exception e ){
+        catch( SQLException | HeadlessException e ){
             System.out.println(e.toString());
             System.out.println("Could not update");
+            JOptionPane.showMessageDialog(patient_table_view, "Failed To Update The Data In The DataBase", "Failed", JOptionPane.ERROR_MESSAGE);
         }
 
     }
@@ -244,11 +245,12 @@ public class Hospital_Database_Model {
                  pStatement.execute();
                  System.out.println ("End of update");
              }
-             
+           JOptionPane.showMessageDialog(doctor_table_view, "Successfully Updated The Data In The DataBase", "Updated", JOptionPane.INFORMATION_MESSAGE);
         }
-        catch( Exception e ){
+        catch( SQLException | HeadlessException e ){
             System.out.println(e.toString());
             System.out.println("Could not update");
+            JOptionPane.showMessageDialog(doctor_table_view, "Failed To Update The Data In The DataBase", "Failed", JOptionPane.ERROR_MESSAGE);
         }
 
     }
@@ -271,12 +273,13 @@ public class Hospital_Database_Model {
             
             if ( patient_table_view.getSelectedRow ( ) >= 0 )
             patient_table_view.deleteRow ( );
+             JOptionPane.showMessageDialog(patient_table_view, "Successfully Deleted The Data In The DataBase", "Deleted", JOptionPane.INFORMATION_MESSAGE);
         }//End Of Try
         catch ( SQLException e )
         {
             System.out.println(e.toString());
             System.out.println("Could not delete");
-//            JOptionPane.showMessageDialog(null, "Failed To Delete The Data From The DataBase", "Not Deleted", JOptionPane.ERROR_MESSAGE);
+       JOptionPane.showMessageDialog(patient_table_view, "Failed To Delete The Data From The DataBase", "Not Deleted", JOptionPane.ERROR_MESSAGE);
         }//End Of Catch
     }//End of deleteDatabase
 
@@ -299,12 +302,13 @@ public class Hospital_Database_Model {
             
             if ( doctor_table_view.getSelectedRow ( ) >= 0 )
             doctor_table_view.deleteRow ( );
+         JOptionPane.showMessageDialog(doctor_table_view, "Successfully Deleted The Data In The DataBase", "Deleted", JOptionPane.INFORMATION_MESSAGE);
         }//End Of Try
         catch ( SQLException e )
         {
             System.out.println(e.toString());
             System.out.println("Could not delete");
-//            JOptionPane.showMessageDialog(null, "Failed To Delete The Data From The DataBase", "Not Deleted", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(doctor_table_view, "Failed To Delete The Data From The DataBase", "Not Deleted", JOptionPane.ERROR_MESSAGE);
         }//End Of Catch
     }//End of deleteDatabase
 
@@ -337,9 +341,11 @@ public class Hospital_Database_Model {
              pStatement.setString (8, doctorPassword);
              
              pStatement.execute ( );
+         JOptionPane.showMessageDialog(doctor_view, "Successfully Inserted The Data In The DataBase", "Inserted", JOptionPane.INFORMATION_MESSAGE);
         }
-        catch (Exception e){
+        catch (SQLException | HeadlessException e){
             System.out.println(e.toString());
+         JOptionPane.showMessageDialog(doctor_view, "Failed To Insert The Data From The DataBase", "Not Inserted", JOptionPane.ERROR_MESSAGE);
         }
     }
     

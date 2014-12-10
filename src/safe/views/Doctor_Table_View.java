@@ -276,29 +276,36 @@ JComboBox department_combo;
 
         jToolBar1.setRollover(true);
 
-        display.setText("Display");
+        display.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/accept_database-32.png"))); // NOI18N
+        display.setToolTipText("Display data in database");
         jToolBar1.add(display);
 
-        delete.setText("Delete");
+        delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/delete_database-32.png"))); // NOI18N
+        delete.setToolTipText("Delete data from database");
         jToolBar1.add(delete);
 
-        update.setText("Update");
+        update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/data_backup-32.png"))); // NOI18N
+        update.setToolTipText("Update data in database");
         jToolBar1.add(update);
 
-        open.setText("Import");
+        open.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/import-32.png"))); // NOI18N
+        open.setToolTipText("Import data from csv");
         jToolBar1.add(open);
 
-        save.setText("Export");
+        save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/export-32.png"))); // NOI18N
+        save.setToolTipText("Export data to csv");
         jToolBar1.add(save);
 
-        close.setText("x");
+        close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/cancel-32.png"))); // NOI18N
+        close.setToolTipText("Exit");
         jToolBar1.add(close);
 
         jDesktopPane2.add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 50));
         jDesktopPane2.add(search_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 10, 230, 30));
 
-        jLabel1.setText("Search");
-        jDesktopPane2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 10, 45, 30));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/search-32.png"))); // NOI18N
+        jLabel1.setToolTipText("search");
+        jDesktopPane2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 10, -1, 30));
 
         search_button.setText("Search");
         jDesktopPane2.add(search_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1213, 10, 80, 30));
@@ -307,12 +314,18 @@ JComboBox department_combo;
 
         jMenu1.setText("File");
 
+        import_menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
+        import_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/import-26.png"))); // NOI18N
         import_menu.setText("Import");
         jMenu1.add(import_menu);
 
+        export_menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        export_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/export-26.png"))); // NOI18N
         export_menu.setText("Export");
         jMenu1.add(export_menu);
 
+        exit_menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
+        exit_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/cancel-26.png"))); // NOI18N
         exit_menu.setText("Exit");
         jMenu1.add(exit_menu);
 
@@ -320,12 +333,18 @@ JComboBox department_combo;
 
         jMenu2.setText("Database");
 
+        display_menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        display_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/accept_database-26.png"))); // NOI18N
         display_menu.setText("Display");
         jMenu2.add(display_menu);
 
+        update_menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
+        update_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/data_backup-26.png"))); // NOI18N
         update_menu.setText("Update");
         jMenu2.add(update_menu);
 
+        delete_menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
+        delete_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/delete_database-26.png"))); // NOI18N
         delete_menu.setText("Delete");
         jMenu2.add(delete_menu);
 

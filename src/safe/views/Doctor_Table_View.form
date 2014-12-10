@@ -11,16 +11,34 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="import_menu">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Ctrl+I"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/safe/images/import-26.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Import"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="export_menu">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Ctrl+E"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/safe/images/export-26.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Export"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="exit_menu">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Ctrl+X"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/safe/images/cancel-26.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Exit"/>
               </Properties>
             </MenuItem>
@@ -33,16 +51,34 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="display_menu">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Ctrl+D"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/safe/images/accept_database-26.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Display"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="update_menu">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Ctrl+U"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/safe/images/data_backup-26.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Update"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="delete_menu">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Ctrl+Z"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/safe/images/delete_database-26.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Delete"/>
               </Properties>
             </MenuItem>
@@ -151,32 +187,50 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="display">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Display"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/safe/images/accept_database-32.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Display data in database"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="delete">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Delete"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/safe/images/delete_database-32.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Delete data from database"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="update">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Update"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/safe/images/data_backup-32.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Update data in database"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="open">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Import"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/safe/images/import-32.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Import data from csv"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="save">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Export"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/safe/images/export-32.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Export data to csv"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="close">
               <Properties>
-                <Property name="text" type="java.lang.String" value="x"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/safe/images/cancel-32.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Exit"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -190,11 +244,14 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Search"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/safe/images/search-32.png"/>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value="search"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="920" y="10" width="45" height="30"/>
+              <AbsoluteConstraints x="950" y="10" width="-1" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
