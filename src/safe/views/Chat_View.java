@@ -5,26 +5,46 @@
  */
 package safe.views;
 
-import javax.swing.DefaultListModel;
-import javax.swing.JList;
+//import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import safe.controllers.Chat_Controller;
 
 /**
  *
- * @author chokayg3
+ * @author Abayie Fredrick
  */
 public class Chat_View extends javax.swing.JFrame {
-    DefaultListModel list_model;
+//    Chat_Controller chat;
     /**
      * Creates new form Chat_View
      */
     public Chat_View() {
-        list_model = new DefaultListModel();
         initComponents();
+//        chat.establishConnection();
     }
     
     public void setTime(String s){
-//        list_model.addElement(s);
          time.setText(s);
+    }
+    
+    public String getList(){
+        return list.getText();
+    }
+    
+    public void setList(String s){
+         list.append(s);
+    }
+    
+    public String getMessage(){
+        return message.getText().trim();
+    }
+    
+    public JButton getSend(){
+        return send;
+    }
+    
+    public JButton getConnect(){
+        return connect;
     }
 
     /**
@@ -37,32 +57,38 @@ public class Chat_View extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        list = new javax.swing.JList();
         time = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        send = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        list = new javax.swing.JTextArea();
+        message = new javax.swing.JTextField();
+        connect = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jDesktopPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        list.setModel(list_model);
-        jScrollPane1.setViewportView(list);
-
-        jDesktopPane1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 380, 380));
-        jDesktopPane1.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 270, 30));
-        jDesktopPane1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 270, 50));
+        jDesktopPane1.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 270, 20));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Message");
         jDesktopPane1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, -1, 50));
 
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jButton1.setText("Send");
-        jDesktopPane1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, 60, 50));
+        send.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        send.setText("Send");
+        jDesktopPane1.add(send, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 420, 60, 50));
+
+        list.setColumns(20);
+        list.setRows(5);
+        jScrollPane2.setViewportView(list);
+
+        jDesktopPane1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 360, 350));
+        jDesktopPane1.add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 419, 220, 50));
+
+        connect.setText("connect");
+        jDesktopPane1.add(connect, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,12 +141,13 @@ public class Chat_View extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton connect;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    public static javax.swing.JList list;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea list;
+    private javax.swing.JTextField message;
+    private javax.swing.JButton send;
     private javax.swing.JLabel time;
     // End of variables declaration//GEN-END:variables
 }

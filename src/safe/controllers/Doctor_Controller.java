@@ -32,13 +32,12 @@ import safe.models.Doctor_Model;
 import safe.views.Doctor_Table_View;
 import static safe.views.Doctor_Table_View.table_model;
 import static safe.views.Doctor_Table_View.doctor_table;
-import static safe.views.Patient_Table_View.patient_table;
 
 /**
  *
  * @author Abayie Fredrick
  */
-public class Doctor_Controller {
+public final class Doctor_Controller {
     Doctor_View doctor_view;
     Hospital_Database_Model database_model;
     ActionListener actionListener;
@@ -148,7 +147,7 @@ try
 }//End of doctorButton
 
 /**
- * 
+ * Method to insert doctor into database
  */
 public void insert(){
     String doctorId = doctor_view.getDoctorId();
