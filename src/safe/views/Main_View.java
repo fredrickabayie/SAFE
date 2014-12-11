@@ -71,12 +71,36 @@ public class Main_View extends javax.swing.JFrame {
     }//End of getDoctorTable_menu
     
     /**
+     * Method to return doctor table button
+     * @return 
+     */
+    public JButton getDoctorTable_button(){
+        return doctortable_button;
+    }//End of getDoctorTable_button
+    
+    /**
+     * Method to return patient table button
+     * @return 
+     */
+    public JButton getPatientTable_button(){
+        return patienttable_button;
+    }//End of getPatientTable_button
+    
+    /**
      * Method to return chat menu
      * @return 
      */
     public JMenuItem getChat_menu(){
         return chat;
     }//End of getChat_menu
+    
+    /**
+     * Method to return chat button
+     * @return 
+     */
+    public JButton getChat(){
+        return chat_button;
+    }//End of getchat
     
     /**
      * Method to return doctor login menu item
@@ -97,13 +121,17 @@ public class Main_View extends javax.swing.JFrame {
     private void initComponents() {
 
         jToolBar1 = new javax.swing.JToolBar();
+        jSeparator1 = new javax.swing.JToolBar.Separator();
         newpatient = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        patienttable_button = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JToolBar.Separator();
         newDoctor = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        doctortable_button = new javax.swing.JButton();
+        jSeparator3 = new javax.swing.JToolBar.Separator();
+        chat_button = new javax.swing.JButton();
+        jSeparator4 = new javax.swing.JToolBar.Separator();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -128,6 +156,7 @@ public class Main_View extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1360, 668));
 
         jToolBar1.setRollover(true);
+        jToolBar1.add(jSeparator1);
 
         newpatient.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/add_user-48.png"))); // NOI18N
         newpatient.setToolTipText("add new patient");
@@ -136,17 +165,15 @@ public class Main_View extends javax.swing.JFrame {
         newpatient.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(newpatient);
 
-        jLabel1.setText("jLabel1");
-        jToolBar1.add(jLabel1);
+        jLabel4.setText("        ");
+        jToolBar1.add(jLabel4);
 
-        jButton2.setText("patienttable");
-        jButton2.setFocusable(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton2);
-
-        jLabel2.setText("jLabel2");
-        jToolBar1.add(jLabel2);
+        patienttable_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/list-48.png"))); // NOI18N
+        patienttable_button.setFocusable(false);
+        patienttable_button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        patienttable_button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(patienttable_button);
+        jToolBar1.add(jSeparator2);
 
         newDoctor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/doctor-48.png"))); // NOI18N
         newDoctor.setToolTipText("add new doctor");
@@ -155,14 +182,22 @@ public class Main_View extends javax.swing.JFrame {
         newDoctor.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(newDoctor);
 
-        jLabel3.setText("jLabel3");
-        jToolBar1.add(jLabel3);
+        jLabel5.setText("        ");
+        jToolBar1.add(jLabel5);
 
-        jButton4.setText("doctortable");
-        jButton4.setFocusable(false);
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton4);
+        doctortable_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/View_Details-48.png"))); // NOI18N
+        doctortable_button.setFocusable(false);
+        doctortable_button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        doctortable_button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(doctortable_button);
+        jToolBar1.add(jSeparator3);
+
+        chat_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/chat-48.png"))); // NOI18N
+        chat_button.setFocusable(false);
+        chat_button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        chat_button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(chat_button);
+        jToolBar1.add(jSeparator4);
 
         jMenuBar1.setBorder(null);
         jMenuBar1.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
@@ -170,16 +205,21 @@ public class Main_View extends javax.swing.JFrame {
         jMenu1.setText("Patients");
         jMenu1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/plus-26.png"))); // NOI18N
         jMenu3.setText("Add");
         jMenu3.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
 
+        addPatient_menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         addPatient_menu.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        addPatient_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/add_user-26.png"))); // NOI18N
         addPatient_menu.setText("New Patient");
         jMenu3.add(addPatient_menu);
 
         jMenu1.add(jMenu3);
 
+        patientTable_menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
         patientTable_menu.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        patientTable_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/list-26.png"))); // NOI18N
         patientTable_menu.setText("Table");
         jMenu1.add(patientTable_menu);
 
@@ -188,15 +228,20 @@ public class Main_View extends javax.swing.JFrame {
         jMenu2.setText("Doctors");
         jMenu2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
+        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/plus-26.png"))); // NOI18N
         jMenu6.setText("Add");
         jMenu6.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
 
+        addDoctor_menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.SHIFT_MASK));
+        addDoctor_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/doctor-26.png"))); // NOI18N
         addDoctor_menu.setText("New Doctor");
         jMenu6.add(addDoctor_menu);
 
         jMenu2.add(jMenu6);
 
+        doctorTable_menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.SHIFT_MASK));
         doctorTable_menu.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        doctorTable_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/View_Details-26.png"))); // NOI18N
         doctorTable_menu.setText("Table");
         jMenu2.add(doctorTable_menu);
 
@@ -206,6 +251,7 @@ public class Main_View extends javax.swing.JFrame {
         jMenu5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         chat.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        chat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/chat-26.png"))); // NOI18N
         chat.setText("Chat");
         jMenu5.add(chat);
 
@@ -296,14 +342,13 @@ public class Main_View extends javax.swing.JFrame {
     private javax.swing.JMenuItem addDoctor_menu;
     private javax.swing.JMenuItem addPatient_menu;
     private javax.swing.JMenuItem chat;
+    private javax.swing.JButton chat_button;
     private javax.swing.JMenuItem doctorLogin_menu;
     private javax.swing.JMenuItem doctorTable_menu;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton doctortable_button;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -312,10 +357,15 @@ public class Main_View extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JToolBar.Separator jSeparator1;
+    private javax.swing.JToolBar.Separator jSeparator2;
+    private javax.swing.JToolBar.Separator jSeparator3;
+    private javax.swing.JToolBar.Separator jSeparator4;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton newDoctor;
     private javax.swing.JButton newpatient;
     private javax.swing.JMenuItem patientTable_menu;
+    private javax.swing.JButton patienttable_button;
     private javax.swing.JMenuItem shortcut;
     // End of variables declaration//GEN-END:variables
 }

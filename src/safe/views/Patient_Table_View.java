@@ -89,7 +89,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     }
               
     /**
-     * 
+     * Method to add a row to the table
      * @param w 
      */
     public void addRow(Object []w){
@@ -97,7 +97,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     }//End of getPatient_table
     
     /**
-     * 
+     * Method returning table model row count
      * @return 
      */
     public int getRowCount(){
@@ -115,7 +115,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     }//End of getValueAt
      
      /**
-      * 
+      * method to delete a row from the database
       */
      public void deleteRow()
     {
@@ -132,7 +132,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
      }//End of getSelectedRow
     
      /**
-      * 
+      * Method to set row count of the table
       * @param i 
       */
     public void setRowCount( int i){
@@ -141,7 +141,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     }
     
     /**
-     * 
+     * Method to return display button
      * @return 
      */
     public JButton getDisplay(){
@@ -149,7 +149,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     }
     
     /**
-     * 
+     * Method to return update button
      * @return 
      */
     public JButton getUpdate(){
@@ -157,7 +157,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     }
     
     /**
-     * 
+     * Method to return delete button
      * @return 
      */
     public JButton getDelete(){
@@ -165,7 +165,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     }
     
     /**
-     * 
+     * Method to return close button
      * @return 
      */
     public JButton getClose(){
@@ -173,7 +173,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     }
     
     /**
-     * 
+     * Method to return open button
      * @return 
      */
     public JButton getOpen(){
@@ -181,7 +181,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     }
     
     /**
-     * 
+     * Method to return save button
      * @return 
      */
     public JButton getSave(){
@@ -269,6 +269,22 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         return print_menu;
     }//End of getPrint_menu
     
+    /**
+     * Method to return clear menu item
+     * @return 
+     */
+    public JMenuItem getClear_menu(){
+        return clear_menu;
+    }//End of getClear_menu
+    
+    /**
+     * Method to return delete row from table
+     * @return 
+     */
+    public JMenuItem getDeleteRow_menu(){
+        return deleterow_menu;
+    }//End of getDeleteRow_menu
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -309,8 +325,8 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         exit_menu = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        deleterow_menu = new javax.swing.JMenuItem();
+        clear_menu = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         display_menu = new javax.swing.JMenuItem();
         jSeparator8 = new javax.swing.JPopupMenu.Separator();
@@ -426,17 +442,17 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/delete-26.png"))); // NOI18N
         jMenu5.setText("Delete");
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/Delete_Row-26.png"))); // NOI18N
-        jMenuItem2.setText("Row");
-        jMenu5.add(jMenuItem2);
+        deleterow_menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        deleterow_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/Delete_Row-26.png"))); // NOI18N
+        deleterow_menu.setText("Row");
+        jMenu5.add(deleterow_menu);
 
         jMenu4.add(jMenu5);
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/delete_file-26.png"))); // NOI18N
-        jMenuItem1.setText("Clear");
-        jMenu4.add(jMenuItem1);
+        clear_menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        clear_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/delete_file-26.png"))); // NOI18N
+        clear_menu.setText("Clear");
+        jMenu4.add(clear_menu);
 
         jMenuBar1.add(jMenu4);
 
@@ -514,9 +530,11 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem clear_menu;
     private javax.swing.JButton close_button;
     private javax.swing.JButton delete;
     private javax.swing.JMenuItem delete_menu;
+    private javax.swing.JMenuItem deleterow_menu;
     private javax.swing.JButton display;
     private javax.swing.JMenuItem display_menu;
     private javax.swing.JMenuItem exit_menu;
@@ -533,8 +551,6 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;

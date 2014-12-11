@@ -66,7 +66,7 @@ public class Chat_View extends javax.swing.JFrame {
         connect = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
+        setType(java.awt.Window.Type.UTILITY);
 
         jDesktopPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jDesktopPane1.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 270, 20));

@@ -61,7 +61,8 @@ public final class Main_Controller {
                     System.out.println("add patient pressed");
                 }
                 
-                if (e.getSource().equals(main_view.getPatientTable_menu())){
+                if (e.getSource().equals(main_view.getPatientTable_menu())
+                    ||e.getSource().equals(main_view.getPatientTable_button())){
                     patient_table_view.setVisible(true);
                     System.out.println("patient table pressed");
                 }
@@ -72,7 +73,8 @@ public final class Main_Controller {
                     System.out.println("add doctor pressed");
                 }
                 
-                if (e.getSource().equals(main_view.getDoctorTable_menu())){
+                if (e.getSource().equals(main_view.getDoctorTable_menu())
+                    ||e.getSource().equals(main_view.getDoctorTable_button())){
                     doctor_table_view.setVisible(true);
                     System.out.println("doctor table pressed");
                 }
@@ -82,19 +84,23 @@ public final class Main_Controller {
                     System.out.println("login menu pressed");
                 }
                 
-                if (e.getSource().equals(main_view.getChat_menu())){
+                if (e.getSource().equals(main_view.getChat_menu())
+                    ||e.getSource().equals(main_view.getChat())){
                     chat_view.setVisible(true);
                     System.out.println("Chat started");
                 }
               };
                main_view.getAddPatient_menu().addActionListener ( actionListener );
                main_view.getPatientTable_menu().addActionListener ( actionListener );
+               main_view.getPatientTable_button().addActionListener ( actionListener );
+               main_view.getDoctorTable_button().addActionListener ( actionListener );
                main_view.getAddDoctor_menu().addActionListener ( actionListener );
                main_view.getDoctorTable_menu().addActionListener ( actionListener );
                main_view.getDoctorLogin_menu().addActionListener ( actionListener );
                main_view.getChat_menu().addActionListener ( actionListener );
                main_view.getNewPatient().addActionListener ( actionListener );
                main_view.getNewDoctor().addActionListener ( actionListener );
+               main_view.getChat().addActionListener ( actionListener );
         }
         
         catch( Exception e ){

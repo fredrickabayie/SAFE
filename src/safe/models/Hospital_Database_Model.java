@@ -49,7 +49,7 @@ public class Hospital_Database_Model {
     try
         {
             Class.forName ( "com.mysql.jdbc.Driver" ).newInstance ( );
-             connection = java.sql.DriverManager.getConnection("jdbc:mysql://10.10.30.107/safe?user=safe&password=");
+             connection = java.sql.DriverManager.getConnection("jdbc:mysql://localhost/safe?user=root&password=Ashesi@2016?");
              System.out.println ( "Connected" );
         }//End Of Try
         catch ( ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException e )

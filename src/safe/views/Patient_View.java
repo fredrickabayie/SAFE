@@ -45,8 +45,19 @@ public class Patient_View extends javax.swing.JFrame {
         return image_button;
     }//End of getImage_button
     
+    /**
+     * Method to set image button to null
+     */
+    public void setImage_button(){
+        image_button.setIcon(null);
+    }//End of setImage_button
+    
+    /**
+     * Method to get path
+     * @return 
+     */
     public byte[] getPath(){
-        String n = path.getText().toString();
+        String n = path.getText();
          byte [] byt = n.getBytes();
          return byt;
     }
@@ -63,8 +74,10 @@ public class Patient_View extends javax.swing.JFrame {
         return patientId.getText();
     }//End of getPatientId
     
-    public void edit(){
+    public void editable(){
         patientId.setEditable(false);
+        path.setEditable(false);
+        path.setVisible(false);
     }
     
     public void setPatientId(String x){
@@ -228,7 +241,7 @@ public class Patient_View extends javax.swing.JFrame {
       }//End of setDrugName
       
       /**
-       * 
+       * Method to get patient disease
        * @return 
        */
       public String getPatientDisease(){
@@ -236,14 +249,14 @@ public class Patient_View extends javax.swing.JFrame {
       }
       
       /**
-       * 
+       * Method to set patient disease
        */
       public void setPatientDisease(){
           patientDisease.setText(null);
       }
       
       /**
-       * 
+       * Method to get patient symptom
      * @return 
        */
       public String getPatientSymptom(){
@@ -251,14 +264,14 @@ public class Patient_View extends javax.swing.JFrame {
       }
       
       /**
-       * 
+       * Method to set patient symptom
        */
       public void setPatientSymptom(){
           patientSymptom.setText(null);
       }
       
       /**
-       * 
+       * Method to get drug instruction
        * @return 
        */
      public String getDrugInstruction(){
@@ -266,7 +279,7 @@ public class Patient_View extends javax.swing.JFrame {
      }
       
      /**
-      * 
+      * Method to set drug instruction
       */
      public void setDrugInstruction(){
          drugInstruction.setText(null);
@@ -282,7 +295,6 @@ public class Patient_View extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        addPatientBackground = new javax.swing.JLabel();
         ok_button = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
         close_button = new javax.swing.JButton();
@@ -332,8 +344,6 @@ public class Patient_View extends javax.swing.JFrame {
         drugInstruction = new javax.swing.JTextArea();
         jLabel21 = new javax.swing.JLabel();
 
-        addPatientBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/addpatient.png"))); // NOI18N
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ADD PATIENT");
         setAlwaysOnTop(true);
@@ -354,13 +364,12 @@ public class Patient_View extends javax.swing.JFrame {
 
         close_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/cancel-26.png"))); // NOI18N
         close_button.setToolTipText("Exit");
-        getContentPane().add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 40, 30));
+        getContentPane().add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 30, 30));
 
         jDesktopPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Unique Information"));
 
         image_button.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        image_button.setMnemonic('p');
-        image_button.setText("PHOTO");
+        image_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/camera-48.png"))); // NOI18N
         jDesktopPane1.add(image_button);
         image_button.setBounds(10, 20, 230, 160);
 
@@ -518,6 +527,7 @@ public class Patient_View extends javax.swing.JFrame {
 
         patientSymptom.setColumns(20);
         patientSymptom.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        patientSymptom.setLineWrap(true);
         patientSymptom.setRows(5);
         jScrollPane1.setViewportView(patientSymptom);
 
@@ -548,6 +558,7 @@ public class Patient_View extends javax.swing.JFrame {
 
         drugInstruction.setColumns(20);
         drugInstruction.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        drugInstruction.setLineWrap(true);
         drugInstruction.setRows(5);
         jScrollPane2.setViewportView(drugInstruction);
 
@@ -612,7 +623,6 @@ public class Patient_View extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel addPatientBackground;
     private javax.swing.JButton close_button;
     private javax.swing.JTextArea drugInstruction;
     private javax.swing.JTextField drugName;

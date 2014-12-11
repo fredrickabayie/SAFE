@@ -55,6 +55,16 @@ public class SAFE {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                try{
+                    Thread.sleep(7000);
+                }
+                catch(Exception e){
+                    System.out.println(e.toString());
+                    e.printStackTrace();
+                }
+                
+                
+                
    Patient_View patient_view = new Patient_View ( );
    Patient_Table_View patient_table_view = new Patient_Table_View();
    Main_View main_view = new Main_View ();

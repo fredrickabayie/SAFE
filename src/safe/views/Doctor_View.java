@@ -114,7 +114,6 @@ public class Doctor_View extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        doctorBackgroundImage = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         close_button = new javax.swing.JButton();
         jDesktopPane1 = new javax.swing.JDesktopPane();
@@ -138,8 +137,6 @@ public class Doctor_View extends javax.swing.JFrame {
         doctorEmail = new javax.swing.JTextField();
         ok_button = new javax.swing.JButton();
 
-        doctorBackgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/newdoctor3.png"))); // NOI18N
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
         setUndecorated(true);
@@ -150,8 +147,9 @@ public class Doctor_View extends javax.swing.JFrame {
         jLabel9.setText("ADD DOCTOR");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 160, 20));
 
-        close_button.setText("x");
-        getContentPane().add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, -1, 20));
+        close_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/cancel-26.png"))); // NOI18N
+        close_button.setToolTipText("close");
+        getContentPane().add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 30, 30));
 
         jDesktopPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Unique Details"));
 
@@ -252,8 +250,9 @@ public class Doctor_View extends javax.swing.JFrame {
 
         getContentPane().add(jDesktopPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 730, 170));
 
-        ok_button.setText("Ok");
-        getContentPane().add(ok_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, -1, -1));
+        ok_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/ok-26.png"))); // NOI18N
+        ok_button.setToolTipText("ok");
+        getContentPane().add(ok_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 390, -1, 30));
 
         pack();
         setLocationRelativeTo(null);
@@ -308,7 +307,6 @@ public class Doctor_View extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton close_button;
-    private javax.swing.JLabel doctorBackgroundImage;
     private com.toedter.calendar.JDateChooser doctorDate;
     private javax.swing.JComboBox doctorDepartment;
     private javax.swing.JTextField doctorEmail;

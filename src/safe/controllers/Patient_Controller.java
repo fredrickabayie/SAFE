@@ -8,9 +8,11 @@ package safe.controllers;
 /**
  * Importing of java directories
  */
+import java.awt.HeadlessException;
 import safe.models.Hospital_Database_Model;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.print.PrinterException;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
@@ -58,6 +60,7 @@ public final class Patient_Controller {
     TableRowSorter <TableModel> rowSorter;
     long ticket_id;
     Connection connection;
+    byte[] patientImage = null;
     
 /**
  * COnstructor for the patient controller class
@@ -93,7 +96,7 @@ public Patient_Controller( Patient_View patient_view, Hospital_Database_Model da
 //        vector.add ("INSTRUCTION");
     generateId();
         patient_view.setPatientId("PAT"+ticket_id);
-        patient_view.edit();
+        patient_view.editable();
 patientController();
 patientButton();
 }//End of Patient_Controller
@@ -114,22 +117,21 @@ ticket_id=x;
 public boolean checkId(long x){
 boolean valid=true;
 try {
-java.sql.Statement s = connection.createStatement();
-java.sql.ResultSet r = s.executeQuery("SELECT patientFname FROM patients where patientId="+x+";");
-//System.out.println(r);
-try{
-   if(r==null)
-	 valid= false; 
-   else
-       valid= true; 
-} catch(Exception e){
-    System.out.println(e.toString());
-   
-//valid= true;  
-}                                               
- s.close();       
-}catch (Exception e) {
-//System.out.println("Error " + e.toString());
+try(java.sql.Statement s = connection.createStatement()) {
+    java.sql.ResultSet r = s.executeQuery("SELECT patientFname FROM patients where patientId="+x+";");
+    //System.out.println(r);
+    try{
+        if(r==null)
+            valid= false;
+        else
+            valid= true;
+    } catch(Exception e){
+        System.out.println(e.toString());
+        
+//valid= true;
+    }
+}}catch (Exception e) {
+System.out.println("Error " + e.toString());
 valid= false; 
 //System.exit(0);
 	}
@@ -199,6 +201,17 @@ if (e.getSource().equals(patient_table_view.getUpdate())
       ||e.getSource().equals(patient_table_view.getPrint_button())){
       print();
   }
+  
+  //Clear table
+  if (e.getSource().equals(patient_table_view.getClear_menu())){
+      patient_table_view.setRowCount(0);
+  }
+  
+  //Delete row
+  if (e.getSource().equals(patient_table_view.getDeleteRow_menu())){
+      patient_table_view.deleteRow();
+  }
+  
 };
    patient_table_view.getDisplay().addActionListener ( actionListener );
    patient_table_view.getDisplay_menu().addActionListener ( actionListener );
@@ -215,6 +228,8 @@ if (e.getSource().equals(patient_table_view.getUpdate())
    patient_table_view.getSearch_button().addActionListener(actionListener);
    patient_table_view.getPrint_menu().addActionListener(actionListener);
    patient_table_view.getPrint_button().addActionListener(actionListener);
+   patient_table_view.getClear_menu().addActionListener(actionListener);
+   patient_table_view.getDeleteRow_menu().addActionListener(actionListener);
 }
 catch( Exception e ){
     System.out.println(e.toString());
@@ -233,13 +248,6 @@ actionListener = new ActionListener ( ){
     public void actionPerformed ( ActionEvent e ){
 
     if ( e.getSource( ).equals ( patient_view.getImage_button ( ))){
-//        JFileChooser filechooser = new JFileChooser();
-//        filechooser.showOpenDialog(patient_view);
-//        file = filechooser.getSelectedFile();
-//        String path = file.getAbsolutePath();
-//        System.out.println(""+path);
-//        patient_view.setPath(path);
-//        patient_view.getImage_button().setIcon(new ImageIcon (path));
         image();
     }//End of if
 
@@ -290,7 +298,7 @@ private void insert(){
     String patientSymptom = patient_view.getPatientSymptom();
     String drugName = patient_view.getDrugName();
     String drugInstruction = patient_view.getDrugInstruction();
-    patientImage = patient_view.getPath();
+//    patientImage = patient_view.getPath();
 
 Patient_Model patient_model = new Patient_Model ( patientId, patientFname, patientSname, patientAge, patientAddress, 
     patientPhone, patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate,
@@ -301,6 +309,9 @@ database_controller.insertPatientdatabase(patientId, patientFname, patientSname,
     patientDisease, patientSymptom, drugName, drugInstruction,patientImage );
     System.out.println ( ""+patient_model.toString() );
     resetTextFields();
+    generateId();
+    patient_view.setPatientId("PAT"+ticket_id);
+        patient_view.editable();
     }
 }
     
@@ -308,7 +319,6 @@ database_controller.insertPatientdatabase(patientId, patientFname, patientSname,
  * Method to reset the text fields
  */
 private void resetTextFields(){
-//    patient_view.setPatientId();
      patient_view.setPatientFname();
     patient_view.setPatientSname();
  patient_view.setPatientAge();
@@ -324,6 +334,7 @@ private void resetTextFields(){
    patient_view.setPatientSymptom();
    patient_view.setDrugName();
    patient_view.setDrugInstruction();
+   patient_view.setImage_button();
 }
    
     
@@ -353,15 +364,15 @@ public boolean patientValidate ( ){
  public void open(File file)
 {
 table_model.setRowCount(0);
-String splitHere=",";
+String split=",";
 try
 {
     input = new Scanner ( new BufferedReader ( new FileReader( file )));
     input.nextLine();
     while (input.hasNextLine()){
-     String [] oneTicket=input.nextLine().split(splitHere);
+     String [] splitter=input.nextLine().split(split);
         Vector row=new Vector();
-        row.addAll(Arrays.asList(oneTicket));
+        row.addAll(Arrays.asList(splitter));
         table_model.addRow(row);
     }
  input.close();
@@ -445,25 +456,24 @@ public void image(){
                 outputStream.write(byt,0,readNum);
             }
             patientImage = outputStream.toByteArray();
+            System.out.println(Arrays.toString(patientImage));
         }
         catch(Exception e){
             System.out.println(e.toString());
         }
 }
 
-byte[] patientImage = null;
-
 /**
  * Method to print the table
  */
 public void print(){
-    MessageFormat header = new MessageFormat("Report Print");
+    MessageFormat header = new MessageFormat("Patient Report");
     MessageFormat footer = new MessageFormat("Page{0,number,integer}");
     try{
         patient_table.print(JTable.PrintMode.NORMAL,header,footer);
         JOptionPane.showMessageDialog(patient_table_view, "Data Printed Successfully", "PRINTED", JOptionPane.INFORMATION_MESSAGE);
     }
-    catch(Exception e){
+    catch(PrinterException | HeadlessException e){
         System.out.println(e.toString());
         JOptionPane.showMessageDialog(patient_table_view, "Failed To Print Data", "ERROR", JOptionPane.ERROR_MESSAGE);
     }
