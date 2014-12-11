@@ -5,12 +5,12 @@
  */
 package safe.views;
 
-import com.toedter.calendar.JCalendar;
 import java.util.Vector;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
@@ -28,11 +28,13 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     JComboBox status_combo;
     JComboBox blood_combo;
     JComboBox gender_combo;
+    JPopupMenu pop_menu;
 
     /**
      * Creates new form Patient_Table_View
      */
     public Patient_Table_View() {
+//        pop_menu = new JPopupMenu();
         vector = new Vector();
         vector.add ("ID");
         vector.add ("FIRST NAME");
@@ -50,9 +52,8 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         vector.add ("SYMPTOM");
         vector.add ("DRUG");
         vector.add ("INSTRUCTION");
+      
         table_model = new DefaultTableModel ( new Vector(), vector );
-        
-//        filechooser = new JFileChooser();
         initComponents();
         
         //Combo box for gender
@@ -82,9 +83,6 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         status_combo.addItem ("Married");
         status.setCellEditor( new DefaultCellEditor(status_combo));
         
-        id = patient_table.getColumnModel().getColumn(0);
-//        id.setCellEditor(new DefaultCellEditor(null));
-//        isCellEditable(0,0);
         
     }
               
@@ -401,11 +399,12 @@ public final class Patient_Table_View extends javax.swing.JFrame {
 
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1530, 50));
 
-        patient_table.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        patient_table.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         patient_table.setModel(table_model);
         patient_table.setCellSelectionEnabled(true);
         patient_table.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        patient_table.setRowHeight(25);
+        patient_table.setDoubleBuffered(true);
+        patient_table.setRowHeight(30);
         jScrollPane1.setViewportView(patient_table);
 
         jDesktopPane2.add(jScrollPane1);

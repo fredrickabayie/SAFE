@@ -7,7 +7,6 @@ package safe.controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import safe.views.Chat_View;
 import safe.views.Doctor_Table_View;
 import safe.views.Doctor_View;
 import safe.views.Login_View;
@@ -28,12 +27,11 @@ public final class Main_Controller {
     Doctor_View doctor_view;
     Doctor_Table_View doctor_table_view;
     Login_View login_view;
-    Chat_Controller chat_controller;
-    Chat_View chat_view;
+    
     
     public Main_Controller( Main_View main_view, Patient_Controller patient_controller, Patient_View patient_view,
             Patient_Table_View patient_table_view,Doctor_View doctor_view,Doctor_Table_View doctor_table_view,
-            Login_View login_view,Chat_Controller chat_controller,Chat_View chat_view){
+            Login_View login_view){
         this.main_view = main_view;
         this.patient_controller = patient_controller;
         this.patient_view = patient_view;
@@ -41,8 +39,6 @@ public final class Main_Controller {
         this.doctor_view = doctor_view;
         this.doctor_table_view = doctor_table_view;
         this.login_view = login_view;
-        this.chat_controller = chat_controller;
-        this.chat_view = chat_view;
         menu ( );
     }
     
@@ -86,8 +82,7 @@ public final class Main_Controller {
                 
                 if (e.getSource().equals(main_view.getChat_menu())
                     ||e.getSource().equals(main_view.getChat())){
-                    chat_view.setVisible(true);
-                    System.out.println("Chat started");
+                    
                 }
               };
                main_view.getAddPatient_menu().addActionListener ( actionListener );

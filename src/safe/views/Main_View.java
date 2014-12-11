@@ -6,12 +6,11 @@
 package safe.views;
 
 import javax.swing.JButton;
-import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
 /**
  *
- * @author chokayg3
+ * @author Abayie Fredrick
  */
 public class Main_View extends javax.swing.JFrame {
 

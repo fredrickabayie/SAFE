@@ -76,24 +76,6 @@ public Patient_Controller( Patient_View patient_view, Hospital_Database_Model da
  this.patient_table_view = patient_table_view;
   rowSorter = new TableRowSorter<>(patient_table.getModel());
   patient_table.setRowSorter( rowSorter);
-     
-//       vector = new Vector();
-//        vector.add ("ID");
-//        vector.add ("FIRST NAME");
-//        vector.add ("SURNAME");
-//        vector.add ("AGE");
-//        vector.add ("ADDRESS");
-//        vector.add ("PHONE");
-//        vector.add ("GENDER");
-//        vector.add ("OCCUPATION");
-//        vector.add ("BLOODGROUP");
-//        vector.add ("STATUS");
-//        vector.add ("BIRTHDATE");
-//        vector.add ("NATIONAL");
-//        vector.add ("DISEASE");
-//        vector.add ("SYMPTOM");
-//        vector.add ("DRUG");
-//        vector.add ("INSTRUCTION");
     generateId();
         patient_view.setPatientId("PAT"+ticket_id);
         patient_view.editable();
@@ -119,7 +101,6 @@ boolean valid=true;
 try {
 try(java.sql.Statement s = connection.createStatement()) {
     java.sql.ResultSet r = s.executeQuery("SELECT patientFname FROM patients where patientId="+x+";");
-    //System.out.println(r);
     try{
         if(r==null)
             valid= false;
@@ -127,13 +108,10 @@ try(java.sql.Statement s = connection.createStatement()) {
             valid= true;
     } catch(Exception e){
         System.out.println(e.toString());
-        
-//valid= true;
     }
 }}catch (Exception e) {
 System.out.println("Error " + e.toString());
 valid= false; 
-//System.exit(0);
 	}
    return valid;     
 }
@@ -266,7 +244,6 @@ patient_view.getClose_button().addActionListener ( actionListener );
 patient_view.getImage_button().addActionListener ( actionListener );
 }
 catch ( Exception e ){
-//            JOptionPane.showMessageDialog(null, "Failed To Connect To The DataBase", "Not Connected", JOptionPane.ERROR_MESSAGE);
     System.out.print(e.toString());
 }
 }//End of controller    
@@ -298,7 +275,6 @@ private void insert(){
     String patientSymptom = patient_view.getPatientSymptom();
     String drugName = patient_view.getDrugName();
     String drugInstruction = patient_view.getDrugInstruction();
-//    patientImage = patient_view.getPath();
 
 Patient_Model patient_model = new Patient_Model ( patientId, patientFname, patientSname, patientAge, patientAddress, 
     patientPhone, patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate,
