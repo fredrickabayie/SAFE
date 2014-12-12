@@ -3,14 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/fred/Desktop/SAFE/SAFE/src/safe/main/SAFE.java</file>
-            <file>file:/C:/Users/fred/Desktop/SAFE/SAFE/src/safe/views/Patient_View.java</file>
-            <file>file:/C:/Users/fred/Desktop/SAFE/SAFE/src/safe/views/Chat_View.java</file>
+            <file>file:/C:/Users/fred/Desktop/SAFE/SAFE/src/safe/models/Hospital_Database_Model.java</file>
+            <file>file:/C:/Users/fred/Desktop/SAFE/SAFE/src/safe/views/Main_View.java</file>
             <file>file:/C:/Users/fred/Desktop/SAFE/SAFE/src/safe/controllers/Patient_Controller.java</file>
-            <file>file:/C:/Users/fred/Desktop/SAFE/SAFE/src/safe/controllers/Chat_Controller.java</file>
-            <file>file:/C:/Users/fred/Desktop/SAFE/SAFE/src/safe/controllers/Main_Controller.java</file>
-            <file>file:/C:/Users/fred/Desktop/SAFE/SAFE/src/safe/views/Patient_Table_View.java</file>
-            <file>file:/C:/Users/fred/Desktop/SAFE/SAFE/src/safe/controllers/Doctor_Controller.java</file>
+            <file>file:/C:/Users/fred/Desktop/SAFE/SAFE/src/safe/views/Doctor_Table_View.java</file>
         </group>
     </open-files>
 </project-private>

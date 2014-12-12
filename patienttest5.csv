@@ -1,0 +1,8 @@
+ID, FIRST NAME, SURNAME, AGE, ADDRESS, PHONE, GENDER, OCCUPATION, BLOODGROUP, STATUS, BIRTHDATE, NATIONAL, DISEASE, SYMPTOM, DRUG, INSTRUCTION
+PAT19113, Abraham, Vanderpuye,21, TY 4323,242616645, Male, Student, B+, Single, 1993-12-16, Ghanaian, Headache, Pain in the head, Paracetamol, 2tablets morning evening and afternoon
+PAT36717, Isaac, Amoafo,21, SR 336,244444444, Male, Secret Agent, AB-, Single, 1993-12-10, Togolese, Epilepsy, fainting, Carbamazepine, 1 tablet twice daily
+PAT39921, Michael, Annor,24, GY 332,245778451, Male, Farmer, B+, Single, 1992-12-16, Ghanaian, Malaria, High body temperature, Paracetamol, 3tablets 2times daily
+PAT50930, Agatha, Maison,23, UI 732,24577562, Female, Banker, A-, Married, 1991-06-12, Ghanaian, Minor headache, pain in the head, Paracetamol, 2tablets 3times daily
+PAT60444, Fredrick, Abayie,22, KN 4414,209339957, Male, Software Engineer, B+, Single, 1992-12-13, Ghanaian, Tooth infection, Swollen enamel, Amoxicillin, 3times daily for 7 days
+PAT71975, Rahab, Wangari,21, KW 3223,214574452, Female, Software Developer, B+, Married, 1991-12-12, Togolese, Dementia, Tiredness, Galantamine, 5mg once daily at night
+PAT83994, Muhammed, Hanif,24, 1st Avenue Berekuso,242138283, Male, Student, A-, Single, 1990-03-28, Ghanaian, Glaucoma, Blurry eyes, Latanoprost, instill drops on affected eye in the evening

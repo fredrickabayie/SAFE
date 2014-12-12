@@ -8,6 +8,7 @@ package safe.models;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 import safe.views.Doctor_Table_View;
@@ -160,11 +161,12 @@ public class Hospital_Database_Model {
              ResultSet resultSet = statement.executeQuery ( "SELECT * FROM doctors" );
          while ( resultSet.next ( ) )
          {
+             ArrayList<Object> array = new ArrayList<>();
              Object [] w = {resultSet.getString ( "doctorId" ),resultSet.getString ( "doctorFname" ),resultSet.getString ( "doctorSname" ),
                  resultSet.getString ( "doctorPhone" ),resultSet.getString ( "doctorEmail" ),resultSet.getString ( "doctorDepartment" ),
              resultSet.getString ( "doctorDate" ),resultSet.getString("doctorPassword")};
-            
-             System.out.println(""+Arrays.toString(w));
+            array.add(w);
+             System.out.println(""+array);
              System.out.println(resultSet.getString("doctorId"));
              doctor_table_view.addRow(w);
          }//End Of While

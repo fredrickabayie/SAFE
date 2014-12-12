@@ -46,7 +46,6 @@ JComboBox department_combo;
         department_combo.addItem("Haematology");
         department_combo.addItem("Oncology");
         department.setCellEditor ( new DefaultCellEditor (department_combo));
-//        blood.setCellEditor( new DefaultCellEditor(blood_combo));
    }
     
      /**

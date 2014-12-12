@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.text.MessageFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Random;
@@ -63,7 +64,7 @@ public final class Patient_Controller {
     byte[] patientImage = null;
     
 /**
- * COnstructor for the patient controller class
+ * Constructor for the patient controller class
  * @param patient_view 
  * @param database_controller 
  * @param patient_table_view 
@@ -84,6 +85,9 @@ patientButton();
 }//End of Patient_Controller
 
 
+/**
+ * Method to generate an id
+ */
 public void generateId(){
 int x =0;
 do{
@@ -96,6 +100,11 @@ x = ran.nextInt(100000) + 1000;
 ticket_id=x;
 }
 
+/**
+ * Method to check or verify id
+ * @param x
+ * @return 
+ */
 public boolean checkId(long x){
 boolean valid=true;
 try {
@@ -283,7 +292,11 @@ Patient_Model patient_model = new Patient_Model ( patientId, patientFname, patie
 database_controller.insertPatientdatabase(patientId, patientFname, patientSname, patientAge, patientAddress, patientPhone,
     patientGender, patientOccupation, patientBloodgroup, patientMaritalstatus, patientBirthdate, patientNational, 
     patientDisease, patientSymptom, drugName, drugInstruction,patientImage );
-    System.out.println ( ""+patient_model.toString() );
+
+ArrayList<Object> array = new ArrayList<>();
+array.add(patient_model);
+
+    System.out.println ( ""+array );
     resetTextFields();
     generateId();
     patient_view.setPatientId("PAT"+ticket_id);
@@ -367,12 +380,23 @@ JOptionPane.showMessageDialog(patient_table_view, "Failed To Import File " +file
  * Method to get column names of the patient table
  * @return 
  */
-public Vector getColumnNames()
-{
-    Vector <String> vec = new Vector < > ( );
-   for ( int i=0; i < patient_table.getColumnCount ( ); i++ )
-       vec.add ( patient_table.getColumnName ( i ) );
-   return vec;
+//public Vector getColumnNames()
+//{
+//    Vector <String> vec = new Vector < > ( );
+//   for ( int i=0; i < patient_table.getColumnCount ( ); i++ )
+//       vec.add ( patient_table.getColumnName ( i ) );
+//   return vec;
+//}
+
+ /**
+ * Method to get column names of the patient table
+ * @return 
+ */
+public ArrayList getColumnNames(){
+    ArrayList<String> array = new ArrayList<>();
+    for ( int i=0; i < patient_table.getColumnCount ( ); i++ )
+       array.add ( patient_table.getColumnName ( i ) );
+   return array;
 }
      
     

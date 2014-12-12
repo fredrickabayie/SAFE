@@ -7,6 +7,7 @@ package safe.controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import safe.views.Doctor_Table_View;
 import safe.views.Doctor_View;
 import safe.views.Login_View;
@@ -82,7 +83,8 @@ public final class Main_Controller {
                 
                 if (e.getSource().equals(main_view.getChat_menu())
                     ||e.getSource().equals(main_view.getChat())){
-                    
+                    JOptionPane.showMessageDialog(main_view, "This feature will be implemented in version"
+                            + " 1.34", "Not Implemented", JOptionPane.INFORMATION_MESSAGE);
                 }
               };
                main_view.getAddPatient_menu().addActionListener ( actionListener );
