@@ -5,12 +5,16 @@
  */
 package safe.views;
 
+/**
+ * Importing java libraries
+ */
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
 /**
  *
  * @author Abayie Fredrick
+ * @version 1.02
  */
 public class Patient_View extends javax.swing.JFrame {
 
@@ -23,7 +27,7 @@ public class Patient_View extends javax.swing.JFrame {
     
     /**
      * A method to get a button id
-     * @return 
+     * @return the ok button
      */
     public JButton getOk_button(){
         return ok_button;
@@ -31,7 +35,7 @@ public class Patient_View extends javax.swing.JFrame {
     
     /**
      * A method to get a button id
-     * @return 
+     * @return the close button
      */    
     public JButton getClose_button(){
         return close_button;
@@ -39,7 +43,7 @@ public class Patient_View extends javax.swing.JFrame {
     
     /**
      * A method to get a button id
-     * @return 
+     * @return the image button
      */    
     public JButton getImage_button(){
         return image_button;
@@ -54,7 +58,7 @@ public class Patient_View extends javax.swing.JFrame {
     
     /**
      * Method to get path
-     * @return 
+     * @return the path of the file
      */
     public byte[] getPath(){
         String n = path.getText();
@@ -62,115 +66,147 @@ public class Patient_View extends javax.swing.JFrame {
          return byt;
     }
     
+    /**
+     * Method to set path
+     * @param s the path of the image
+     */
     public void setPath(String s){
         path.setText(s);
     }
     
     /**
      * A method to get a string in a text field id
-     * @return 
+     * @return the patient id text
      */
     public String getPatientId(){
         return patientId.getText();
     }//End of getPatientId
     
+    /**
+     * Method to set editable of fields
+     */
     public void editable(){
         patientId.setEditable(false);
         path.setEditable(false);
         path.setVisible(false);
     }
     
+    /**
+     * Method to set patient id
+     * @param x the patient id
+     */
     public void setPatientId(String x){
         patientId.setText(x);
     }
     
     /**
      * A method to get a string in a text field id
-     * @return 
+     * @return the patient first name text
      */
     public String getPatientFname(){
         return patientFname.getText();
     }//End of getPatientFname
     
+    /**
+     * Method to set patient first name
+     */
     public void setPatientFname(){
          patientFname.setText(null);
     }
 
     /**
      * A method to get a string in a text field id
-     * @return 
+     * @return the patient surname text
      */    
     public String getPatientSname(){
         return patientSname.getText();
     }//End of getPatientSname
     
+    /**
+     * Method to set patient surname
+     */
     public void setPatientSname(){
          patientSname.setText(null);
     }
     
     /**
      * A method to get a string in a text field id
-     * @return 
+     * @return the patient age
      */    
     public int getPatientAge(){
         return Integer.parseInt(patientAge.getText());
     }//End of getPatientAge
     
+    /**
+     * Method to set patient age
+     */
     public void setPatientAge(){
          patientAge.setText(null);
     }
     
     /**
      * A method to get a string in a text field id
-     * @return 
+     * @return the patient address text
      */    
     public String getPatientAddress(){
         return patientAddress.getText();
     }//End of getPatientAddress
     
+    /**
+     * Method to set patient address text field
+     */
     public void setPatientAddress(){
          patientAddress.setText(null);
     }
     
     /**
      * A method to get a string in a text field id
-     * @return 
+     * @return the patient phone number
      */    
     public int getPatientPhone(){
         return Integer.parseInt(patientPhone.getText());
     }//End of getPatientPhone
     
+    /**
+     * Method to set patient phone number field
+     */
     public void setPatientPhone(){
          patientPhone.setText(null);
     }
     
     /**
      * A method to get items in a combo box id
-     * @return 
+     * @return the patient text field
      */    
     public String getPatientGender(){
         return patientGender.getSelectedItem().toString();
     }//End of getPatientGender
     
+    /**
+     * Method to set patient gender
+     */
     public void setPatientGender(){
          patientGender.setSelectedIndex(0);
     }
     
     /**
      * A method to get a string in a text field id
-     * @return 
+     * @return the patient occupation text
      */    
     public String getPatientOccupation(){
         return patientOccupation.getText();
     }//End of getPatientOccupation
     
+    /**
+     * Method to set patient occupation field
+     */
       public void setPatientOccupation(){
          patientOccupation.setText(null);
     }
     
     /**
      * A method to get items in a combo box id
-     * @return 
+     * @return the patient blood group text
      */    
     public String getPatientBloodgroup(){
         return patientBloodgroup.getSelectedItem().toString();
@@ -185,7 +221,7 @@ public class Patient_View extends javax.swing.JFrame {
     
     /**
      * A method to get items in a combo box id
-     * @return 
+     * @return the patient status text
      */    
     public String getPatientMaritalstatus(){
         return patientMaritalstatus.getSelectedItem().toString();
@@ -200,19 +236,22 @@ public class Patient_View extends javax.swing.JFrame {
     
     /**
      * A method to get a string in a text field id
-     * @return 
+     * @return the patient nationality text
      */       
     public String getPatientNational(){
         return patientNational.getText();
     }//End of getPatientNational
     
+    /**
+     * Method to set patient nationality
+     */
       public void setPatientNational(){
          patientNational.setText(null);
     }
     
     /**
      * A method to get a string of a date in a text field id
-     * @return 
+     * @return the patient birth date text
      */       
     public String getPatientBirthdate(){
         return ((JTextField)patientBirthdate.getDateEditor().getUiComponent()).getText();
@@ -227,7 +266,7 @@ public class Patient_View extends javax.swing.JFrame {
        
       /**
        * Method to return drug name
-       * @return 
+       * @return the drug name field
        */
       public String getDrugName(){
           return drugName.getText();
@@ -242,7 +281,7 @@ public class Patient_View extends javax.swing.JFrame {
       
       /**
        * Method to get patient disease
-       * @return 
+       * @return the patient disease text
        */
       public String getPatientDisease(){
           return patientDisease.getText();
@@ -257,7 +296,7 @@ public class Patient_View extends javax.swing.JFrame {
       
       /**
        * Method to get patient symptom
-     * @return 
+     * @return the patient symptom text
        */
       public String getPatientSymptom(){
           return patientSymptom.getText();
@@ -272,7 +311,7 @@ public class Patient_View extends javax.swing.JFrame {
       
       /**
        * Method to get drug instruction
-       * @return 
+       * @return the drug instruction text
        */
      public String getDrugInstruction(){
          return drugInstruction.getText();

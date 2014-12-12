@@ -11,6 +11,7 @@ import javax.swing.JMenuItem;
 /**
  *
  * @author Abayie Fredrick
+ * @version 1.02
  */
 public class Main_View extends javax.swing.JFrame {
 
@@ -23,7 +24,7 @@ public class Main_View extends javax.swing.JFrame {
     
     /**
      * Method to return add patient menu item
-     * @return 
+     * @return the add patient menu item
      */
     public JMenuItem getAddPatient_menu(){
         return addPatient_menu;
@@ -31,7 +32,7 @@ public class Main_View extends javax.swing.JFrame {
     
     /**
      * Method to return new doctor button
-     * @return 
+     * @return the new doctor button
      */
     public JButton getNewDoctor(){
         return newDoctor;
@@ -39,7 +40,7 @@ public class Main_View extends javax.swing.JFrame {
     
     /**
      * Method to return new patient button
-     * @return 
+     * @return the new patient button
      */
     public JButton getNewPatient(){
         return newpatient;
@@ -47,7 +48,7 @@ public class Main_View extends javax.swing.JFrame {
     
     /**
      * Method to return patient table menu item
-     * @return 
+     * @return the patient table menu item
      */
     public JMenuItem getPatientTable_menu(){
         return patientTable_menu;
@@ -55,7 +56,7 @@ public class Main_View extends javax.swing.JFrame {
     
     /**
      * Method to return add doctor menu item
-     * @return 
+     * @return the add doctor menu item
      */
     public JMenuItem getAddDoctor_menu(){
         return addDoctor_menu;
@@ -63,7 +64,7 @@ public class Main_View extends javax.swing.JFrame {
     
     /**
      * Method to return doctor table menu item
-     * @return 
+     * @return the doctor table menu item
      */
     public JMenuItem getDoctorTable_menu(){
         return doctorTable_menu;
@@ -71,7 +72,7 @@ public class Main_View extends javax.swing.JFrame {
     
     /**
      * Method to return doctor table button
-     * @return 
+     * @return the doctor table button
      */
     public JButton getDoctorTable_button(){
         return doctortable_button;
@@ -79,7 +80,7 @@ public class Main_View extends javax.swing.JFrame {
     
     /**
      * Method to return patient table button
-     * @return 
+     * @return the patient table button
      */
     public JButton getPatientTable_button(){
         return patienttable_button;
@@ -87,7 +88,7 @@ public class Main_View extends javax.swing.JFrame {
     
     /**
      * Method to return chat menu
-     * @return 
+     * @return the chat menu item
      */
     public JMenuItem getChat_menu(){
         return chat;
@@ -95,7 +96,7 @@ public class Main_View extends javax.swing.JFrame {
     
     /**
      * Method to return chat button
-     * @return 
+     * @return the chat button
      */
     public JButton getChat(){
         return chat_button;
@@ -103,7 +104,7 @@ public class Main_View extends javax.swing.JFrame {
     
     /**
      * Method to return doctor login menu item
-     * @return 
+     * @return the doctor login menu item
      */
     public JMenuItem getDoctorLogin_menu(){
         return doctorLogin_menu;
@@ -111,7 +112,7 @@ public class Main_View extends javax.swing.JFrame {
     
     /**
      * Method to return how to use software pdf
-     * @return 
+     * @return the usepdf menu item
      */
     public JMenuItem getUsepdf(){
         return usepdf;

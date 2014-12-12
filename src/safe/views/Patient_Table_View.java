@@ -5,6 +5,9 @@
  */
 package safe.views;
 
+/**
+ * Importing java libraries
+ */
 import java.util.Vector;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
@@ -16,7 +19,8 @@ import javax.swing.table.TableColumn;
 
 /**
  *
- * @author chokayg3
+ * @author Abayie Fredrick
+ * @version 1.02
  */
 public final class Patient_Table_View extends javax.swing.JFrame {
     public static DefaultTableModel table_model;
@@ -34,7 +38,6 @@ public final class Patient_Table_View extends javax.swing.JFrame {
      * Creates new form Patient_Table_View
      */
     public Patient_Table_View() {
-//        pop_menu = new JPopupMenu();
         vector = new Vector();
         vector.add ("ID");
         vector.add ("FIRST NAME");
@@ -82,13 +85,11 @@ public final class Patient_Table_View extends javax.swing.JFrame {
         status_combo.addItem ("Single");
         status_combo.addItem ("Married");
         status.setCellEditor( new DefaultCellEditor(status_combo));
-        
-        
     }
               
     /**
      * Method to add a row to the table
-     * @param w 
+     * @param w the index to add new row
      */
     public void addRow(Object []w){
         table_model.addRow(w);
@@ -96,7 +97,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
     /**
      * Method returning table model row count
-     * @return 
+     * @return the row count of the table model
      */
     public int getRowCount(){
         return table_model.getRowCount();
@@ -104,9 +105,9 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
     /**
      * A method to get a value in the table
-     * @param i
-     * @param j
-     * @return 
+     * @param i the row to get value
+     * @param j the column to get value
+     * @return the value at the table model
      */
      public String getValueAt(int i, int j){
         return (String) table_model.getValueAt(i, j);
@@ -123,7 +124,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
      
      /**
       * A method to return a selected row
-      * @return 
+      * @return the selected row
       */
      public int getSelectedRow(){
          return patient_table.getSelectedRow();
@@ -131,7 +132,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
      /**
       * Method to set row count of the table
-      * @param i 
+      * @param i the index to set row count
       */
     public void setRowCount( int i){
         i=0;
@@ -140,7 +141,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
     /**
      * Method to return display button
-     * @return 
+     * @return the display button
      */
     public JButton getDisplay(){
         return display;
@@ -148,7 +149,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
     /**
      * Method to return update button
-     * @return 
+     * @return the update button
      */
     public JButton getUpdate(){
         return update;
@@ -156,7 +157,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
     /**
      * Method to return delete button
-     * @return 
+     * @return the delete button
      */
     public JButton getDelete(){
         return delete;
@@ -164,7 +165,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
     /**
      * Method to return close button
-     * @return 
+     * @return the close button
      */
     public JButton getClose(){
         return close_button;
@@ -172,7 +173,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
     /**
      * Method to return open button
-     * @return 
+     * @return the open button
      */
     public JButton getOpen(){
         return open;
@@ -180,7 +181,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
     /**
      * Method to return save button
-     * @return 
+     * @return the save button
      */
     public JButton getSave(){
         return save;
@@ -188,7 +189,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
       /**
      * Method to return table menu item
-     * @return 
+     * @return the import menu item
      */
     public JMenuItem getImport_menu(){
         return import_menu;
@@ -196,7 +197,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
     /**
      * Method to return table menu item
-     * @return 
+     * @return the export menu item
      */
     public JMenuItem getExport_menu(){
         return export_menu;
@@ -204,7 +205,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
     /**
      * Method to return table menu item
-     * @return 
+     * @return the exit menu item
      */
     public JMenuItem getExit_menu(){
         return exit_menu;
@@ -212,7 +213,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
     /**
      * Method to return table menu item
-     * @return 
+     * @return the display menu item
      */
     public JMenuItem getDisplay_menu(){
         return display_menu;
@@ -220,7 +221,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
     /**
      * Method to return table menu item
-     * @return 
+     * @return the update menu item
      */
     public JMenuItem getUpdate_menu(){
         return update_menu;
@@ -229,7 +230,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
     /**
      * Method to return table menu item
-     * @return 
+     * @return the delete menu item
      */
     public JMenuItem getDelete_menu(){
         return delete_menu;
@@ -237,7 +238,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
     /**
      * Method to return search text field
-     * @return 
+     * @return the search text
      */
     public String getSearch(){
         return search_field.getText();
@@ -245,7 +246,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
     /**
      * Method to get search button
-     * @return 
+     * @return the search button
      */
     public JButton getSearch_button(){
         return search_button;
@@ -253,7 +254,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
     /**
      * Method to return print button
-     * @return 
+     * @return the print button
      */
     public JButton getPrint_button(){
         return print;
@@ -261,7 +262,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
     /**
      * Method to return print menu
-     * @return 
+     * @return the print menu item
      */
     public JMenuItem getPrint_menu(){
         return print_menu;
@@ -269,7 +270,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
     /**
      * Method to return clear menu item
-     * @return 
+     * @return the clear menu item
      */
     public JMenuItem getClear_menu(){
         return clear_menu;
@@ -277,7 +278,7 @@ public final class Patient_Table_View extends javax.swing.JFrame {
     
     /**
      * Method to return delete row from table
-     * @return 
+     * @return the delete row menu item
      */
     public JMenuItem getDeleteRow_menu(){
         return deleterow_menu;

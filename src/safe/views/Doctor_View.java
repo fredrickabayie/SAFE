@@ -10,8 +10,9 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 /**
- *
- * @author chokayg3
+ *Doctor view class
+ * @author Abayie Fredrick
+ * @version 1.02
  */
 public class Doctor_View extends javax.swing.JFrame {
 
@@ -24,71 +25,71 @@ public class Doctor_View extends javax.swing.JFrame {
     
     /**
      * A method to return a button id
-     * @return 
+     * @return the close button
      */
     public JButton getClose_button(){
         return close_button;
     }
     
     /**
-     * 
-     * @return 
+     * Method to return the ok button
+     * @return the ok button
      */
     public JButton getOk_button(){
         return ok_button;
     }
     
     /**
-     * 
-     * @return 
+     * Method to get doctor id
+     * @return the doctor id text
      */
     public String getDoctorId(){
         return doctorId.getText();
     }//End of getDoctorId
     
     /**
-     * 
-     * @return 
+     * Method to get doctor first name
+     * @return the doctor first name text
      */
     public String getDoctorFname(){
         return doctorFname.getText();
     }//End of getDoctorFname
     
     /**
-     * 
-     * @return 
+     * Method to get doctor surname
+     * @return the doctor surname field
      */
     public String getDoctorSname(){
         return doctorSname.getText();
     }//End of getDoctorSname
     
     /**
-     * 
-     * @return 
+     * Method to get doctor phone
+     * @return the doctor phone
      */
     public String getDoctorPhone(){
         return doctorPhone.getText();
     }//End of getDoctorPhone
     
     /**
-     * 
-     * @return 
+     * Method to get doctor email
+     * @return the doctor email text
      */
     public String getDoctorEmail(){
         return doctorEmail.getText();
     }//End of getDoctorEmail
     
     /**
-     * 
-     * @return 
+     * Method to get doctor department
+     * @return the doctor department text
      */
     public String getDoctorDepartment(){
         return doctorDepartment.getSelectedItem().toString();
     }
     
     /**
-     * 
-     * @return 
+     * Method to get doctor date joined
+     * @return the doctor date 
      */
     public String getDoctorDate(){
         return ((JTextField)doctorDate.getDateEditor().getUiComponent()).getText();
@@ -96,7 +97,7 @@ public class Doctor_View extends javax.swing.JFrame {
     
     /**
      * Method to return password text field
-     * @return 
+     * @return the doctor password text
      */
     public String getPassword(){
         return Arrays.toString(doctorPassword.getPassword());

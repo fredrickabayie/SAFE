@@ -187,7 +187,7 @@ JComboBox department_combo;
     
     /**
      * Method to return table menu item
-     * @return 
+     * @return the update menu item
      */
     public JMenuItem getUpdate_menu(){
         return update_menu;
@@ -195,7 +195,7 @@ JComboBox department_combo;
     
     /**
      * Method to return table menu item
-     * @return 
+     * @return the delete menu item
      */
     public JMenuItem getDelete_menu(){
         return delete_menu;
@@ -203,7 +203,7 @@ JComboBox department_combo;
     
     /**
      * Method to return the search text field
-     * @return 
+     * @return the search field text
      */
     public String getSearch(){
         return search_field.getText();
@@ -211,7 +211,7 @@ JComboBox department_combo;
     
     /**
      * Method to return the search button
-     * @return 
+     * @return the search button
      */
     public JButton getSearch_button(){
         return search_button;
@@ -219,7 +219,7 @@ JComboBox department_combo;
     
     /**
      * Method to return print button
-     * @return 
+     * @return the print button
      */
     public JButton getPrint_button(){
         return print;
@@ -227,7 +227,7 @@ JComboBox department_combo;
     
     /**
      * Method to return print menu
-     * @return 
+     * @return the print menu item
      */
     public JMenuItem getPrint_menu(){
         return print_menu;
