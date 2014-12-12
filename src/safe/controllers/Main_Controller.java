@@ -86,6 +86,10 @@ public final class Main_Controller {
                     JOptionPane.showMessageDialog(main_view, "This feature will be implemented in version"
                             + " 1.34", "Not Implemented", JOptionPane.INFORMATION_MESSAGE);
                 }
+                
+                if (e.getSource().equals(main_view.getUsepdf())){
+                    openPdf();
+                }
               };
                main_view.getAddPatient_menu().addActionListener ( actionListener );
                main_view.getPatientTable_menu().addActionListener ( actionListener );
@@ -98,10 +102,20 @@ public final class Main_Controller {
                main_view.getNewPatient().addActionListener ( actionListener );
                main_view.getNewDoctor().addActionListener ( actionListener );
                main_view.getChat().addActionListener ( actionListener );
+                main_view.getUsepdf().addActionListener ( actionListener );
         }
         
         catch( Exception e ){
             System.out.println(e.toString());
         }    
 }
+    
+    public void openPdf(){
+        try{
+            Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler "+"C:\\Users\\fred\\Desktop\\SAFE\\SAFE\\SAFE HOSPITAL.pdf");
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }
+    }
 }

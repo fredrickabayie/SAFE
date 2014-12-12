@@ -109,6 +109,14 @@ public class Main_View extends javax.swing.JFrame {
         return doctorLogin_menu;
     }//End of getDoctorLogin_menu
     
+    /**
+     * Method to return how to use software pdf
+     * @return 
+     */
+    public JMenuItem getUsepdf(){
+        return usepdf;
+    }//End of getUsepdf
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -148,7 +156,7 @@ public class Main_View extends javax.swing.JFrame {
         doctorLogin_menu = new javax.swing.JMenuItem();
         jMenu9 = new javax.swing.JMenu();
         shortcut = new javax.swing.JMenuItem();
-        about = new javax.swing.JMenuItem();
+        usepdf = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SAFE HOSPITAL");
@@ -284,8 +292,8 @@ public class Main_View extends javax.swing.JFrame {
         shortcut.setText("Shortcuts");
         jMenu9.add(shortcut);
 
-        about.setText("About");
-        jMenu9.add(about);
+        usepdf.setText("How To USe");
+        jMenu9.add(usepdf);
 
         jMenuBar1.add(jMenu9);
 
@@ -348,7 +356,6 @@ public class Main_View extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu JMenu5;
-    private javax.swing.JMenuItem about;
     private javax.swing.JMenuItem addDoctor_menu;
     private javax.swing.JMenuItem addPatient_menu;
     private javax.swing.JMenuItem chat;
@@ -377,5 +384,6 @@ public class Main_View extends javax.swing.JFrame {
     private javax.swing.JMenuItem patientTable_menu;
     private javax.swing.JButton patienttable_button;
     private javax.swing.JMenuItem shortcut;
+    private javax.swing.JMenuItem usepdf;
     // End of variables declaration//GEN-END:variables
 }

@@ -168,9 +168,9 @@
                 <Property name="text" type="java.lang.String" value="Shortcuts"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="about">
+            <MenuItem class="javax.swing.JMenuItem" name="usepdf">
               <Properties>
-                <Property name="text" type="java.lang.String" value="About"/>
+                <Property name="text" type="java.lang.String" value="How To USe"/>
               </Properties>
             </MenuItem>
           </SubComponents>
