@@ -8,6 +8,7 @@ package safe.models;
 /**
  *
  * @author Fredrick Abayie
+ * @version 1.02
  */
 public class Patient_Model {
     String patientId;
@@ -29,23 +30,23 @@ public class Patient_Model {
     byte patientImage;
     
     /**
-     * 
-     * @param patientId
-     * @param patientFname
-     * @param patientSname
-     * @param patientAge
-     * @param patientAddress
-     * @param patientPhone 
-     * @param patientGender 
-     * @param patientOccupation 
-     * @param patientBloodgroup 
-     * @param patientMaritalstatus 
-     * @param patientBirthdate 
-     * @param patientNational 
-     * @param patientDisease 
-     * @param patientSymptom 
-     * @param drugName 
-     * @param drugInstruction 
+     * Constructor for the patient model class
+     * @param patientId the patient id
+     * @param patientFname the patient first name
+     * @param patientSname the patient surname
+     * @param patientAge the patient age
+     * @param patientAddress the patient address
+     * @param patientPhone the patient phone number
+     * @param patientGender the patient gender
+     * @param patientOccupation the patient occupation
+     * @param patientBloodgroup the patient blood group
+     * @param patientMaritalstatus the patient marital status
+     * @param patientBirthdate the patient birth date
+     * @param patientNational the patient nationality
+     * @param patientDisease the patient disease
+     * @param patientSymptom the patient symptom
+     * @param drugName the drug name
+     * @param drugInstruction the drug instruction
      */
     public Patient_Model ( String patientId, String patientFname, String patientSname, int patientAge, String patientAddress, 
             int patientPhone, String patientGender, String patientOccupation, String patientBloodgroup, String patientMaritalstatus,
@@ -66,267 +67,269 @@ public class Patient_Model {
         this.patientMaritalstatus = patientMaritalstatus;
         this.patientSymptom = patientSymptom;
         this.drugName = drugName;
-        this.drugInstruction = drugInstruction;
-//        this.patientImage = patientImage;
-        
+        this.drugInstruction = drugInstruction;        
     }//End of Patient_Model
     
     /**
-     * 
-     * @param patientId 
+     * Method to set patient id
+     * @param patientId the patient id
      */
     public void setPatientId ( String patientId ){
         this.patientId = patientId;
     }//End of setPatientId
     
     /**
-     * 
-     * @return 
+     * Method to get patient id
+     * @return the patient id
      */
     public String getPatientId ( ){
         return patientId;
     }//End of getPatientId
     
     /**
-     * 
-     * @param patientFname 
+     * Method to set patient first name
+     * @param patientFname the patient first name
      */
     public void setPatientFname ( String patientFname ){
         this.patientFname = patientFname;
     }//End of setPatientFname
     
     /**
-     * 
-     * @return 
+     * Method to get patient first name
+     * @return the patient first name
      */
     public String getPatientFname ( ){
         return patientFname;
     }//End of getPatientFname
     
     /**
-     * 
-     * @param patientSname 
+     * Method to set patient surname
+     * @param patientSname the patient surname
      */
     public void setPatientSname ( String patientSname ){
         this.patientSname = patientSname;
     }//End of setPatientSname
     
     /**
-     * 
-     * @return 
+     * Method to get the patient surname
+     * @return the patient surname
      */
     public String getPatientSname ( ){
         return patientSname;
     }//End of getPatientSname
     
     /**
-     * 
-     * @param patientAge 
+     * Method to set the patient age
+     * @param patientAge the patient age
      */
     public void setPatientAge ( int patientAge ){
         this.patientAge = patientAge;
     }//End of setPatientAge
     
     /**
-     * 
-     * @return 
+     * Method to get patient age
+     * @return the patient age
      */
     public int getPatientAge ( ){
         return patientAge;
     }//End of getPatientFname
     
     /**
-     * 
-     * @param patientAddress 
+     * Method to set patient address
+     * @param patientAddress the patient address
      */
     public void setPatientAddress ( String patientAddress ){
         this.patientAddress = patientAddress;
     }//End of setPatientAddress
     
     /**
-     * 
-     * @return 
+     * Method to get patient address
+     * @return the patient address
      */
     public String getPatientAddress ( ){
         return patientAddress;
     }//End of getPatientAddress
     
     /**
-     * 
-     * @param patientPhone
+     * Method to set patient phone number
+     * @param patientPhone the patient phone number
      */
     public void setPatientPhone ( int patientPhone ){
         this.patientPhone = patientPhone;
     }//End of setPatientPhone
     
     /**
-     * 
-     * @return 
+     * Method to get patient phone number
+     * @return the patient phone number
      */
     public int getPatientPhone ( ){
         return patientPhone;
     }//End of getPatientPhone
     
     /**
-     * 
-     * @param patientGender
+     * Method to set patient gender
+     * @param patientGender the patient gender
      */
     public void setPatientGender ( String patientGender ){
         this.patientGender = patientGender;
     }//End of setPatientGender
     
     /**
-     * 
-     * @return 
+     * Method to get patient gender
+     * @return the patient gender
      */
     public String getPatientGender ( ){
         return patientGender;
     }//End of getPatientGender
     
     /**
-     * 
-     * @param patientBloodgroup
+     * Method to set patient blood group
+     * @param patientBloodgroup the patient blood group
      */
     public void setPatientBloodgroup ( String patientBloodgroup ){
         this.patientBloodgroup = patientBloodgroup;
     }//End of setPatientGender
     
     /**
-     * 
-     * @return 
+     * Method to get patient blood group
+     * @return the patient blood group
      */
     public String getPatientBloodgroup ( ){
         return patientBloodgroup;
     }//End of getPatientBloodgroup
     
     /**
-     * 
-     * @param patientMaritalstatus
+     * Method to set patient status
+     * @param patientMaritalstatus the patient status
      */
     public void setPatientMaritalstatus ( String patientMaritalstatus ){
         this.patientMaritalstatus = patientMaritalstatus;
     }//End of setPatientMaritalstatus
     
     /**
-     * 
-     * @return 
+     * Method to get patient status
+     * @return the patient status
      */
     public String getPatientMaritalstatus ( ){
         return patientMaritalstatus;
     }//End of getPatientMaritalstatus
     
     /**
-     * 
-     * @param patientNational
+     * Method to set patient nationality
+     * @param patientNational the patient nationality
      */
     public void setPatientNational ( String patientNational ){
         this.patientNational = patientNational;
     }//End of setPatientNational
     
     /**
-     * 
-     * @return 
+     * Method to get patient nationality
+     * @return the patient nationality
      */
     public String getPatientNational ( ){
         return patientNational;
     }//End of getPatientNational
     
     /**
-     * 
-     * @param patientBirthdate
+     * Method to set patient birth date
+     * @param patientBirthdate the patient birth date
      */
     public void setPatientBirthdate ( String patientBirthdate ){
         this.patientBirthdate = patientBirthdate;
     }//End of setPatientBirthdate
     
     /**
-     * 
-     * @return 
+     * Method to get patient birth date
+     * @return the patient birth date
      */
     public String getPatientBirthdate ( ){
         return patientBirthdate;
     }//End of getPatientBirthdate
     
     /**
-     * 
-     * @param patientDisease
+     * Method to set patient disease
+     * @param patientDisease the patient disease
      */
     public void setPatientDisease ( String patientDisease ){
         this.patientDisease = patientDisease;
     }//End of setPatientDisease
     
     /**
-     * 
-     * @return 
+     * Method to get patient disease
+     * @return the patient disease
      */
     public String getPatientDisease ( ){
         return patientDisease;
     }//End of getPatientDisease
     
     /**
-     * 
-     * @param patientSymptom
+     * Method to set patient symptom
+     * @param patientSymptom the patient symptom
      */
     public void setPatientSymptom ( String patientSymptom ){
         this.patientSymptom = patientSymptom;
     }//End of setPatientSymptom
     
     /**
-     * 
-     * @return 
+     * Method to get patient symptom
+     * @return the patient symptom
      */
     public String getPatientSymptom ( ){
         return patientSymptom;
     }//End of getPatientSymptom
     
     /**
-     * 
-     * @param drugName
+     * Method to set drug name
+     * @param drugName the drug name
      */
     public void setDrugName ( String drugName ){
         this.drugName = drugName;
     }//End of setDrugName
     
     /**
-     * 
-     * @return 
+     * Method to get drug name
+     * @return the drug name
      */
     public String getDrugName ( ){
         return drugName;
     }//End of getDrugName
     
     /**
-     * 
-     * @param drugInstruction
+     * Method to set drug instruction
+     * @param drugInstruction the drug instruction
      */
     public void setDrugInstruction ( String drugInstruction ){
         this.drugInstruction = drugInstruction;
     }//End of setDrugInstruction
     
     /**
-     * 
-     * @return 
+     * Method to get drug instruction
+     * @return the drug instruction
      */
     public String getDrugInstruction( ){
         return drugInstruction;
     }//End of getDrugInstruction
     
     /**
-     * 
-     * @param patientImage
+     * Method to get patient image
+     * @param patientImage the patient image
      */
     public void setPatientImage ( byte patientImage ){
         this.patientImage = patientImage;
     }//End of setPatientImage
     
     /**
-     * 
-     * @return 
+     * Method to get patient image
+     * @return the patient image
      */
     public byte getPatientImage ( ){
         return patientImage;
     }//End of getPatientImage
     
+    /**
+     * Method to show a string representation of patient model
+     * @return the patient model
+     */
     @Override
     public String toString (){
         return  patientId+" "+patientFname+" "+patientSname+" "+patientAge+" "+patientAddress+" "+patientPhone+" "+patientGender+

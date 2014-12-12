@@ -5,6 +5,9 @@
  */
 package safe.controllers;
 
+/**
+ * Import java libraries
+ */
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -36,6 +39,7 @@ import static safe.views.Doctor_Table_View.doctor_table;
 /**
  *
  * @author Abayie Fredrick
+ * @version 1.02
  */
 public final class Doctor_Controller {
     Doctor_View doctor_view;
@@ -47,7 +51,12 @@ public final class Doctor_Controller {
     File file;
     TableRowSorter <TableModel> rowSorter;
     
-    
+    /**
+     * The constructor for the doctor controller
+     * @param doctor_view instance of the doctor view class
+     * @param database_model instance of the database model class
+     * @param doctor_table_view instance of the doctor table view class
+     */
 public Doctor_Controller (Doctor_View doctor_view, Hospital_Database_Model database_model, Doctor_Table_View doctor_table_view){
         this.doctor_view = doctor_view;
         this.database_model = database_model;
@@ -57,7 +66,9 @@ public Doctor_Controller (Doctor_View doctor_view, Hospital_Database_Model datab
          doctor_table.setRowSorter( rowSorter);
     }
     
-    
+    /**
+     * Method to add listeners to the buttons
+     */
 public void doctorButton (){
 try
    {
@@ -169,7 +180,7 @@ public void insert(){
 
 /**
  * Method to open a saved data
- * @param file 
+ * @param file the selected from the file chooser
  */
  public void open(File file)
     {
@@ -200,7 +211,7 @@ public void insert(){
  
      /**
      * A method to get the column names in the table
-     * @return 
+     * @return the column names in the table
      */
      public Vector getColumnNames()
     {
@@ -212,7 +223,7 @@ public void insert(){
      
     /**
      * Method to save data to file
-     * @param file 
+     * @param file the file name to save
      */
     public void save (File file)
     {
@@ -222,12 +233,10 @@ public void insert(){
             String headers=getColumnNames().toString();
             print.println(headers.substring(1,headers.length()-1));
             Enumeration veNums=table_model.getDataVector().elements();
-//            Enumeration veNums=patient_table_view.getTable_model();
             while(veNums.hasMoreElements()){
                 String row=veNums.nextElement().toString();
               print.println(row.substring(1,row.length()-1)); 
             }
-//            System.out.println(table_model.getDataVector().elementAt(0));
             print.close();          
             System.out.println("Saved data to file");
          JOptionPane.showMessageDialog(doctor_table_view, "Data Saved Successfully To " +file.getName(), "SAVED", JOptionPane.INFORMATION_MESSAGE);
@@ -239,7 +248,7 @@ public void insert(){
             JOptionPane.showMessageDialog(doctor_table_view, "Failed To Save Data", "ERROR "+file.getName(), JOptionPane.ERROR_MESSAGE);
         }//End Of Catch 
     
-    /**
+/**
  * A method to allow searching of data in the table
  */
 public void search ( ){

@@ -8,6 +8,7 @@ package safe.models;
 /**
  *
  * @author Fredrick Abayie
+ * @version 1.02
  */
 public class Doctor_Model {
     String doctorId;
@@ -20,15 +21,15 @@ public class Doctor_Model {
     String doctorPassword;
     
     /**
-     * 
-     * @param doctorId
-     * @param doctorFname
-     * @param doctorSname
-     * @param doctorPhone 
-     * @param doctorDepartment 
-     * @param doctorEmail 
-     * @param doctorDate 
-     * @param doctorPassword 
+     * Constructor for the doctor model class
+     * @param doctorId the doctor id
+     * @param doctorFname the doctor first name
+     * @param doctorSname the doctor surname
+     * @param doctorPhone the doctor phone number
+     * @param doctorDepartment the doctor department
+     * @param doctorEmail the doctor email address
+     * @param doctorDate the doctor date joined the department
+     * @param doctorPassword the doctor password
      */
     public Doctor_Model ( String doctorId, String doctorFname, String doctorSname, int doctorPhone, String doctorDepartment,
                           String doctorEmail,String doctorDate,String doctorPassword ){
@@ -44,7 +45,7 @@ public class Doctor_Model {
     
     /**
      * Method to set the doctor id
-     * @param doctorId 
+     * @param doctorId the doctor id
      */
     public void setDoctorId ( String doctorId ){
         this.doctorId = doctorId;
@@ -52,7 +53,7 @@ public class Doctor_Model {
     
     /**
      * Method to get doctor id
-     * @return 
+     * @return the doctor id
      */
     public String getDoctorId ( ){
         return doctorId;
@@ -60,7 +61,7 @@ public class Doctor_Model {
     
     /**
      * Method to set doctor first name
-     * @param doctorFname 
+     * @param doctorFname the doctor first name
      */
     public void setDoctorFname ( String doctorFname ){
         this.doctorFname = doctorFname;
@@ -68,7 +69,7 @@ public class Doctor_Model {
     
     /**
      * Method to get doctor first name
-     * @return 
+     * @return the doctor first name
      */
     public String getDoctorFname ( ){
         return doctorFname;
@@ -76,7 +77,7 @@ public class Doctor_Model {
     
     /**
      * Method to set doctor surname
-     * @param doctorSname 
+     * @param doctorSname the doctor surname
      */
     public void setDoctorSname ( String doctorSname ){
         this.doctorSname = doctorSname;
@@ -84,7 +85,7 @@ public class Doctor_Model {
     
     /**
      * Method to get doctor surname
-     * @return 
+     * @return the doctor surname
      */
     public String getDoctorSname ( ){
         return doctorSname;
@@ -92,7 +93,7 @@ public class Doctor_Model {
     
     /**
      * Method to set doctor phone
-     * @param doctorPhone 
+     * @param doctorPhone the doctor phone number
      */
     public void setDoctorPhone ( int doctorPhone ){
         this.doctorPhone = doctorPhone;
@@ -100,7 +101,7 @@ public class Doctor_Model {
     
     /**
      * Method to get doctor phone
-     * @return 
+     * @return the doctor phone number
      */
     public int getDocotorPhone ( ){
         return doctorPhone;
@@ -108,7 +109,7 @@ public class Doctor_Model {
     
     /**
      * Method to set doctor department
-     * @param doctorDepartment
+     * @param doctorDepartment the doctor department
      */
     public void setDoctorDepartment ( String doctorDepartment ){
         this.doctorDepartment = doctorDepartment;
@@ -116,7 +117,7 @@ public class Doctor_Model {
     
     /**
      * Method to get doctor department
-     * @return 
+     * @return the doctor department
      */
     public String getDoctorDepartment ( ){
         return doctorDepartment;
@@ -124,7 +125,7 @@ public class Doctor_Model {
     
     /**
      * Method to set doctor date
-     * @param doctorDate 
+     * @param doctorDate the doctor date joined
      */
     public void setDoctorDate( String doctorDate ){
         this.doctorDate = doctorDate;
@@ -132,7 +133,7 @@ public class Doctor_Model {
     
     /**
      * Method to get doctor date
-     * @return 
+     * @return the doctor date joined
      */
     public String getDoctorDate ( ){
         return doctorDate;
@@ -140,7 +141,7 @@ public class Doctor_Model {
     
     /**
      * Method to set doctor password
-     * @param doctorPassword 
+     * @param doctorPassword the doctor password
      */
     public void setDoctorPassword(String doctorPassword){
         this.doctorPassword = doctorPassword;
@@ -148,7 +149,7 @@ public class Doctor_Model {
     
     /**
      * Method to get doctor password
-     * @return 
+     * @return the doctor password
      */
     public String getDoctorPassword (){
         return doctorPassword;
@@ -156,7 +157,7 @@ public class Doctor_Model {
     
     /**
      * Method to return doctor details
-     * @return 
+     * @return the string representation of the doctor model
      */
     @Override
     public String toString(){

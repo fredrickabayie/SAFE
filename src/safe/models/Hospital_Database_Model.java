@@ -5,6 +5,9 @@
  */
 package safe.models;
 
+/**
+ * Importing java libraries
+ */
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.*;
@@ -19,6 +22,7 @@ import safe.views.Patient_Table_View;
 /**
  *
  * @author Abayie Fredrick
+ * @version 1.02
  */
 public class Hospital_Database_Model {
     Connection connection = null;
@@ -29,10 +33,10 @@ public class Hospital_Database_Model {
     
     /**
      * Constructor for the class
-     * @param patient_view
-     * @param patient_table_view 
-     * @param doctor_view 
-     * @param doctor_table_view 
+     * @param patient_view the instance of patient view class
+     * @param patient_table_view the instance of patient table view class
+     * @param doctor_view the instance of doctor view class
+     * @param doctor_table_view the instance of doctor table view class
      */
     public Hospital_Database_Model(Patient_View patient_view, Patient_Table_View patient_table_view, Doctor_View doctor_view,
             Doctor_Table_View doctor_table_view){
@@ -62,23 +66,23 @@ public class Hospital_Database_Model {
     /**
      * Method to insert data into the patient table in the 
      * database
-     * @param patientId
-     * @param patientFname
-     * @param patientSname
-     * @param patientAge
-     * @param patientAddress
-     * @param patientPhone 
-     * @param patientGender 
-     * @param patientOccupation 
-     * @param patientBloodgroup 
-     * @param patientMaritalstatus 
-     * @param patientBirthdate 
-     * @param patientNational 
-     * @param patientDisease 
-     * @param patientSymptom 
-     * @param drugName 
-     * @param drugInstruction 
-     * @param patientImage 
+     * @param patientId the patient id
+     * @param patientFname the patient first name
+     * @param patientSname the patient surname
+     * @param patientAge the patient age
+     * @param patientAddress the patient address
+     * @param patientPhone the patient phone number
+     * @param patientGender the patient gender
+     * @param patientOccupation the patient occupation
+     * @param patientBloodgroup the patient blood group
+     * @param patientMaritalstatus the patient marital status
+     * @param patientBirthdate the patient birth date
+     * @param patientNational the patient nationality
+     * @param patientDisease the patient disease
+     * @param patientSymptom the patient symptom
+     * @param drugName the patient drug name
+     * @param drugInstruction the patient instruction
+     * @param patientImage the patient image
      */
     public void insertPatientdatabase ( String patientId, String patientFname, String patientSname, int patientAge, String patientAddress, 
             int patientPhone, String patientGender, String patientOccupation, String patientBloodgroup, String patientMaritalstatus,
@@ -180,9 +184,9 @@ public class Hospital_Database_Model {
         }//End Of Catch
     }
     
-/**
- * update method for patients
- */
+    /**
+     * update method for patients
+     */
     public void updatePatientdatabase(){
         System.out.println(patient_table_view.getRowCount());
         try{
@@ -258,11 +262,10 @@ public class Hospital_Database_Model {
     }
     
     
-/**
- * delete method for patients
- */
+    /**
+     * delete method for patients
+     */
     public void deletePatientdatabase(){
-//         int row=patient_table_view.getSelectedRow();
         String deleteThis=patient_table_view.getValueAt(patient_table_view.getSelectedRow(),0);
         System.out.println(deleteThis);
          try
@@ -291,7 +294,6 @@ public class Hospital_Database_Model {
  * delete method for doctors database
  */
     public void deleteDoctordatabase(){
-//         int row=patient_table_view.getSelectedRow();
         String deleteThis=doctor_table_view.getValueAt(doctor_table_view.getSelectedRow(),0);
         System.out.println(deleteThis);
          try
@@ -317,14 +319,14 @@ public class Hospital_Database_Model {
     
     /**
      * method to insert data into the doctors database
-     * @param doctorId
-     * @param doctorFname
-     * @param doctorSname
-     * @param doctorPhone
-     * @param doctorEmail
-     * @param doctorDepartment
-     * @param doctorDate 
-     * @param doctorPassword 
+     * @param doctorId the doctor id
+     * @param doctorFname the doctor first name
+     * @param doctorSname the doctor surname
+     * @param doctorPhone the doctor phone number
+     * @param doctorEmail the doctor email address
+     * @param doctorDepartment the doctor department
+     * @param doctorDate the doctor date joined
+     * @param doctorPassword the doctor password
      */
     public void insertDoctordatabase(String doctorId,String doctorFname,String doctorSname,int doctorPhone,String doctorEmail,
             String doctorDepartment,String doctorDate,String doctorPassword){

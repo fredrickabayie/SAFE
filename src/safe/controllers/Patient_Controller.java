@@ -46,6 +46,7 @@ import static safe.views.Patient_Table_View.table_model;
 /**
  *
  * @author Fredrick Abayie
+ * @version 1.02
  */
 public final class Patient_Controller {
     private final Patient_View patient_view;
@@ -65,9 +66,9 @@ public final class Patient_Controller {
     
 /**
  * Constructor for the patient controller class
- * @param patient_view 
- * @param database_controller 
- * @param patient_table_view 
+ * @param patient_view instance instance of the patient view class
+ * @param database_controller instance of the database controller class
+ * @param patient_table_view instance of the patient table view class
  */
 public Patient_Controller( Patient_View patient_view, Hospital_Database_Model database_controller, 
         Patient_Table_View patient_table_view ){
@@ -102,8 +103,8 @@ ticket_id=x;
 
 /**
  * Method to check or verify id
- * @param x
- * @return 
+ * @param x accepts long variable
+ * @return set valid to true when condition is satisfied
  */
 public boolean checkId(long x){
 boolean valid=true;
@@ -329,7 +330,7 @@ private void resetTextFields(){
     
 /**
  * Method to check for validation of input
- * @return 
+ * @return true when the condition is satisfied
  */
 public boolean patientValidate ( ){
   boolean valid=true;
@@ -348,7 +349,7 @@ public boolean patientValidate ( ){
 
 /**
  * Method to open saved data
- * @param file 
+ * @param file the selected file name
  */
  public void open(File file)
 {
@@ -374,23 +375,10 @@ catch (IOException ex)
 JOptionPane.showMessageDialog(patient_table_view, "Failed To Import File " +file.getName(), "ERROR", JOptionPane.ERROR_MESSAGE);
 }//End Of Catch
 }
-    
- 
-/**
- * Method to get column names of the patient table
- * @return 
- */
-//public Vector getColumnNames()
-//{
-//    Vector <String> vec = new Vector < > ( );
-//   for ( int i=0; i < patient_table.getColumnCount ( ); i++ )
-//       vec.add ( patient_table.getColumnName ( i ) );
-//   return vec;
-//}
 
  /**
  * Method to get column names of the patient table
- * @return 
+ * @return the array of column names
  */
 public ArrayList getColumnNames(){
     ArrayList<String> array = new ArrayList<>();
@@ -402,7 +390,7 @@ public ArrayList getColumnNames(){
     
 /**
  * Method to save data to a file
- * @param file 
+ * @param file the name of the file to save
  */
 public void save (File file){
 try

@@ -5,6 +5,9 @@
  */
 package safe.views;
 
+/**
+ * Importing java libraries
+ */
 import java.util.Vector;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
@@ -16,12 +19,14 @@ import javax.swing.table.TableColumn;
 /**
  *
  * @author Abayie Fredrick
+ * @version 1.02
  */
 public class Doctor_Table_View extends javax.swing.JFrame {
 public static DefaultTableModel table_model;
 public static Vector vector;
 TableColumn department;
 JComboBox department_combo;
+
     /**
      * Creates new form Doctor_Table_View
      */
@@ -49,16 +54,16 @@ JComboBox department_combo;
    }
     
      /**
-     * 
-     * @param w 
+     * Method to add a row
+     * @param w the object to add
      */
     public void addRow(Object []w){
         table_model.addRow(w);
     }//End of getPatient_table
     
     /**
-     * 
-     * @return 
+     * Method to get row count of the table
+     * @return the table model row count
      */
     public int getRowCount(){
         return table_model.getRowCount();
@@ -66,16 +71,16 @@ JComboBox department_combo;
     
     /**
      * A method to get a value in the table
-     * @param i
-     * @param j
-     * @return 
+     * @param i the row in the table
+     * @param j the column in the table
+     * @return string of the value at the tale
      */
      public String getValueAt(int i, int j){
         return (String) table_model.getValueAt(i, j);
     }//End of getValueAt
      
      /**
-      * 
+      * Method to delete row
       */
      public void deleteRow()
     {
@@ -85,15 +90,15 @@ JComboBox department_combo;
      
      /**
       * A method to return a selected row
-      * @return 
+      * @return the selected row in the table model
       */
      public int getSelectedRow(){
          return doctor_table.getSelectedRow();
      }//End of getSelectedRow
     
      /**
-      * 
-      * @param i 
+      * Method to set the row count of the table model
+      * @param i the index to set the row count
       */
     public void setRowCount( int i){
         i=0;
@@ -101,24 +106,24 @@ JComboBox department_combo;
     }
     
     /**
-     * 
-     * @return 
+     * Method to get the display button
+     * @return the display button
      */
     public JButton getDisplay(){
         return display;
     }
     
     /**
-     * 
-     * @return 
+     * Method to get the update button
+     * @return the update button
      */
     public JButton getUpdate(){
         return update;
     }
     
     /**
-     * 
-     * @return 
+     * Method to get delete button
+     * @return the delete button
      */
     public JButton getDelete(){
         return delete;
@@ -126,7 +131,7 @@ JComboBox department_combo;
     
     /**
      * Method to return close button
-     * @return 
+     * @return the close button
      */
     public JButton getClose(){
         return close;
@@ -134,23 +139,23 @@ JComboBox department_combo;
     
     /**
      * Method to return open button
-     * @return 
+     * @return the open button
      */
     public JButton getOpen(){
         return open;
     }//End of getOpen
     
     /**
-     * MEthod to return save button
-     * @return 
+     * Method to return save button
+     * @return the save button
      */
     public JButton getSave(){
         return save;
     }//End of getSave
     
-          /**
+    /**
      * Method to return table menu item
-     * @return 
+     * @return the import menu item
      */
     public JMenuItem getImport_menu(){
         return import_menu;
@@ -158,7 +163,7 @@ JComboBox department_combo;
     
     /**
      * Method to return table menu item
-     * @return 
+     * @return the export menu item
      */
     public JMenuItem getExport_menu(){
         return export_menu;
@@ -166,7 +171,7 @@ JComboBox department_combo;
     
     /**
      * Method to return table menu item
-     * @return 
+     * @return the exit menu item
      */
     public JMenuItem getExit_menu(){
         return exit_menu;
@@ -174,7 +179,7 @@ JComboBox department_combo;
     
     /**
      * Method to return table menu item
-     * @return 
+     * @return the display menu item
      */
     public JMenuItem getDisplay_menu(){
         return display_menu;

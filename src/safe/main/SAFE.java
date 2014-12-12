@@ -10,14 +10,14 @@ import safe.models.Hospital_Database_Model;
 import safe.controllers.Patient_Controller;
 import safe.views.Doctor_Table_View;
 import safe.views.Doctor_View;
-import safe.views.Login_View;
 import safe.views.Main_View;
 import safe.views.Patient_Table_View;
 import safe.views.Patient_View;
 
 /**
  *
- * @author chokayg3
+ * @author Abayie Fredrick
+ * @version 1.02
  */
 public class SAFE {
 
@@ -62,8 +62,7 @@ public class SAFE {
                 
    Patient_View patient_view = new Patient_View ( );
    Patient_Table_View patient_table_view = new Patient_Table_View();
-   Main_View main_view = new Main_View ();
-   Login_View login_view = new Login_View();               
+   Main_View main_view = new Main_View ();              
                 
                 
    Doctor_View doctor_view = new Doctor_View ( );
@@ -74,19 +73,9 @@ public class SAFE {
    Doctor_Controller doctor_controller = new Doctor_Controller (doctor_view,database_controller,doctor_table_view);
                 
    Main_Controller main_controller = new Main_Controller (main_view,patient_controller,patient_view,patient_table_view,doctor_view,
-   doctor_table_view,login_view);
-//   ,chat_controller,chat_view
-                
+   doctor_table_view);
 
-// doctor_table_view.setVisible(true);
    main_view.setVisible(true);
-//   main_controller.menu();
-// patient_view.setVisible ( true );
-// patient_table_view.setVisible(true);
-// doctor_view.setVisible(true);
-// patient_controller.doctorController();
-// doctor_controller.doctorButton();
-// patient_controller.patientButton();
             }
         });
     }

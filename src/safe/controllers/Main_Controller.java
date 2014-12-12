@@ -4,20 +4,22 @@
  * and open the template in the editor.
  */
 package safe.controllers;
-
+/**
+ * Importing java libraries
+ */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import safe.views.Doctor_Table_View;
 import safe.views.Doctor_View;
-import safe.views.Login_View;
 import safe.views.Main_View;
 import safe.views.Patient_Table_View;
 import safe.views.Patient_View;
 
 /**
  *
- * @author chokayg3
+ * @author Abayie Fredrick
+ * @version 1.02
  */
 public final class Main_Controller {
     Main_View main_view;
@@ -27,19 +29,24 @@ public final class Main_Controller {
     Patient_Table_View patient_table_view;
     Doctor_View doctor_view;
     Doctor_Table_View doctor_table_view;
-    Login_View login_view;
     
-    
+    /**
+     * Constructor for the amin controller
+     * @param main_view instance of the main view class
+     * @param patient_controller instance of the patient controller class
+     * @param patient_view instance of the patient view class
+     * @param patient_table_view instance of the patient table view class
+     * @param doctor_view instance of the doctor view class
+     * @param doctor_table_view instance of the doctor table view class
+     */
     public Main_Controller( Main_View main_view, Patient_Controller patient_controller, Patient_View patient_view,
-            Patient_Table_View patient_table_view,Doctor_View doctor_view,Doctor_Table_View doctor_table_view,
-            Login_View login_view){
+            Patient_Table_View patient_table_view,Doctor_View doctor_view,Doctor_Table_View doctor_table_view){
         this.main_view = main_view;
         this.patient_controller = patient_controller;
         this.patient_view = patient_view;
         this.patient_table_view = patient_table_view;
         this.doctor_view = doctor_view;
         this.doctor_table_view = doctor_table_view;
-        this.login_view = login_view;
         menu ( );
     }
     
@@ -76,11 +83,6 @@ public final class Main_Controller {
                     System.out.println("doctor table pressed");
                 }
                 
-                if (e.getSource().equals(main_view.getDoctorLogin_menu())){
-                    login_view.setVisible(true);
-                    System.out.println("login menu pressed");
-                }
-                
                 if (e.getSource().equals(main_view.getChat_menu())
                     ||e.getSource().equals(main_view.getChat())){
                     JOptionPane.showMessageDialog(main_view, "This feature will be implemented in version"
@@ -109,7 +111,9 @@ public final class Main_Controller {
             System.out.println(e.toString());
         }    
 }
-    
+    /**
+     * Method to open how to use software pdf
+     */
     public void openPdf(){
         try{
             Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler "+"C:\\Users\\fred\\Desktop\\SAFE\\SAFE\\SAFE HOSPITAL.pdf");
